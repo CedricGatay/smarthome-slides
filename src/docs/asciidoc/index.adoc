@@ -78,6 +78,187 @@ image:tnt_logo.png[role=small] TouraineTech co-organizer
 One can also notice various Wicket framework contributions, docker images, jenkins plugins, restx, parsley.js bridges...
 ****
 
+
+
+
+
+== Part 1
+
+Pourquoi j'ai voulu automatiser ma maison ? Je voulais gagner du temps sur les tâches basiques et me simplifier la vie. 
+Les deux exemple les plus visibles sont la gestion des volets roulants et des lumières du salon/séjour. 
+En effet j'ai une grande pièce avec un grand plafond tendu qui donne un style sympa mais qui ne présente donc pas de plafonniers ni de spots. 
+Du coup, allumer les lumières du salon voulait dire aller manipuler les 5 interrupteurs partout dans la pièce (et bien sûr même punition lors de l'extinction). 
+Trouver un moyen pour centraliser tout ca me paraissait un bon exercice.
+L'autre point est la gestion des volets roulants, c'est assez pénible d'aller dans chacune des pièces ouvrir / fermer manuellement les volets (bon ok c'est être faignant). 
+C'est aussi sympa de pouvoir préparer le coucher des enfants en fermant les volets avant d’entrer dans leur chambre.
+
+Les enfants, parlons en, c'est l'autre point qui m’a conduit à améliorer ma maison. 
+Les jeunes parents me comprendront quand je vais évoquer la sempiternelle question du “est ce qu'il est assez ou trop couvert”. 
+Une sonde de température coûte pas grand chose et permet de vite se rassurer (surtout quand on change de domicile et qu'on ne connait pas bien sa réaction aux températures extérieures)
+	
+Ainsi en quelques mois, j'avais le contrôle de mes volets et lumières depuis mon smartphone, un ordinateur en dépensant relativement peu:
+
+Quelques prises commandées (50€ les trois en magasin de bricolage)
+Un raspberry pi (50€) / un nas (400€)
+Un émetteur rfxtrx (110€)
+Des sondes de température (10 - 20€)
+Quelques heures de configuration du logiciel qu'un ami utilisait et m’avait conseillé : domoticz (0€, 5h)
+
+So far so good, mais quelques problèmes sont vite arrivés : la technologie derrière toute mon installation est du 433MHz, c'est du fire and forget. 
+Dans certains cas ce n'est pas important, par exemple les sondes de température envoient toutes les 30s les informations, si j'en rate quelques uns ce n’est pas grave.
+En revanche si j’envoie l'ordre de fermer les volets, je m’attends à ce que ce soit fait, et en l'occurrence, je ne peux pas en être sûr…
+(Quelqu'un cherchant le réseau avec son mobile)
+Du coup j’en suis venu à utiliser la technique du “ça marche la” pour placer au mieux l’émetteur. 
+Et enfin la sécurité de l'installation : globalement il n’y en a aucune en 433MHz, les températures sont balancées à tout le monde, les ordres d’allumage extinctions de prises commandées sont ouverts à tous. 
+Le seul point sécurisé est le protocole utilisé pour les volets (Somfy à fait une surcouche avec du chiffrement avec un rolling code).
+Le truc marrant avec le 433MHz, c’est que c’est utilisé pour tout plein de choses depuis assez longtemps, je capte par exemple un détecteur de mouvement de la cour de l’immeuble à côté de chez moi. 
+Et ca sert encore chez PSA par exemple, les clefs sont en 433MHz.
+
+Au niveau du contrôle, à l’époque j’étais encore sous Android, j’utilisais donc l’application “officielle” Domoticz pour mon smartphone, et des télécommandes pour le reste (dans les tiroirs de table basse). 
+En gros c’était du contrôle uniquement de mon ressort, pas très utilisable par un invité (ni sans un smartphone sous la main).
+
+== Part 2
+
+// Hue
+
+Après quelques mois de bidouilles avec le 433MHz, j’ai réussi à contourner ce qui me gênait et j’arrive a bien parler avec tous mes équipements. 
+En plaçant correctement l’antenne je n’ai quasiment aucun ordre non fonctionnel !
+Par contre un point reste un peu dommage, la gestion des lumières n’est pas assez fines avec uniquement des interrupteurs commandés.
+C’est sympa mais faire pouvoir réduire la luminosité (et la couleur en bonus) ca serait sympa. 
+Je me suis donc décidé à utiliser une solution du marché avec les ampoules Philips Hue, des interrupteurs compatibles et le bridge.
+Le bridge c’est finalement un petit périphérique que vous posez sur votre réseau qui vous permet d’attaquer vos lampes via une API.
+(on est des geeks, on aime les api)
+Le plus c’est qu’on a des applications sympa Android et iOS permettant le contrôle des luminosités et couleurs (les enfants adorent jouer avec). 
+Et pour les gens sous iOS, le compatiblité HomeKit permet d’utiliser Siri ou l’application Maison pour changer la luminosité (et là ça commence à devenir classe).
+Niveau utilisabilité par n’importe qui j’ai considérablement gagné en confort, avec un iPad qui traine dans le salon, on peut facilement invoquer Siri ou utiliser l’application Maison pour gérer les lumières.
+Pour les invités, des interrupteurs “standard” permettent de gérer la lumière, on est dans une configuration confortable !
+Et niveau sécurité, c’est mieux car il faut se connecter au compte Hue, après les données se balladent un peu partout sur le réseau et en dehors (peut-être).
+Voilà une belle façon de contrôler les lumières, qui plus est avec des interactions possible via les API, donc une gestion dans Domoticz, j’ai “juste” eu à enrichir mon système.
+
+Niveau coût :
+
+ * Pack de démarrage Hue 1 ampoule, 1 interrupteur, 1 pont (120€)
+ * Une ampoule (20 -> 60€) en fonction de la possibilité de changer les couleurs ou non
+ * Temps de configuration (1h)
+
+== Part 3
+//ZWave
+
+Une fois que j’ai eu une maison assez facilitée niveau vie intérieure, j’ai voulu ajouter un peu de sécurité, principalement pour gérer les cas de fenêtres / portes laissées ouvertes.
+Je n’avais pas envie d’exposer cette donnée via du 433MHz non fiable / ni sécurisé et je me suis donc tourné vers du ZWave, qui est la deuxième technologie la plus utilisée sur le marché je pense.
+J’ai donc ajouté dans mon installation des capteurs d’ouverture de portes / fenêtres en ZWave (ainsi qu’une clef ZWave) pour être capable d’intéragir avec les périphériques.
+Le tout a fonctionné globalement du premier coup, mais j’ai rapidement vu des problèmes de décrochage du réseau.
+
+Et c'est là que mes difficultés avec ma solution entièrement ont commencé.
+Comme j'ai dit, j'ai du jouer au jeu du ça capte, ça capte pas pour le 433MHz. 
+J'ai fini par réussir, mais la ou je pensais que le ZWave allait me simplifier la vie, j'ai découvert que c'était presque pire.
+Toute mon installation est dans une baie de brassage, à côté d'un mur très épais, j'ai peiné à comprendre mes problèmes d'utilisation du ZWave.
+Il s'agissait tout simplement de problèmes physique de portée du signal.
+
+Niveau coût:
+
+ * Clef ZWave 50€
+ * Detecteur d'ouverture 40€
+ * Prise commandée 50€
+ * Détecteur de mouvements 50€
+ * Temps de configuration (2h)
+
+== Part 4
+// Merge all the things
+
+On a des choses marrantes maintenant, parce qu'on a beaucoup de périphériques connectés donc on peut se permettre pas mal de choses.
+Par exemple, j'ai du changer mon lave linge récemment. La différence de prix pour avoir une version avec Wifi était négligeable.
+J'ai donc pu remplacer mon DashButton qui me permettait de penser à vider le lave-linge par un trigger IFTTT.
+
+J'ai aussi craqué en me promenant dans un magasin de la grande chaîne suèdoise, j'ai vu que leur système d'éclairage proposait des ampoules E14 (ce que Philips ne faisait pas à l'époque).
+Bien que ce soit le même protocole (Zigbee) que chez Philips, ce n'était pas interopérable à l'époque. 
+Il parait que ca l'est devenu, mais je n'ai pas testé.
+
+L'avantage de tous ces systèmes, c'est qu'ils sont globalement bien supportés par la communauté et qu'il est possible de trouver un moyen de les adresser.
+Le problème est que parfois, les reverse engineering des API ne va pas assez vite vers les versions stables des outils. 
+Et la, c'est le drame, j'ai commencé à dépendre de version nightly de Domoticz.
+Je suis même allé assez loin et j'ai appris des choses marrantes sur le comportement de Docker Hub.
+Ca m'a permis de construire une image Docker de façon automatique pour toutes les ß de Domoticz
+//https://hub.docker.com/v2/repositories/cgatay/domoticz/ 188k pull
+Et forcément, quand on dépend de `-SNAPSHOT` des choses pas cool arrivent : système qui ne démarre pas, module non fonctionnels, perte de configuration.
+
+Niveau coût:
+
+ * pas mal de temps perdu
+ * de l'agacement
+
+== Part 0
+//on recommence, en sachant mieux ce qu'on veut faire
+Du coup j'ai réévalué mes besoins en sachant ce que je voulais faire et ce dont je disposais.
+Je suis passé sur Home Assistant principalement pour le support très étendu et très actif de différenes technologies.
+Dans les bonus, la configuration de Home Assistant est basée sur des fichiers YAML.
+Tout le monde aime detester le YAML, mais ce qu'on peut adorer c'est que c'est un format génialement `diff`able et gérable avec Git.
+Les problèmes de configuration qui disparait peuvent ainsi être gérés très facilement.
+
+== Part 1
+// parler à sa maison
+Pour ceux qui s'interessent a la domotique, il y a plusieurs solutions qui existent pour permettre le pilotage de sa maison par la voix.
+Un des plus connu s'appelle Gladys, et permet d'utiliser un Kinect pour gérer la partie reconnaissance vocale.
+Mais, Alexa et Google Assistant sont arrivés, et bien qu'on puisse douter de la destination des données collectées, il faut avouer que ce sont des gadgets sympa.
+Et, entre nous, votre téléphone n'est il pas toujours à votre écoute de toute façon ?
+
+Home Assistant dispose depuis quelques mois d'une intégration de Google Actions, et m'a donc permis de piloter ma maison simplement avec un Google Home.
+Pour dire vrai, il a surtout permis à mes enfants de piloter la maison simplement. 
+C'est tellement amusant de les voir répéter les phrases quand le Google Home dit qu'il n'a pas compris.
+Ainsi, la domotique a permis d'aider a améliorer la prononciation de mes enfants "OK Google, ouvre les volets".
+
+
+== Conseils
+
+Pensez à avoir un routeur performant, pour deux raisons principales. 
+Vous allez avoir beaucoup de périphériques en Wifi, les boxs de nos FAI ne sont pas si bien pour gérer beaucoup de périphériques.
+Pouvoir bloquer le traffic vers Internet pour un périphérique voir leur créer un réseau Wifi isolé est un luxe parfois nécessaire.
+Par exemple, ma super machine à laver high-tech ne sait pas se connecter en WPA2, ce n'est noté nulle part, au bout d'un peu d'archarnement j'ai découvert qu'elle ne parlait juste pas à mon routeur...
+
+L'automatique c'est bien, mais ça fait souvent des choses non prévues.
+Un des principal travers est de prévoir un mécanisme qui permet au système d'avoir une mémoire à court terme.
+On peut ainsi l'empêcher de rallumer une lumière qu'on viendrait d'éteindre par exemple (c'est un des premiers trucs qu'on découvre).
+
+Il est important de penser au mode enfant, invité, au cas où on a pas internet et aussi à gérer le cas de la coupure de courant.
+
+
+== Problèmes rencontrés
+
+J'ai tenté de faire un détail de ce qu'il est possible de faire.
+Mais vous savez comme moi que tout n'est jamais parfaitement rose dans notre métier et que tout bouge un peu vite.
+Un des inconvénients à l'interconnexion de système hétérogènes est qu'on ne maîtrise pas tout ce qui peut se passer.
+On vit une époque géniale ou les périphériques peuvent se mettre à jour d'eux-même. 
+Du coup, toutes les bidouilles qui consistent à exploiter des API non publiques peuvent poser des problèmes.
+
+Dans les problèmes récents que j'ai pu avoir :
+ 
+  * le protocole IKEA qui a bougé pour rajouter de la sécurité (merci Home Assistant et la réactivité, et IKEA de prévenir directement sur Reddit)
+  * Google Actions on Google, qui permet de jouer avec le OK Google, peut bouger, et parfois "Je ne peux contrôler vos appareils domotiques"
+
+== En résumé
+
+En mélangeant tout plein de technologies, j'ai réussi à finalement rendre ma maison moins bête.
+Je ne dirais pas que j'ai une maison intelligente, et je n'ai pas réellement chercher à en arriver là.
+J'ai surtout cherché à faciliter la vie et l'utilisation de la maison par les personnes qui l'occupent.
+Que ce soit les habitants comme les invités, et c'est un des points les plus importants.
+
+Malgré tout le travail pour que ce soit simple à utiliser, il reste toujours des moments ou "ca marche pas".
+Pour tous ceux-là, avoir une technique "classique" est indispensable. 
+Et quand ca finit par ne plus fonctionner, le problème est le temps passé à réparer ensuite.
+
+Maintenant, en terme de temps consacré, il y a des semaines ou je ne passe pas une seconde à m'en occuper, et d'autres ou je peux avoir besoin d'y passer 3 ou 4h.
+En moyenne, je dirais que je prend 10 minutes maximum par semaine pour effectuer la maintenance classique.
+
+Maintenant, abordons le plus gros problème, c'est un passe temps assez addictif, je passe beaucoup de temps à chercher un peu de matériel pour améliorer des petits trucs.
+J'achète des trucs dont je ne me sers pas, je m'acharne même à sauver du matos que j'ai tué dans mes tests.
+Par exemple, pour sauver une caméra IP avec un badflash j'ai dépensé plus en matériel qui me resservira peut-être que le prix de la caméra...
+
+=== Domoticz -> Home Assistant
+
+--------
+--------
+
+
 == Une maison manuelle
 
 * actions manuelles répétitives
