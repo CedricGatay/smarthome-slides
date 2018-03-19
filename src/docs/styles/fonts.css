@@ -1,1 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+@font-face{
+    font-family: "BTTF";
+    src: url('/fonts/BTTF.ttf');
+}
+.bttf{
+    font-family: "BTTF";
+}
