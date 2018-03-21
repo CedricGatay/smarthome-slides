@@ -40,50 +40,58 @@ include::banner.adoc[]
 //  * réviser le TCP/IP
 
 
-== Un peu d'histoire
+// == Un peu d'histoire
 
-[.cue]
-****
-J'ai, il y a deux ans, changé de domicile pour une maison. 
-Dans l'appartement que je possédais auparavant, j'avais eu envie d'automatiser certaines choses mais je n'avais pas mis en pratique.
-L’acquisition et le déménagement dans un lieu ou je suis censé passer plus de temps m’a un peu plus motivé.
-Je vais essayer de vous decrire mon parcours et par quelles étapes je suis passé.
-****
+// [.cue]
+// ****
+// J'ai, il y a deux ans, changé de domicile pour une maison. 
+// Dans l'appartement que je possédais auparavant, j'avais eu envie d'automatiser certaines choses mais je n'avais pas mis en pratique.
+// L’acquisition et le déménagement dans un lieu ou je suis censé passer plus de temps m’a un peu plus motivé.
+// Je vais essayer de vous decrire mon parcours et par quelles étapes je suis passé.
+// ****
 
 
-== image:CG_BW.jpg[]
+// == image:CG_BW.jpg[]
 
-icon:twitter[] @Cedric_Gatay
+// icon:twitter[] @Cedric_Gatay
 
-icon:code[] Developer
+// icon:code[] Developer
 
-icon:empire[] Code-Troopers co-founder
+// icon:empire[] Code-Troopers co-founder
 
-icon:google[] GDG Tours lead
+// icon:google[] GDG Tours lead
 
-image:tnt_logo.png[role=small] TouraineTech co-organizer
+// image:tnt_logo.png[role=small] TouraineTech co-organizer
 
-== icon:code-fork[]
+// == icon:code-fork[]
 
- * icon:bus[] http://navigtours.com[Navig'Tours] icon:apple[] icon:android[]
- * icon:music[] Chapi.to icon:apple[] icon:android[]
- * icon:github[] FOSS:
- ** icon:calendar[] Android Betterpickers icon:android[]
- ** icon:github-alt[] sbt plugins icon:globe[]
- ** icon:github-alt[] wicket-hot-reload icon:globe[]
- ** icon:gitlab[] Gitlab contributor icon:globe[]
+//  * icon:bus[] http://navigtours.com[Navig'Tours] icon:apple[] icon:android[]
+//  * icon:music[] Chapi.to icon:apple[] icon:android[]
+//  * icon:github[] FOSS:
+//  ** icon:calendar[] Android Betterpickers icon:android[]
+//  ** icon:github-alt[] sbt plugins icon:globe[]
+//  ** icon:github-alt[] wicket-hot-reload icon:globe[]
+//  ** icon:gitlab[] Gitlab contributor icon:globe[]
 
-[.cue]
-****
-One can also notice various Wicket framework contributions, docker images, jenkins plugins, restx, parsley.js bridges...
-****
+// [.cue]
+// ****
+// One can also notice various Wicket framework contributions, docker images, jenkins plugins, restx, parsley.js bridges...
+// ****
 
 
 
 
 
 == Part 1
+//DIY the hard way
 
+== Raisons de l'automatisation
+
+ * gain de temps
+ * faciliter les tâches répétitives
+
+[.cue]
+****
 Pourquoi j'ai voulu automatiser ma maison ? Je voulais gagner du temps sur les tâches basiques et me simplifier la vie. 
 Les deux exemple les plus visibles sont la gestion des volets roulants et des lumières du salon/séjour. 
 En effet j'ai une grande pièce avec un grand plafond tendu qui donne un style sympa mais qui ne présente donc pas de plafonniers ni de spots. 
@@ -95,66 +103,162 @@ C'est aussi sympa de pouvoir préparer le coucher des enfants en fermant les vol
 Les enfants, parlons en, c'est l'autre point qui m’a conduit à améliorer ma maison. 
 Les jeunes parents me comprendront quand je vais évoquer la sempiternelle question du “est ce qu'il est assez ou trop couvert”. 
 Une sonde de température coûte pas grand chose et permet de vite se rassurer (surtout quand on change de domicile et qu'on ne connait pas bien sa réaction aux températures extérieures)
-	
-Ainsi en quelques mois, j'avais le contrôle de mes volets et lumières depuis mon smartphone, un ordinateur en dépensant relativement peu:
+****
 
+== Premiers pas
+
+ * prises commandées 
+ * sondes de températures
+ * contrôle des volets roulants
+
+[.cue]
+****
+Ainsi en quelques mois, j'avais le contrôle de mes volets et lumières depuis mon smartphone, un ordinateur en dépensant relativement peu:
+****
+
+== Coût
+
+ * environ 250€
+ * 5h de configuration
+
+[.cue]
+****
 Quelques prises commandées (50€ les trois en magasin de bricolage)
 Un raspberry pi (50€) / un nas (400€)
 Un émetteur rfxtrx (110€)
 Des sondes de température (10 - 20€)
 Quelques heures de configuration du logiciel qu'un ami utilisait et m’avait conseillé : domoticz (0€, 5h)
+****
 
+== Technologie
+
+ * 433MHz
+ * Somfy RTS
+
+== Retour sur l'utilisation technique
+
+ * fiabilité hasardeuse
+ * bas coût
+ * sécurité ?
+
+[.cue]
+****
 So far so good, mais quelques problèmes sont vite arrivés : la technologie derrière toute mon installation est du 433MHz, c'est du fire and forget. 
 Dans certains cas ce n'est pas important, par exemple les sondes de température envoient toutes les 30s les informations, si j'en rate quelques uns ce n’est pas grave.
 En revanche si j’envoie l'ordre de fermer les volets, je m’attends à ce que ce soit fait, et en l'occurrence, je ne peux pas en être sûr…
 (Quelqu'un cherchant le réseau avec son mobile)
 Du coup j’en suis venu à utiliser la technique du “ça marche la” pour placer au mieux l’émetteur. 
 Et enfin la sécurité de l'installation : globalement il n’y en a aucune en 433MHz, les températures sont balancées à tout le monde, les ordres d’allumage extinctions de prises commandées sont ouverts à tous. 
-Le seul point sécurisé est le protocole utilisé pour les volets (Somfy à fait une surcouche avec du chiffrement avec un rolling code).
+Le seul point sécurisé est le protocole utilisé pour les volets (Somfy à fait une surcouche avec du chiffrement avec un rolling code, et utilise une frequence tres legeremnt différente).
 Le truc marrant avec le 433MHz, c’est que c’est utilisé pour tout plein de choses depuis assez longtemps, je capte par exemple un détecteur de mouvement de la cour de l’immeuble à côté de chez moi. 
 Et ca sert encore chez PSA par exemple, les clefs sont en 433MHz.
+****
+//TODO se renseigner sur l'openness de la frequence.
 
+
+== Interface de contrôle
+
+ * Application Web
+ * Application Mobile 
+ * Télécommandes --moches-- DYI
+
+[.cue]
+****
 Au niveau du contrôle, à l’époque j’étais encore sous Android, j’utilisais donc l’application “officielle” Domoticz pour mon smartphone, et des télécommandes pour le reste (dans les tiroirs de table basse). 
 En gros c’était du contrôle uniquement de mon ressort, pas très utilisable par un invité (ni sans un smartphone sous la main).
+****
 
-== Part 2
+
+== ! 
+[role=bttf]
+DIY 
+
+// == Part 2
 
 // Hue
-
+[.cue]
+****
 Après quelques mois de bidouilles avec le 433MHz, j’ai réussi à contourner ce qui me gênait et j’arrive a bien parler avec tous mes équipements. 
 En plaçant correctement l’antenne je n’ai quasiment aucun ordre non fonctionnel !
-Par contre un point reste un peu dommage, la gestion des lumières n’est pas assez fines avec uniquement des interrupteurs commandés.
+Par contre un point reste un peu dommage, la gestion des lumières n’est pas assez fines avec uniquement des interrupteurs commandés (lag).
 C’est sympa mais faire pouvoir réduire la luminosité (et la couleur en bonus) ca serait sympa. 
+****
+
+== De la couleur partout !
+
+ * Philips Hue
+ * Zigbee
+
+[.cue]
+****
 Je me suis donc décidé à utiliser une solution du marché avec les ampoules Philips Hue, des interrupteurs compatibles et le bridge.
 Le bridge c’est finalement un petit périphérique que vous posez sur votre réseau qui vous permet d’attaquer vos lampes via une API.
 (on est des geeks, on aime les api)
 Le plus c’est qu’on a des applications sympa Android et iOS permettant le contrôle des luminosités et couleurs (les enfants adorent jouer avec). 
-Et pour les gens sous iOS, le compatiblité HomeKit permet d’utiliser Siri ou l’application Maison pour changer la luminosité (et là ça commence à devenir classe).
+Et pour les gens sous iOS, le compatiblité HomeKit permet d’utiliser Siri ou l’application Maison pour changer la luminosité (et là ça commence à devenir classe) à la voix.
+****
+
+== Utilisable par tous !
+
+ * Applications mobiles
+ * Contrôle Vocal (Siri / Google Assistant / Alexa)
+ * Interrupteurs physiques
+
+[.cue]
+****
 Niveau utilisabilité par n’importe qui j’ai considérablement gagné en confort, avec un iPad qui traine dans le salon, on peut facilement invoquer Siri ou utiliser l’application Maison pour gérer les lumières.
 Pour les invités, des interrupteurs “standard” permettent de gérer la lumière, on est dans une configuration confortable !
 Et niveau sécurité, c’est mieux car il faut se connecter au compte Hue, après les données se balladent un peu partout sur le réseau et en dehors (peut-être).
 Voilà une belle façon de contrôler les lumières, qui plus est avec des interactions possible via les API, donc une gestion dans Domoticz, j’ai “juste” eu à enrichir mon système.
+****
 
+== Pas super bon marché quand même
+
+ * environ 120€
+ * de 20 à 60€ par ampoule 
+
+[.cue]
+**** 
 Niveau coût :
 
  * Pack de démarrage Hue 1 ampoule, 1 interrupteur, 1 pont (120€)
  * Une ampoule (20 -> 60€) en fonction de la possibilité de changer les couleurs ou non
  * Temps de configuration (1h)
+****
 
 == Part 3
 //ZWave
+
+== Intégration de ZWave
+
+[.cue]
+****
 
 Une fois que j’ai eu une maison assez facilitée niveau vie intérieure, j’ai voulu ajouter un peu de sécurité, principalement pour gérer les cas de fenêtres / portes laissées ouvertes.
 Je n’avais pas envie d’exposer cette donnée via du 433MHz non fiable / ni sécurisé et je me suis donc tourné vers du ZWave, qui est la deuxième technologie la plus utilisée sur le marché je pense.
 J’ai donc ajouté dans mon installation des capteurs d’ouverture de portes / fenêtres en ZWave (ainsi qu’une clef ZWave) pour être capable d’intéragir avec les périphériques.
 Le tout a fonctionné globalement du premier coup, mais j’ai rapidement vu des problèmes de décrochage du réseau.
+****
 
+
+== Galère d'installation
+
+[.cue]
+****
 Et c'est là que mes difficultés avec ma solution entièrement ont commencé.
 Comme j'ai dit, j'ai du jouer au jeu du ça capte, ça capte pas pour le 433MHz. 
 J'ai fini par réussir, mais la ou je pensais que le ZWave allait me simplifier la vie, j'ai découvert que c'était presque pire.
 Toute mon installation est dans une baie de brassage, à côté d'un mur très épais, j'ai peiné à comprendre mes problèmes d'utilisation du ZWave.
 Il s'agissait tout simplement de problèmes physique de portée du signal.
+****
 
+== Coût global
+
+ * 50€ pour une clef ZWave
+ * 50€ par élément
+
+[.cue]
+****
 Niveau coût:
 
  * Clef ZWave 50€
@@ -163,67 +267,187 @@ Niveau coût:
  * Détecteur de mouvements 50€
  * Temps de configuration (2h)
 
+ Au niveau du contrôle, ca n'a pas changé, les outils sont passifs, par contre j'ai mis en place des automatisations.
+****
+
 == Part 4
 // Merge all the things
 
+== Internet Of things
+ 
+ * TV
+ * Ampli
+ * Lave-linge
+
+[.cue]
+****
 On a des choses marrantes maintenant, parce qu'on a beaucoup de périphériques connectés donc on peut se permettre pas mal de choses.
 Par exemple, j'ai du changer mon lave linge récemment. La différence de prix pour avoir une version avec Wifi était négligeable.
 J'ai donc pu remplacer mon DashButton qui me permettait de penser à vider le lave-linge par un trigger IFTTT.
+****
 
+== !
+ IKEA TRÅDFRI
+
+[.cue]
+****
 J'ai aussi craqué en me promenant dans un magasin de la grande chaîne suèdoise, j'ai vu que leur système d'éclairage proposait des ampoules E14 (ce que Philips ne faisait pas à l'époque).
 Bien que ce soit le même protocole (Zigbee) que chez Philips, ce n'était pas interopérable à l'époque. 
 Il parait que ca l'est devenu, mais je n'ai pas testé.
+****
 
+== `-beta`
+
+ * Reverse Engineering des API fragile
+ * passage en version instable
+
+[.cue]
+****
 L'avantage de tous ces systèmes, c'est qu'ils sont globalement bien supportés par la communauté et qu'il est possible de trouver un moyen de les adresser.
 Le problème est que parfois, les reverse engineering des API ne va pas assez vite vers les versions stables des outils. 
 Et la, c'est le drame, j'ai commencé à dépendre de version nightly de Domoticz.
+****
+
+== Docker hub hacks
+
+ * construction d'une image automatisée
+ * hooks cachés dans hub
+
+[.cue]
+****
 Je suis même allé assez loin et j'ai appris des choses marrantes sur le comportement de Docker Hub.
 Ca m'a permis de construire une image Docker de façon automatique pour toutes les ß de Domoticz
 //https://hub.docker.com/v2/repositories/cgatay/domoticz/ 188k pull
+****
+
+== J'ai cassé ma maison
+
+[.cue]
+****
 Et forcément, quand on dépend de `-SNAPSHOT` des choses pas cool arrivent : système qui ne démarre pas, module non fonctionnels, perte de configuration.
 
 Niveau coût:
 
  * pas mal de temps perdu
  * de l'agacement
+****
 
-== Part 0
+
+== Presentation des solutions domotiques FOSS
+
+ * jeedom
+ * openHAB (java)
+ * home-assistant (python)
+
+// == Part 0
 //on recommence, en sachant mieux ce qu'on veut faire
-Du coup j'ai réévalué mes besoins en sachant ce que je voulais faire et ce dont je disposais.
+[.cue]
+****
+Fort de cette expérience peu agréable, j'ai réévalué mes besoins en sachant ce que je voulais faire et ce dont je disposais.
+****
+
+== Home Assistant
+
+ * python
+ * Apache Software License 2.0
+ * configuration yaml
+ * une release majeure par semaine
+ * 1000 composants
+
+[.cue]
+****
 Je suis passé sur Home Assistant principalement pour le support très étendu et très actif de différenes technologies.
 Dans les bonus, la configuration de Home Assistant est basée sur des fichiers YAML.
 Tout le monde aime detester le YAML, mais ce qu'on peut adorer c'est que c'est un format génialement `diff`able et gérable avec Git.
 Les problèmes de configuration qui disparait peuvent ainsi être gérés très facilement.
+****
 
-== Part 1
-// parler à sa maison
+== Atouts principaux
+
+ * rapide
+ * joli
+ * stables
+
+== Coût de migration
+
+ * 12h environ
+
+[.cue]
+****
+Temps de reconfiguration: 12h, avec beaucoup de périphériques, tout reconfigurer prend du temps.
+Je vous montrerai à quoi peut ressembler home-assistant en version "brute", il y a énormément de choses.
+C'est pas très encourageant, mais on arrive vite à en faire ce qu'on veut.
+Le nombre d'intégration présent de base est assez impressionnant et m'a permis facilement de rajouter des automatisations.
+Par exemple, on a souvent l'habitude de démarrer la musique avec nos téléphones sur Spotify. 
+Spotify qui est malin et qui allume tout seul l'ampli, par contre il n'éteint pas automatiquement une fois la playlist terminée.
+En deux minutes à peine, j'ai pu écrire l'automatisation qui fait que l'ampli s'éteint s'il _idle_ pendant 3 minutes.
+****
+
+== Ma maison me comprend
+
+ * Alexa
+ * Google Assistant
+ * Jarvis
+ * Gladys
+
+[.cue]
+****
+// parler à sa maison sur SLACK, FB, DialogFlow
 Pour ceux qui s'interessent a la domotique, il y a plusieurs solutions qui existent pour permettre le pilotage de sa maison par la voix.
 Un des plus connu s'appelle Gladys, et permet d'utiliser un Kinect pour gérer la partie reconnaissance vocale.
 Mais, Alexa et Google Assistant sont arrivés, et bien qu'on puisse douter de la destination des données collectées, il faut avouer que ce sont des gadgets sympa.
 Et, entre nous, votre téléphone n'est il pas toujours à votre écoute de toute façon ?
+****
 
+== Et mes enfants aussi !
+
+"Ok Google, ouvre les volets !"
+
+[.cue]
+****
 Home Assistant dispose depuis quelques mois d'une intégration de Google Actions, et m'a donc permis de piloter ma maison simplement avec un Google Home.
 Pour dire vrai, il a surtout permis à mes enfants de piloter la maison simplement. 
 C'est tellement amusant de les voir répéter les phrases quand le Google Home dit qu'il n'a pas compris.
 Ainsi, la domotique a permis d'aider a améliorer la prononciation de mes enfants "OK Google, ouvre les volets".
-
+****
 
 == Conseils
 
+ * routeur de qualité
+ * bloquer le traffic
+ * créer plusiers SSID
+ * un π d'avance
+
+[.cue]
+****
 Pensez à avoir un routeur performant, pour deux raisons principales. 
 Vous allez avoir beaucoup de périphériques en Wifi, les boxs de nos FAI ne sont pas si bien pour gérer beaucoup de périphériques.
 Pouvoir bloquer le traffic vers Internet pour un périphérique voir leur créer un réseau Wifi isolé est un luxe parfois nécessaire.
 Par exemple, ma super machine à laver high-tech ne sait pas se connecter en WPA2, ce n'est noté nulle part, au bout d'un peu d'archarnement j'ai découvert qu'elle ne parlait juste pas à mon routeur...
+****
 
+== Effets de bords
+
+ * éviter une automatisation de prendre le pas
+ * mode invité
+ * mode pas internet
+
+[.cue]
+****
 L'automatique c'est bien, mais ça fait souvent des choses non prévues.
 Un des principal travers est de prévoir un mécanisme qui permet au système d'avoir une mémoire à court terme.
 On peut ainsi l'empêcher de rallumer une lumière qu'on viendrait d'éteindre par exemple (c'est un des premiers trucs qu'on découvre).
 
 Il est important de penser au mode enfant, invité, au cas où on a pas internet et aussi à gérer le cas de la coupure de courant.
-
+****
 
 == Problèmes rencontrés
 
+ * API trop volatiles
+ * Interférences
+
+[.cue]
+**** 
 J'ai tenté de faire un détail de ce qu'il est possible de faire.
 Mais vous savez comme moi que tout n'est jamais parfaitement rose dans notre métier et que tout bouge un peu vite.
 Un des inconvénients à l'interconnexion de système hétérogènes est qu'on ne maîtrise pas tout ce qui peut se passer.
@@ -234,9 +458,14 @@ Dans les problèmes récents que j'ai pu avoir :
  
   * le protocole IKEA qui a bougé pour rajouter de la sécurité (merci Home Assistant et la réactivité, et IKEA de prévenir directement sur Reddit)
   * Google Actions on Google, qui permet de jouer avec le OK Google, peut bouger, et parfois "Je ne peux contrôler vos appareils domotiques"
+****
 
 == En résumé
 
+TAG CLOUD DES TECHNOS
+ 
+[.cue]
+****
 En mélangeant tout plein de technologies, j'ai réussi à finalement rendre ma maison moins bête.
 Je ne dirais pas que j'ai une maison intelligente, et je n'ai pas réellement chercher à en arriver là.
 J'ai surtout cherché à faciliter la vie et l'utilisation de la maison par les personnes qui l'occupent.
@@ -252,322 +481,29 @@ En moyenne, je dirais que je prend 10 minutes maximum par semaine pour effectuer
 Maintenant, abordons le plus gros problème, c'est un passe temps assez addictif, je passe beaucoup de temps à chercher un peu de matériel pour améliorer des petits trucs.
 J'achète des trucs dont je ne me sers pas, je m'acharne même à sauver du matos que j'ai tué dans mes tests.
 Par exemple, pour sauver une caméra IP avec un badflash j'ai dépensé plus en matériel qui me resservira peut-être que le prix de la caméra...
-
-=== Domoticz -> Home Assistant
-
---------
---------
-
-
-== Une maison manuelle
-
-* actions manuelles répétitives
-* oubli des actions
-
-//* on répète tous beaucoup de choses
-//* et si on pouvait gagner du temps en en automatisant certaines ?
+****
 
 [.cue]
 ****
-Une des premières chose que j'ai fait quand j'ai cherché à automatiser ma maison a été de lister les points manuels
-Ouvrir / fermer les volets roulants: c'est bien mais ca prend quand même pas mal de temps, même s'ils sont électriques.
-Gérer la température des pièces: Quand on est parent, on se préoccupe un peu de la température des pièces et de savoir si on doit mettre une couverture supplémentaire à son petit.
-Savoir quand une porte / fenêtre est restée ouverte, on aère et parfois on oublie de fermer
-Ouvrir la porte du garage
-Mettre la VMC en double vitesse quand l'humidité est trop importante dans les pièces d'eau
-Et le truc le plus important, ne pas oublier de sortir le linge de la machine à laver pour le transférer dans le sèche-linge. 
-Avec des enfants, c'est toujours pratique de ne pas être en rade de bavoirs...
-****
+== Demo
 
-== Pourquoi automatiser ?
-
-* parce qu'on est des geeks ?
-* pour gagner du temps
-* pour se *simplifier* la vie
-
-== Un peu de technique
-
-. *433Mhz*
-. Zwave
-. Zigbee
-. Wifi
-
-[.cue]
-****
-Avant de pouvoir automatiser et parler de ce qu'on peut faire il faut quand même s'intéresser un peu à la technique.
-Globalement, il n'y a que quelques protocoles utilisés dans les solutions grand publics, mais peu sont réellement interconnectables.
-****
-
-== 433Mhz
-
-* bon marché
-* portée moyenne
-* aucune sécurité
-* pas de retour d'état
-
-[.cue]
-****
-Le principal avantage est le coût. Un lot de 3 prises télécommandées s'achète autour de 50€ dans tous les magasins de bricolages (même celui qui vendait des livres à la base...).
-On a quelque chose de facile à mettre en place, mais qui ne présente pas de sécurité en contre partie. 
-Par exemple, je capte parfaitement le detecteur de mouvement de la cour situé à côté de ma maison, je sais donc quand la lumière se déclenche, complétement inutile...
-Le principal défaut est le manque de retour d'état. En fonction du type d'action, on peut être prêt à faire le sacrifice. 
-Par exemple un capteur de température comme celui-ci emet l'info toute les 30 secondes, c'est pas grave de rater une salve, c'est plus embêtant de ne pas savoir si une lampe est éteinte ou allumée en revanche. 
-****
-
-== 433Mhz 
-
-Exemples:
+ * montrer home-assistant démarré depuis le debut de la presentation
+ * faire un rapide tour de l'interface, en montrant uniquement le premier onglet (mode y'en a partout).
+ * passer sur le deuxième onglet pour montrer qu'on peut (et qu'on doit ranger les éléments)
+  ** graph de consommation de la prise
+  ** prochain passage de tram
+  ** état des detecteurs d'ouverture
+  ** info instantanées (conso / lumières)
  
- * capteur de température
- * détecteur de mouvements
- * capteur d'ouverture
- * volets
+ * faire une automatisation
+  ** porte ouverte, on allume la lumière et on pousse une notif html
+  ** porte fermée, on éteint la lumière
 
-[.cue]
+ * passer sur la config pour montrer le yaml, dire que c'est pas cool mais que c'est quand même facile
+ * exemple de renommage d'entité
+
+Idées:
+ * tester dialogflow avec un tunnel ssl sur la 4G du telephone.
+  ** demander a dialogflow l'énergie de la prise commandée
+  ** et la consommation
 ****
-Chez Somfy, le 433Mhz est utilisé, mais c'est en fait un peu sécurisé, il y a un pseudo rolling code qui permet l'appairement.
-C'est pas ce qu'il y a de mieux, mais entre pirater un rolling code ou forcer un volet roulant, je ne sais pas ce qui est le plus difficile...
-**** 
-
-== 433MHz
-
-Analogie naze, c'est comme de l'UDP, fire and forget
-//not convinced by this one
-
-
-== Un peu de technique
-
-. _433Mhz_
-. *Zwave*
-. Zigbee
-. Wifi
-
-== ZWave
-
-* 868.42 MHz
-* prix honnêtes
-* portée moyenne
-* sécurité forte
-* réseau maillé
-* avec retour d'état
-
-== ZWave
-
-Exemples:
- 
- * capteur de température
- * détecteur de mouvements
- * capteur d'ouverture
- * volets
-
-== Un peu de technique
-
-. _433Mhz_
-. _Zwave_
-. *Zigbee*
-. Wifi
-
-== Zigbee
-
-* 868.42 MHz
-* maillé
-* sécurisé
-* portée moyenne
-* open source
-* plein d'implémentations ± compatibles
-
-== Zigbee
-
-Exemples:
-
- * Philips Hue
- * IKEA Tradfri
- * Osram Lightify
-
-
-== Un peu de technique
-
-. _433Mhz_
-. _Zwave_
-. _Zigbee_
-. *Wifi*
-
-
-== Wifi
-
-* 2.4GHz / 5GHz
-* IP
-
-[.cue]
-****
-donc une IP par device connecté, nos réseaux de classe C peuvent avoir mal. Est ce que c'est rassurant d'avoir plein de devices connectés sur son réseau IP (pas sans filtrage a mon avis)
-****
-
-== Wifi
-
-Exemples:
-
- * ampoules
- * caméras
- * sonnette
-
-[.cue]
-****
-Après toute la partie hardware, on peut commencer à s'intéresser au software. 
-il existe plusieurs solutions, soit on adhère au lock-in constructeur et on prend une box toute faite (Fibaro, Somfy), sans savoir quelles données sortent de chez nous.
-****
-
-== Mise en place
-
-.technos
-.besoins
-.solution
-
-== Mode dégradé
-
-[.cue]
-****
-Bien qu'on ait souvent notre Smartphone en main ou pas loin, il n'est pas toujours rapide de l'utiliser.
-S’il faut lire un manuel pour allumer la lumière du salon, on a un problème.
-Il faut donc bien penser à un mode sans smartphone, sans internet et sans box domotique accessible.
-****
-
-== Solutions logicielles
-
-* user friendly
-//TODO find out a domoticz screencap
-* léger
-* maintenu
-
-[.cue]
-****
-Dans les critères de choix il fallait trouver une solution sympa et utilisable par toute la famille.
-J'ai opté pour la solution conseillé par des amis, bon pas vraiment user friendly, mais c'est un projet maintenu et qui supporte pas mal de choses
-****
-
-== Solutions logicielles
-
-* openhab
-* Jeedom
-* Domoticz
-* Home assistant
-
-[.cue]
-****
-Il y a des solutions open source, gratuites ou non.
-Jeedom a par exemple tout un jeu de plugin, certains sont payants
-****
-
-== Migration de solution
-
-[.cue]
-****
-J'étais dans une situation où j’avais besoin d’être en version instable (master quoi) de domoticz : xiaomi tout nouvellement supporté, changement dans Harmony … 
-Du coup j'ai joué un peu et * faute de build automatique d'image Docker de master, je l'ai mis en place (et il y a des trucs marrant non documentés dans hub.docker.com pour trigger des builds cf repo github)
-C'était pas hyper confortable ni sécurisant, j'ai donc repris mes investigations pour trouver une alternative. Avec un peu plus de maturité sur mes besoins, j'ai essayé des solutions plus actives, avec plus de composants supportés et en bonus, un gui sympa. Ce qui m'a amené à retester et adopter Home assistant. 
-Ceci étant dit, mon build automatique est toujours vivant et est une image très utilisée (100k pull…)
-****
-
-== C'est parti pour la migration
-
-[.cue]
-****
-Qu'est ce que je perd :
-
-* Historique des éléments (températures, hygrométrie, temps d'utilisation)
-* Une interface simple côté administration
-* Un logiciel éprouvé
-* Des automatisations
-
-Qu'est ce que je gagne :
-* Je n’utilise plus master
-* Le support de plus de composants
-* Un GUI sympa
-* La configuration dans des fichiers à plat (bon c'est quand même du yml)
-****
-
-== Problème zwave
-
-[.cue]
-****
-Changement du Synology vers un pi
-Changement de domoticz vers Home assistant en passant par jeedom
-Découverte de difficulté sur la portée réseau
-Firmware fibaro bancal
-****
-
-== Lenteurs
-
-[.cue]
-****
-Toutes les technologies ne permettent pas de faire autrement que du polling
-Réseau domestique bien occupé
-Routeur performant conseillé (pb Samsung ssid, blocage de l’outbound, segment réseau à part)
-****
-
-== Cas d’utilisation
-
-[.cue]
-****
-Allumage des lumières lorsque je sors de mon garage
-Alerte de porte restée ouverte (garage / baie vitrée / entrée…)
-Extinction globale des éléments du salon (scenario dodo)
-Activation du mode absent automatique (alerte d’ouverture de porte, extinction musique / lumières…)
-Alerte de fin de lessive (pour ne pas oublier de la sortir et de la transférer dans le sèche linge)
-****
-
-== Automatiser mais pas trop
-
-[.cue]
-****
-Un des trucs marrants quand on tente d'automatiser c'est qu'on a tendance à oublier pas mal de conditions.
-Exemple : allumer toutes les lampes lorsqu'une est allumée dans la pièce, j’en éteins une manuellement, oups elle se rallume : il faut prendre en compte l’historique récent.
-Par contre on peut assez facilement envisager de passer les lumières du salon en mode “cinéma” lorsque la télé est allumée et qu'on est après le coucher du soleil. Par contre attention de ne pas allumer les lumières si elles ne l’étaient pas (ou être conscient que ça peut arriver).
-J’éteins une lampe d’un scenario, il ne faut pas qu’elle se rallume sur l’action d’un scenario (effet mémoire temporaire)
-****
-
-== En vrac des technologies utilisées
-
-* RfxTrx
-* ZWave 
-* Ikea Trafri
-* Philips Hue
-* Xiaomi Home
-* Dash button
-* Netatmo weather
-* Logitech Harmony
-* Spotify connect
-* Yamaha
-* Samsung TV | Wash
-* Dialogflow
-* Home-Assistant
-* Google home
-* Facebook Messenger
-* Slack
-* Apple Homekit
-* Amazon Dash button
-* Google Chromecast
-* Synology Surveillance Station
-* Synology DSM
-* Somfy RTS
-* AsusWRT
-* IFTTT
-* Syncthing
-
-== Démo Time
-
-[.cue]
-****
-Montrer le démarrage de Hass
-La simplicité d'installation via pip
-Montrer le fichier de configuration et booter le gui avec du zwave et du rfxtrx (prise commandée, température), zwave avec prise fibaro, capteur de porte.
-
-Écrire une automatisation, TODO
-
-Faire un exemple dialogflow (vérifier ngrok, reverse tunnel, whatever), et slack
-****
-
-[.bibliography]
-
-* https://www.youtube.com/watch?v=OZyzfnZVCCk Black Mirror Clip from White Christmas Episode
-* https://www.youtube.com/watch?v=sXH2K2ZlrjQ Iron Man's Alarm Clock(scene from movie)
