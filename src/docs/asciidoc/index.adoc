@@ -82,7 +82,7 @@ include::banner.adoc[]
 
 
 
-== Part 1
+//== Part 1
 //DIY the hard way
 
 == Raisons de l'automatisation
@@ -160,7 +160,7 @@ Et ca sert encore chez PSA par exemple, les clefs sont en 433MHz.
 
  * Application Web
  * Application Mobile 
- * Télécommandes --moches-- DYI
+ * Télécommandes _moches_
 
 [.cue]
 ****
@@ -226,10 +226,17 @@ Niveau coût :
  * Temps de configuration (1h)
 ****
 
-== Part 3
+//== Part 3
 //ZWave
 
 == Intégration de ZWave
+
+* 868.42 MHz
+* prix honnêtes
+* portée moyenne
+* sécurité forte
+* réseau maillé
+* avec retour d'état
 
 [.cue]
 ****
@@ -243,6 +250,9 @@ Le tout a fonctionné globalement du premier coup, mais j’ai rapidement vu des
 
 == Galère d'installation
 
+ * Pairage
+ * Portée
+ 
 [.cue]
 ****
 Et c'est là que mes difficultés avec ma solution entièrement ont commencé.
@@ -270,7 +280,7 @@ Niveau coût:
  Au niveau du contrôle, ca n'a pas changé, les outils sont passifs, par contre j'ai mis en place des automatisations.
 ****
 
-== Part 4
+//== Part 4
 // Merge all the things
 
 == Internet Of things
@@ -312,6 +322,8 @@ Et la, c'est le drame, j'ai commencé à dépendre de version nightly de Domotic
 
  * construction d'une image automatisée
  * hooks cachés dans hub
+ 
+icon:github[] https://github.com/CedricGatay/docker_domoticz
 
 [.cue]
 ****
@@ -336,8 +348,8 @@ Niveau coût:
 == Presentation des solutions domotiques FOSS
 
  * jeedom
- * openHAB (java)
- * home-assistant (python)
+ * openHAB
+ * home-assistant
 
 // == Part 0
 //on recommence, en sachant mieux ce qu'on veut faire
@@ -350,7 +362,7 @@ Fort de cette expérience peu agréable, j'ai réévalué mes besoins en sachant
 
  * python
  * Apache Software License 2.0
- * configuration yaml
+ * configuration YAML
  * une release majeure par semaine
  * 1000 composants
 
@@ -371,6 +383,7 @@ Les problèmes de configuration qui disparait peuvent ainsi être gérés très 
 == Coût de migration
 
  * 12h environ
+ * De nouvelles automatisations
 
 [.cue]
 ****
@@ -388,13 +401,13 @@ En deux minutes à peine, j'ai pu écrire l'automatisation qui fait que l'ampli 
  * Alexa
  * Google Assistant
  * Jarvis
- * Gladys
+ * S.A.R.A.H.
 
 [.cue]
 ****
 // parler à sa maison sur SLACK, FB, DialogFlow
 Pour ceux qui s'interessent a la domotique, il y a plusieurs solutions qui existent pour permettre le pilotage de sa maison par la voix.
-Un des plus connu s'appelle Gladys, et permet d'utiliser un Kinect pour gérer la partie reconnaissance vocale.
+Un des projets notable s'appelle S.A.R.A.H., et permet d'utiliser un Kinect pour gérer la partie reconnaissance vocale.
 Mais, Alexa et Google Assistant sont arrivés, et bien qu'on puisse douter de la destination des données collectées, il faut avouer que ce sont des gadgets sympa.
 Et, entre nous, votre téléphone n'est il pas toujours à votre écoute de toute façon ?
 ****
@@ -428,9 +441,10 @@ Par exemple, ma super machine à laver high-tech ne sait pas se connecter en WPA
 
 == Effets de bords
 
- * éviter une automatisation de prendre le pas
  * mode invité
  * mode pas internet
+ * retour de courant
+ * éviter une automatisation de prendre le pas
 
 [.cue]
 ****
@@ -482,6 +496,8 @@ Maintenant, abordons le plus gros problème, c'est un passe temps assez addictif
 J'achète des trucs dont je ne me sers pas, je m'acharne même à sauver du matos que j'ai tué dans mes tests.
 Par exemple, pour sauver une caméra IP avec un badflash j'ai dépensé plus en matériel qui me resservira peut-être que le prix de la caméra...
 ****
+
+== !
 
 [.cue]
 ****
