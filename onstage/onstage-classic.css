@@ -9,7 +9,7 @@ body {
 }
 
 #present, #future {
-  bottom: 234px;
+  bottom: 513px;
   position: absolute;
   top: 0;
   z-index: 5;
@@ -32,8 +32,9 @@ body {
   border-top: 8px solid #555;
   bottom: 0;
   color: #444;
-  font-size: 30px;
-  height: 226px;
+  font-size: 24px;
+  line-height: 1.4;
+  height: 512px;
   left: 0;
   padding: 0 240px 0 20px;
   position: absolute;
@@ -57,7 +58,17 @@ body {
 }
 
 #timer {
-  display: none;
+  background: #888;
+  border-radius: 10px;
+  bottom: 320px;
+  font-size: 40px;
+  font-weight: bold;
+  height: 52px;
+  line-height: 52px;
+  right: 0px;
+  position: absolute;
+  text-align: center;
+  width: 200px;
 }
 
 iframe {
@@ -84,7 +95,7 @@ iframe {
 #slideidx,
 #nextslideidx {
   border-bottom: 4px solid #555;
-  bottom: 230px;
+  bottom: 513px;
   padding: 0 10px;
 }
 
@@ -105,13 +116,13 @@ iframe {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-top: 4px solid #555;
-  bottom: 174px;
+  bottom: 458px;
   width: 200px;
   right: 20px;
 }
 
 #popup-button {
-  bottom: 88px;
+  bottom: 160px;
   background: #888;
   border: none;
   border-radius: 10px;

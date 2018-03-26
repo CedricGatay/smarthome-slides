@@ -174,6 +174,12 @@ Quelques heures de configuration du logiciel qu'un ami utilisait et m’avait co
  * 433MHz
  * Somfy RTS
 
+[.cue]
+****
+So far so good, mais quelques problèmes sont vite arrivés : la technologie derrière toute mon installation est du 433MHz, c'est du fire and forget. 
+Dans certains cas ce n'est pas important, par exemple les sondes de température envoient toutes les 30s les informations, si j'en rate quelques uns ce n’est pas grave.
+En revanche si j’envoie l'ordre de fermer les volets, je m’attends à ce que ce soit fait, et en l'occurrence, je ne peux pas en être sûr…
+****
 
 == ! 
 [.canvas]
@@ -187,10 +193,6 @@ image::stock-footage-businessman-searching-for-signal-on-cellphone-in-the-desert
 
 [.cue]
 ****
-So far so good, mais quelques problèmes sont vite arrivés : la technologie derrière toute mon installation est du 433MHz, c'est du fire and forget. 
-Dans certains cas ce n'est pas important, par exemple les sondes de température envoient toutes les 30s les informations, si j'en rate quelques uns ce n’est pas grave.
-En revanche si j’envoie l'ordre de fermer les volets, je m’attends à ce que ce soit fait, et en l'occurrence, je ne peux pas en être sûr…
-(Quelqu'un cherchant le réseau avec son mobile)
 Du coup j’en suis venu à utiliser la technique du “ça marche la” pour placer au mieux l’émetteur. 
 Et enfin la sécurité de l'installation : globalement il n’y en a aucune en 433MHz, les températures sont balancées à tout le monde, les ordres d’allumage extinctions de prises commandées sont ouverts à tous. 
 Le seul point sécurisé est le protocole utilisé pour les volets (Somfy à fait une surcouche avec du chiffrement avec un rolling code, et utilise une frequence tres legeremnt différente).
@@ -283,9 +285,8 @@ Niveau coût :
  * Temps de configuration (1h)
 ****
 
-//useless ? Bring closer to hue ?
 == Alternative
- IKEA TRÅDFRI
+IKEA TRÅDFRI
 
 [.cue]
 ****
@@ -345,7 +346,7 @@ Niveau coût:
  * Détecteur de mouvements 50€
  * Temps de configuration (2h)
 
- Au niveau du contrôle, ca n'a pas changé, les outils sont passifs, par contre j'ai mis en place des automatisations.
+Au niveau du contrôle, ca n'a pas changé, les outils sont passifs, par contre j'ai mis en place des automatisations.
 ****
 
 //== Part 4
@@ -599,10 +600,51 @@ image::ouvre_volets.gif[]
 ****
 "Ok Google, ouvre les volets !"
 Home Assistant dispose depuis quelques mois d'une intégration de Google Actions, et m'a donc permis de piloter ma maison simplement avec un Google Home.
+
 Pour dire vrai, il a surtout permis à mes enfants de piloter la maison simplement. 
 C'est tellement amusant de les voir répéter les phrases quand le Google Home dit qu'il n'a pas compris.
 Ainsi, la domotique a permis d'aider a améliorer la prononciation de mes enfants "OK Google, ouvre les volets".
+
+Assez parlé, une petite démo du tout ne fera pas de mal
+
+*DON'T SKIP TO NEXT SLIDE NOW*
 ****
+
+== !
+
+++++
+<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/2967baa8-dcbe-45bf-a448-2a5759cfe99e">
+</iframe>
+++++
+
+[.cue]
+****
+== Demo
+
+ * montrer home-assistant démarré depuis le debut de la presentation
+ * faire un rapide tour de l'interface, en montrant uniquement le premier onglet (mode y'en a partout).
+ * passer sur le deuxième onglet pour montrer qu'on peut (et qu'on doit ranger les éléments)
+  ** graph de consommation de la prise
+  ** prochain passage de tram
+  ** état des detecteurs d'ouverture
+  ** info instantanées (conso / lumières)
+ 
+ * faire une automatisation
+  ** porte ouverte, on allume la lumière et on pousse une notif html
+  ** porte fermée, on éteint la lumière
+
+ * passer sur la config pour montrer le yaml, dire que c'est pas cool mais que c'est quand même facile
+ * exemple de renommage d'entité
+
+Idées:
+ * tester dialogflow avec un tunnel ssl sur la 4G du telephone.
+  ** demander a dialogflow l'énergie de la prise commandée
+  ** et la consommation
+****
+
+== ! 
+[.canvas]
+image::self_lacing_shoes.gif[]
 
 == Conseils
 
@@ -655,9 +697,10 @@ Dans les problèmes récents que j'ai pu avoir :
   * Google Actions on Google, qui permet de jouer avec le OK Google, peut bouger, et parfois "Je ne peux contrôler vos appareils domotiques"
 ****
 
-== En résumé
-
-TAG CLOUD DES TECHNOS
+== ! En résumé
+[.canvas]
+image::techno.png[]
+//TAG CLOUD DES TECHNOS
  
 [.cue]
 ****
@@ -678,34 +721,3 @@ J'achète des trucs dont je ne me sers pas, je m'acharne même à sauver du mato
 Par exemple, pour sauver une caméra IP avec un badflash j'ai dépensé plus en matériel qui me resservira peut-être que le prix de la caméra...
 ****
 
-== !
-
-++++
-<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/2967baa8-dcbe-45bf-a448-2a5759cfe99e">
-</iframe>
-++++
-
-[.cue]
-****
-== Demo
-
- * montrer home-assistant démarré depuis le debut de la presentation
- * faire un rapide tour de l'interface, en montrant uniquement le premier onglet (mode y'en a partout).
- * passer sur le deuxième onglet pour montrer qu'on peut (et qu'on doit ranger les éléments)
-  ** graph de consommation de la prise
-  ** prochain passage de tram
-  ** état des detecteurs d'ouverture
-  ** info instantanées (conso / lumières)
- 
- * faire une automatisation
-  ** porte ouverte, on allume la lumière et on pousse une notif html
-  ** porte fermée, on éteint la lumière
-
- * passer sur la config pour montrer le yaml, dire que c'est pas cool mais que c'est quand même facile
- * exemple de renommage d'entité
-
-Idées:
- * tester dialogflow avec un tunnel ssl sur la 4G du telephone.
-  ** demander a dialogflow l'énergie de la prise commandée
-  ** et la consommation
-****

@@ -279,7 +279,7 @@ J’éteins une lampe d’un scenario, il ne faut pas qu’elle se rallume sur l
 * Ikea Trafri
 * Philips Hue
 * Xiaomi Home
-* Dash button
+>>> * Dash button
 * Netatmo weather
 * Logitech Harmony
 * Spotify connect
@@ -291,14 +291,14 @@ J’éteins une lampe d’un scenario, il ne faut pas qu’elle se rallume sur l
 * Facebook Messenger
 * Slack
 * Apple Homekit
-* Amazon Dash button
+>>>* Amazon Dash button
 * Google Chromecast
 * Synology Surveillance Station
 * Synology DSM
-* Somfy RTS
+>>>* Somfy RTS
 * AsusWRT
 * IFTTT
-* Syncthing
+>>>> * Syncthing
 
 == Démo Time
 
