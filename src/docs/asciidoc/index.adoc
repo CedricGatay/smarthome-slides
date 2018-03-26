@@ -63,29 +63,61 @@ include::banner.adoc[]
 
 // image:tnt_logo.png[role=small] TouraineTech co-organizer
 
-// == icon:code-fork[]
-
-//  * icon:bus[] http://navigtours.com[Navig'Tours] icon:apple[] icon:android[]
-//  * icon:music[] Chapi.to icon:apple[] icon:android[]
-//  * icon:github[] FOSS:
-//  ** icon:calendar[] Android Betterpickers icon:android[]
-//  ** icon:github-alt[] sbt plugins icon:globe[]
-//  ** icon:github-alt[] wicket-hot-reload icon:globe[]
-//  ** icon:gitlab[] Gitlab contributor icon:globe[]
-
 // [.cue]
 // ****
 // One can also notice various Wicket framework contributions, docker images, jenkins plugins, restx, parsley.js bridges...
 // ****
 
 
+== !
+[.bttf]
+disclaimer
 
+
+[.cue]
+****
+Je ne suis pas domoticien / electronicien, je fais du code le jour.
+Donc si je dis des bêtises, n'hésitez pas à me le dire et/ou m'envoyer un tweet pour que je corrige pour les prochaine fois
+****
+
+== ! image:CG_BW.jpg[]
+
+icon:twitter[] @Cedric_Gatay
+
+icon:code[] Developer
+
+icon:empire[] Code-Troopers co-founder
+
+icon:google[] GDG Tours lead
+
+image:tnt_logo.png[role=small] TouraineTech co-organizer
+
+[.cue]
+****
+Je fais partie des co-fondateurs de Code-Troopers, des leads du Google Developer Group de Tours et co-organisateur de Touraine Tech.
+****
+
+
+== ! icon:code-fork[]
+
+ * icon:bus[] http://navigtours.com[Navig'Tours] icon:apple[] icon:android[]
+ * icon:music[] http://chapi.to[Chapi.to] icon:apple[] icon:android[]
+ * icon:github[] FOSS:
+ ** icon:calendar[] Android Betterpickers icon:android[]
+ ** icon:github-alt[] sbt plugins icon:globe[]
+ ** icon:github-alt[] wicket-hot-reload icon:globe[]
+ ** icon:gitlab[] Gitlab icon:globe[]
+
+[.cue]
+****
+Je fais aussi des apps web, mobiles, et de l'open source sur quelques projets
+****
 
 
 //== Part 1
 //DIY the hard way
 
-== Raisons de l'automatisation
+== Raisons
 
  * gain de temps
  * faciliter les tâches répétitives
@@ -105,10 +137,17 @@ Les jeunes parents me comprendront quand je vais évoquer la sempiternelle quest
 Une sonde de température coûte pas grand chose et permet de vite se rassurer (surtout quand on change de domicile et qu'on ne connait pas bien sa réaction aux températures extérieures)
 ****
 
+== !  DIY
+[role="bttf"]
+MAISON< +
+[role="bttf reversed"]
+]futur +
+[.small-shadow]#^ {#
+
 == Premiers pas
 
  * prises commandées 
- * sondes de températures
+ * sondes de température
  * contrôle des volets roulants
 
 [.cue]
@@ -135,11 +174,16 @@ Quelques heures de configuration du logiciel qu'un ami utilisait et m’avait co
  * 433MHz
  * Somfy RTS
 
-== Retour sur l'utilisation technique
+
+== ! 
+[.canvas]
+image::stock-footage-businessman-searching-for-signal-on-cellphone-in-the-desert.gif[]
+
+== Techniquement
 
  * fiabilité hasardeuse
  * bas coût
- * sécurité ?
+ * [.line-through]#sécurité#
 
 [.cue]
 ****
@@ -155,27 +199,34 @@ Et ca sert encore chez PSA par exemple, les clefs sont en 433MHz.
 ****
 //TODO se renseigner sur l'openness de la frequence.
 
-
-== Interface de contrôle
+//cockpit
+== ! Interface de contrôle
 
  * Application Web
  * Application Mobile 
  * Télécommandes _moches_
 
+[role="image lower right"]
+image::diy_remote.JPG[]
+[role="image upper left"]
+image::domoticz.png[]
+
 [.cue]
 ****
 Au niveau du contrôle, à l’époque j’étais encore sous Android, j’utilisais donc l’application “officielle” Domoticz pour mon smartphone, et des télécommandes pour le reste (dans les tiroirs de table basse). 
 En gros c’était du contrôle uniquement de mon ressort, pas très utilisable par un invité (ni sans un smartphone sous la main).
+Ni avec l'interface domoticz qui est pas forcément hyper sexy.
 ****
 
-
-== ! 
-[role=bttf]
-DIY 
 
 // == Part 2
 
 // Hue
+
+== !
+[.canvas]
+image::couleurs_partout.jpg[]
+
 [.cue]
 ****
 Après quelques mois de bidouilles avec le 433MHz, j’ai réussi à contourner ce qui me gênait et j’arrive a bien parler avec tous mes équipements. 
@@ -184,7 +235,7 @@ Par contre un point reste un peu dommage, la gestion des lumières n’est pas a
 C’est sympa mais faire pouvoir réduire la luminosité (et la couleur en bonus) ca serait sympa. 
 ****
 
-== De la couleur partout !
+== ! De la couleur partout !
 
  * Philips Hue
  * Zigbee
@@ -201,18 +252,24 @@ Et pour les gens sous iOS, le compatiblité HomeKit permet d’utiliser Siri ou 
 == Utilisable par tous !
 
  * Applications mobiles
- * Contrôle Vocal (Siri / Google Assistant / Alexa)
+ * Contrôle Vocal 
  * Interrupteurs physiques
+
+[role="image upper left"]
+image::hue_switch.JPG[]
+[role="image lower right"]
+image::hue_app.jpg[]
 
 [.cue]
 ****
 Niveau utilisabilité par n’importe qui j’ai considérablement gagné en confort, avec un iPad qui traine dans le salon, on peut facilement invoquer Siri ou utiliser l’application Maison pour gérer les lumières.
 Pour les invités, des interrupteurs “standard” permettent de gérer la lumière, on est dans une configuration confortable !
 Et niveau sécurité, c’est mieux car il faut se connecter au compte Hue, après les données se balladent un peu partout sur le réseau et en dehors (peut-être).
+(Siri / Google Assistant / Alexa)
 Voilà une belle façon de contrôler les lumières, qui plus est avec des interactions possible via les API, donc une gestion dans Domoticz, j’ai “juste” eu à enrichir mon système.
 ****
 
-== Pas super bon marché quand même
+== icon:dollar[]
 
  * environ 120€
  * de 20 à 60€ par ampoule 
@@ -226,15 +283,26 @@ Niveau coût :
  * Temps de configuration (1h)
 ****
 
+//useless ? Bring closer to hue ?
+== Alternative
+ IKEA TRÅDFRI
+
+[.cue]
+****
+J'ai aussi craqué en me promenant dans un magasin de la grande chaîne suèdoise, j'ai vu que leur système d'éclairage proposait des ampoules E14 (ce que Philips ne faisait pas à l'époque).
+Bien que ce soit le même protocole (Zigbee) que chez Philips, ce n'était pas interopérable à l'époque. 
+Il parait que ca l'est devenu, mais je n'ai pas testé.
+****
+
 //== Part 3
 //ZWave
-
-== Intégration de ZWave
+//REWORK
+== ZWave
 
 * 868.42 MHz
-* prix honnêtes
-* portée moyenne
-* sécurité forte
+//* prix honnêtes
+//* portée moyenne
+//* sécurité forte
 * réseau maillé
 * avec retour d'état
 
@@ -252,7 +320,7 @@ Le tout a fonctionné globalement du premier coup, mais j’ai rapidement vu des
 
  * Pairage
  * Portée
- 
+
 [.cue]
 ****
 Et c'est là que mes difficultés avec ma solution entièrement ont commencé.
@@ -283,11 +351,12 @@ Niveau coût:
 //== Part 4
 // Merge all the things
 
-== Internet Of things
+== Internet Of Things
  
  * TV
  * Ampli
  * Lave-linge
+ * Dash Button
 
 [.cue]
 ****
@@ -296,15 +365,80 @@ Par exemple, j'ai du changer mon lave linge récemment. La différence de prix p
 J'ai donc pu remplacer mon DashButton qui me permettait de penser à vider le lave-linge par un trigger IFTTT.
 ****
 
-== !
- IKEA TRÅDFRI
+
+== Dash Button
+
+ * 5€ le bouton
+ * Wifi 
+ * Permet de commander du Thé 
 
 [.cue]
 ****
-J'ai aussi craqué en me promenant dans un magasin de la grande chaîne suèdoise, j'ai vu que leur système d'éclairage proposait des ampoules E14 (ce que Philips ne faisait pas à l'époque).
-Bien que ce soit le même protocole (Zigbee) que chez Philips, ce n'était pas interopérable à l'époque. 
-Il parait que ca l'est devenu, mais je n'ai pas testé.
+Il y a un élément interessant quand on fait un peu de domotique et qu'on a besoin de déclencheur, le Dash Button.
+Vous avez surement déjà entendu parler de ce dispositif, il coute peu cher (et une partie est créditée sur le compte amazon).
+Il se connecte à votre Wifi et permet de commander tout plein de choses, des couches, du thé, en un click.
+
+Le crédit de 5€ s'ajoute lorsqu'on active et presse pour la premiere fois un nouveau dash button.
+Un fait marrant c'est qu'on peut utiliser ces 5€ pour, par exemple, commander un autre dash button à 5€ -> vous voyez l'astuce ?
 ****
+== ! 
+
+ * Scan ARP
+ * Internet coupé
+
+=> bouton connecté par cher !
+
+[.cue]
+****
+Si vous avez eu des cours de réseau il y a un petit moment, vous vous rappelez peut être de la sequence d'enregistrement sur un réseau.
+Le bouton, lors de l'appui, va faire une requête ARP qu'on va pouvoir attraper pour savoir qu'il a été pressé (c'est le hack).
+Pourquoi c'est un bon déclencheur, c'est qu'on peut assez facilement le détourner de son usage nominal.
+On configurant le wifi uniquement sur un bouton, on peut voir quand il se "réveille" en scannant l'ARP.
+****
+
+== ! 
+
+ * icon:github[] https://github.com/maddox/dasher
+ * Bouton poussoir
+ * 1-5s de délai
+ * 10s de carence
+
+[.cue]
+****
+Il y a beaucoup de projets qui permettent l'exploitation des DashButton. 
+J'utilise Dasher qui a le mérite de permettre la configuration d'actions de natures différentes (appel http, shell script).
+Il ne faut donc pas être pressé et c'est un "push button", pas un bouton avec un état on/off.
+Ca fait un bon moyen de déclencher des événements, le "défaut" est que le réveil est relativement lent.
+La encore, faire un peu d'admin sys pour mettre un bail DHCP "statique" améliore la situation
+****
+
+
+
+== HomeKit
+
+ * Protocole domotique poussé par Apple
+ * iOS
+ * Siri
+ * Compatibilité restreinte
+
+[role="image upper left"]
+image::homekit.png[]
+
+[.cue]
+****
+Comme je disais tout à l'heure, j'étais au début de mon installation un utilisateur d'Android.
+J'ai reswitché vers iOS pour tout plein de raisons, et je me suis interessé à HomeKit, l'implémentation domotique poussée par Apple.
+Le défaut est qu'il faut que le matériel soit compatible (ou que le logiciel le soit depuis peu).
+
+****
+
+== ! 
+
+ * icon:github[] https://github.com/nfarina/homebridge
+ * NodeJS
+ * Passerelle vers les éléments non-compatibles
+
+
 
 == `-beta`
 
@@ -318,6 +452,7 @@ Le problème est que parfois, les reverse engineering des API ne va pas assez vi
 Et la, c'est le drame, j'ai commencé à dépendre de version nightly de Domoticz.
 ****
 
+
 == Docker hub hacks
 
  * construction d'une image automatisée
@@ -328,14 +463,42 @@ icon:github[] https://github.com/CedricGatay/docker_domoticz
 [.cue]
 ****
 Je suis même allé assez loin et j'ai appris des choses marrantes sur le comportement de Docker Hub.
-Ca m'a permis de construire une image Docker de façon automatique pour toutes les ß de Domoticz
+Ca m'a permis de construire une image Docker de façon automatique pour toutes les ß de Domoticz,
+****
+
+
+== !
+
+[source,shell]
+----
+if [[ "$DOCKER_TAG" == *-beta ]]; 
+then 
+ docker build  \
+     --build-arg VCS_REF=$SOURCE_COMMIT \
+     -t $IMAGE_NAME .;
+else 
+ docker build  \ 
+     --build-arg BRANCH_NAME=$DOCKER_TAG \
+     --build-arg VCS_REF=$SOURCE_COMMIT \
+     -t $IMAGE_NAME .;
+fi
+----
+[.cue]
+****
+il me suffit de pousser un nouveau tag sur mon repo github pour que tout se fasse tout seul.
+Jenkins peut très bien s'en charger tout seul ;)
+Le côté marrant c'est qu'il y a environ 190k pull, sur une image que je n'utilise pas (j'ai même mergé ma premiere PR ce we)
 //https://hub.docker.com/v2/repositories/cgatay/domoticz/ 188k pull
 ****
 
-== J'ai cassé ma maison
+== ! J'ai cassé ma maison
+[.canvas]
+image::broken_home.gif[]
 
 [.cue]
 ****
+J'ai cassé ma maison ! 
+
 Et forcément, quand on dépend de `-SNAPSHOT` des choses pas cool arrivent : système qui ne démarre pas, module non fonctionnels, perte de configuration.
 
 Niveau coût:
@@ -344,12 +507,25 @@ Niveau coût:
  * de l'agacement
 ****
 
+== ! 
+[role="bttf"]
+MAISON< +
+[role="bttf reversed"]
+]futur +
+[.small-shadow]#^ }#
 
-== Presentation des solutions domotiques FOSS
+== Alternatives
 
  * jeedom
  * openHAB
- * home-assistant
+//  * home-assistant
+
+[role="picture upper left"]
+image::jeedom.png[]
+
+[role="picture lower right"]
+image::openHAB.png[]
+
 
 // == Part 0
 //on recommence, en sachant mieux ce qu'on veut faire
@@ -360,11 +536,14 @@ Fort de cette expérience peu agréable, j'ai réévalué mes besoins en sachant
 
 == Home Assistant
 
- * python
+ * Python
  * Apache Software License 2.0
  * configuration YAML
- * une release majeure par semaine
  * 1000 composants
+ * deux releases par mois
+
+[role="image upper left"]
+image::home-assistant.png[]
 
 [.cue]
 ****
@@ -378,7 +557,7 @@ Les problèmes de configuration qui disparait peuvent ainsi être gérés très 
 
  * rapide
  * joli
- * stables
+ * stable
 
 == Coût de migration
 
@@ -412,12 +591,13 @@ Mais, Alexa et Google Assistant sont arrivés, et bien qu'on puisse douter de la
 Et, entre nous, votre téléphone n'est il pas toujours à votre écoute de toute façon ?
 ****
 
-== Et mes enfants aussi !
-
-"Ok Google, ouvre les volets !"
+== ! Et mes enfants aussi !
+[.canvas]
+image::ouvre_volets.gif[]
 
 [.cue]
 ****
+"Ok Google, ouvre les volets !"
 Home Assistant dispose depuis quelques mois d'une intégration de Google Actions, et m'a donc permis de piloter ma maison simplement avec un Google Home.
 Pour dire vrai, il a surtout permis à mes enfants de piloter la maison simplement. 
 C'est tellement amusant de les voir répéter les phrases quand le Google Home dit qu'il n'a pas compris.
@@ -428,7 +608,7 @@ Ainsi, la domotique a permis d'aider a améliorer la prononciation de mes enfant
 
  * routeur de qualité
  * bloquer le traffic
- * créer plusiers SSID
+ * créer plusieurs SSID
  * un π d'avance
 
 [.cue]
@@ -457,8 +637,9 @@ Il est important de penser au mode enfant, invité, au cas où on a pas internet
 
 == Problèmes rencontrés
 
- * API trop volatiles
+ * Taille des ampoules
  * Interférences
+ * Durée de vie des piles
 
 [.cue]
 **** 
@@ -498,6 +679,11 @@ Par exemple, pour sauver une caméra IP avec un badflash j'ai dépensé plus en 
 ****
 
 == !
+
+++++
+<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/2967baa8-dcbe-45bf-a448-2a5759cfe99e">
+</iframe>
+++++
 
 [.cue]
 ****

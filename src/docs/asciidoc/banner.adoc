@@ -1,3 +1,4 @@
 [role=bttf]
-Maison
-] futur
+MAISON< 
+[role="bttf reversed"]
+]futur

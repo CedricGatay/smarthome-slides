@@ -24,3 +24,5 @@ bespoke.from({ parent: 'article.deck', slides: 'section' }, [
   onstage(),
   blackout()
 ]);
+
+document.querySelectorAll("video").forEach(e =>{ e.setAttribute("autoplay","true") })
