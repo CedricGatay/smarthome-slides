@@ -163,11 +163,11 @@ Ainsi en quelques mois, j'avais le contrôle de mes volets et lumières depuis m
 
 [.cue]
 ****
-Quelques prises commandées (50€ les trois en magasin de bricolage)
-Un raspberry pi (50€) / un nas (400€)
-Un émetteur rfxtrx (110€)
-Des sondes de température (10 - 20€)
-Quelques heures de configuration du logiciel qu'un ami utilisait et m’avait conseillé : domoticz (0€, 5h)
+* Quelques prises commandées (50€ les trois en magasin de bricolage)
+* Un raspberry pi (50€) / un nas (400€)
+* Un émetteur rfxtrx (110€)
+* Des sondes de température (10 - 20€)
+* Quelques heures de configuration du logiciel qu'un ami utilisait et m’avait conseillé : domoticz (0€, 5h)
 ****
 
 == Technologie
@@ -182,7 +182,7 @@ Dans certains cas ce n'est pas important, par exemple les sondes de température
 En revanche si j’envoie l'ordre de fermer les volets, je m’attends à ce que ce soit fait, et en l'occurrence, je ne peux pas en être sûr…
 ****
 
-[role="image upper left"]
+[role="image_slide upper left"]
 image::techno/rfxtrx.png[]
 
 == ! 
@@ -216,9 +216,9 @@ Et ca sert encore chez PSA par exemple, les clefs sont en 433MHz.
  * Application Mobile 
  * Télécommandes _moches_
 
-[role="image lower right"]
+[role="image_slide lower right"]
 image::diy_remote.JPG[]
-[role="image upper left"]
+[role="image_slide upper left"]
 image::domoticz.png[]
 
 [.cue]
@@ -250,7 +250,7 @@ C’est sympa mais faire pouvoir réduire la luminosité (et la couleur en bonus
  * Philips Hue
  * Zigbee
 
-[role="image upper left"]
+[role="image_slide upper left"]
 image::techno/philips_hue.png[]
 
 [.cue]
@@ -268,9 +268,9 @@ Et pour les gens sous iOS, le compatiblité HomeKit permet d’utiliser Siri ou 
  * Contrôle Vocal 
  * Interrupteurs physiques
 
-[role="image upper left"]
+[role="image_slide upper left"]
 image::hue_switch.JPG[]
-[role="image lower right"]
+[role="image_slide lower right"]
 image::hue_app.jpg[]
 
 [.cue]
@@ -297,7 +297,11 @@ Niveau coût :
 ****
 
 == Alternative
-IKEA TRÅDFRI
+ 
+ * IKEA TRÅDFRI
+ * E14
+ * Sensiblement moins cher
+
 
 [.cue]
 ****
@@ -306,7 +310,7 @@ Bien que ce soit le même protocole (Zigbee) que chez Philips, ce n'était pas i
 Il parait que ca l'est devenu, mais je n'ai pas testé.
 ****
 
-[role="image upper left"]
+[role="image_slide upper left"]
 image::techno/ikea.svg[]
 
 //== Part 3
@@ -322,7 +326,7 @@ image::techno/ikea.svg[]
 * avec retour d'état
 
 
-[role="image upper left"]
+[role="image_slide upper left"]
 image::techno/z-wave.png[]
 
 [.cue]
@@ -367,16 +371,16 @@ Niveau coût:
 Au niveau du contrôle, ca n'a pas changé, les outils sont passifs, par contre j'ai mis en place des automatisations.
 ****
 
-[role="image upper left"]
+[role="image_slide upper left"]
 image::connected_plug.png[]
 
-[role="image lower right"]
+[role="image_slide lower right"]
 image::door_sensor.png[]
 
-[role="image lower left"]
+[role="image_slide lower left"]
 image::motion_sensor.png[]
 
-[role="image upper right"]
+[role="image_slide upper right"]
 image::smoke_sensor.png[]
 
 
@@ -414,7 +418,7 @@ Le crédit de 5€ s'ajoute lorsqu'on active et presse pour la premiere fois un 
 Un fait marrant c'est qu'on peut utiliser ces 5€ pour, par exemple, commander un autre dash button à 5€ -> vous voyez l'astuce ?
 ****
 
-[role="image upper left"]
+[role="image_slide upper left"]
 image::techno/dash_button.png[]
 
 == ! 
@@ -457,7 +461,7 @@ La encore, faire un peu d'admin sys pour mettre un bail DHCP "statique" amélior
  * Siri
  * Compatibilité restreinte
 
-[role="image upper left"]
+[role="image_slide upper left"]
 image::homekit.png[]
 
 [.cue]
@@ -492,6 +496,7 @@ Et la, c'est le drame, j'ai commencé à dépendre de version nightly de Domotic
 == Docker hub hacks
 
  * construction d'une image automatisée
+ * au push de tag
  * hooks cachés dans hub
  
 icon:github[] https://github.com/CedricGatay/docker_domoticz
@@ -557,10 +562,10 @@ MAISON< +
  * openHAB
 //  * home-assistant
 
-[role="picture upper left"]
+[role="image_slide upper left"]
 image::jeedom.png[]
 
-[role="picture lower right"]
+[role="image_slide lower right"]
 image::openHAB.png[]
 
 
@@ -579,7 +584,7 @@ Fort de cette expérience peu agréable, j'ai réévalué mes besoins en sachant
  * 1000 composants
  * deux releases par mois
 
-[role="image upper left"]
+[role="image_slide upper left"]
 image::home-assistant.png[]
 
 [.cue]
@@ -628,7 +633,7 @@ Mais, Alexa et Google Assistant sont arrivés, et bien qu'on puisse douter de la
 Et, entre nous, votre téléphone n'est il pas toujours à votre écoute de toute façon ?
 ****
 
-[role="image upper left"]
+[role="image_slide upper left"]
 image::techno/google-assistant.png[]
 
 == ! Et mes enfants aussi !
@@ -652,7 +657,7 @@ Assez parlé, une petite démo du tout ne fera pas de mal
 == !
 
 ++++
-<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/2967baa8-dcbe-45bf-a448-2a5759cfe99e">
+<iframe width="100%" height="100%" src="http://localhost:8123/">
 </iframe>
 ++++
 
@@ -674,7 +679,17 @@ Assez parlé, une petite démo du tout ne fera pas de mal
 
  * passer sur la config pour montrer le yaml, dire que c'est pas cool mais que c'est quand même facile
  * exemple de renommage d'entité
+****
 
+== !
+
+++++
+<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/2967baa8-dcbe-45bf-a448-2a5759cfe99e">
+</iframe>
+++++
+
+[.cue]
+****
 Idées:
  * tester dialogflow avec un tunnel ssl sur la 4G du telephone.
   ** demander a dialogflow l'énergie de la prise commandée
