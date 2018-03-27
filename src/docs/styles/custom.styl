@@ -23,18 +23,21 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
-.image.lower.right
+.image
     img
         position: absolute;
         max-width: 33%;
         max-height: 33%;
-        right: 5%;
-        bottom: 5%;
-.image.upper.left
-    img
-        position: absolute;
-        max-width: 33%;
-        max-height: 33%;
-        left: 5%;
-        top: 5%;
+    &.lower
+        img
+            bottom: 5%;
+    &.right
+        img
+            right: 5%;
+    &.upper
+        img
+            top: 5%;
+    &.left
+        img
+            left: 5%;
 

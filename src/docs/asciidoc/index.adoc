@@ -78,6 +78,7 @@ disclaimer
 ****
 Je ne suis pas domoticien / electronicien, je fais du code le jour.
 Donc si je dis des bêtises, n'hésitez pas à me le dire et/ou m'envoyer un tweet pour que je corrige pour les prochaine fois
+Et si je ne parle pas de choses super intéressantes, c'est juste que je ne les utilise pas, donc je suis preneur pour pouvoir les rajouter à mon installation :)
 ****
 
 == ! image:CG_BW.jpg[]
@@ -181,9 +182,17 @@ Dans certains cas ce n'est pas important, par exemple les sondes de température
 En revanche si j’envoie l'ordre de fermer les volets, je m’attends à ce que ce soit fait, et en l'occurrence, je ne peux pas en être sûr…
 ****
 
+[role="image upper left"]
+image::techno/rfxtrx.png[]
+
 == ! 
 [.canvas]
 image::stock-footage-businessman-searching-for-signal-on-cellphone-in-the-desert.gif[]
+
+[.cue]
+****
+Du coup j’en suis venu à utiliser la technique du “ça marche la” pour placer au mieux l’émetteur. 
+****
 
 == Techniquement
 
@@ -193,7 +202,6 @@ image::stock-footage-businessman-searching-for-signal-on-cellphone-in-the-desert
 
 [.cue]
 ****
-Du coup j’en suis venu à utiliser la technique du “ça marche la” pour placer au mieux l’émetteur. 
 Et enfin la sécurité de l'installation : globalement il n’y en a aucune en 433MHz, les températures sont balancées à tout le monde, les ordres d’allumage extinctions de prises commandées sont ouverts à tous. 
 Le seul point sécurisé est le protocole utilisé pour les volets (Somfy à fait une surcouche avec du chiffrement avec un rolling code, et utilise une frequence tres legeremnt différente).
 Le truc marrant avec le 433MHz, c’est que c’est utilisé pour tout plein de choses depuis assez longtemps, je capte par exemple un détecteur de mouvement de la cour de l’immeuble à côté de chez moi. 
@@ -241,6 +249,9 @@ C’est sympa mais faire pouvoir réduire la luminosité (et la couleur en bonus
 
  * Philips Hue
  * Zigbee
+
+[role="image upper left"]
+image::techno/philips_hue.png[]
 
 [.cue]
 ****
@@ -295,6 +306,9 @@ Bien que ce soit le même protocole (Zigbee) que chez Philips, ce n'était pas i
 Il parait que ca l'est devenu, mais je n'ai pas testé.
 ****
 
+[role="image upper left"]
+image::techno/ikea.svg[]
+
 //== Part 3
 //ZWave
 //REWORK
@@ -306,6 +320,10 @@ Il parait que ca l'est devenu, mais je n'ai pas testé.
 //* sécurité forte
 * réseau maillé
 * avec retour d'état
+
+
+[role="image upper left"]
+image::techno/z-wave.png[]
 
 [.cue]
 ****
@@ -349,6 +367,19 @@ Niveau coût:
 Au niveau du contrôle, ca n'a pas changé, les outils sont passifs, par contre j'ai mis en place des automatisations.
 ****
 
+[role="image upper left"]
+image::connected_plug.png[]
+
+[role="image lower right"]
+image::door_sensor.png[]
+
+[role="image lower left"]
+image::motion_sensor.png[]
+
+[role="image upper right"]
+image::smoke_sensor.png[]
+
+
 //== Part 4
 // Merge all the things
 
@@ -382,6 +413,10 @@ Il se connecte à votre Wifi et permet de commander tout plein de choses, des co
 Le crédit de 5€ s'ajoute lorsqu'on active et presse pour la premiere fois un nouveau dash button.
 Un fait marrant c'est qu'on peut utiliser ces 5€ pour, par exemple, commander un autre dash button à 5€ -> vous voyez l'astuce ?
 ****
+
+[role="image upper left"]
+image::techno/dash_button.png[]
+
 == ! 
 
  * Scan ARP
@@ -484,6 +519,7 @@ else
      -t $IMAGE_NAME .;
 fi
 ----
+
 [.cue]
 ****
 il me suffit de pousser un nouveau tag sur mon repo github pour que tout se fasse tout seul.
@@ -591,6 +627,9 @@ Un des projets notable s'appelle S.A.R.A.H., et permet d'utiliser un Kinect pour
 Mais, Alexa et Google Assistant sont arrivés, et bien qu'on puisse douter de la destination des données collectées, il faut avouer que ce sont des gadgets sympa.
 Et, entre nous, votre téléphone n'est il pas toujours à votre écoute de toute façon ?
 ****
+
+[role="image upper left"]
+image::techno/google-assistant.png[]
 
 == ! Et mes enfants aussi !
 [.canvas]
