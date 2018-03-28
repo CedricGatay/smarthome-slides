@@ -87,7 +87,7 @@ icon:twitter[] @Cedric_Gatay
 
 icon:code[] Developer
 
-icon:empire[] Code-Troopers co-founder
+image:ct-square.png[role=small ct] Code-Troopers co-founder
 
 icon:google[] GDG Tours lead
 
@@ -482,7 +482,7 @@ Le défaut est qu'il faut que le matériel soit compatible (ou que le logiciel l
 
 == `-beta`
 
- * Reverse Engineering des API fragile
+ * API fragiles
  * passage en version instable
 
 [.cue]
@@ -496,8 +496,8 @@ Et la, c'est le drame, j'ai commencé à dépendre de version nightly de Domotic
 == Docker hub hacks
 
  * construction d'une image automatisée
- * au push de tag
  * hooks cachés dans hub
+ * push de tag vide
  
 icon:github[] https://github.com/CedricGatay/docker_domoticz
 
@@ -505,6 +505,7 @@ icon:github[] https://github.com/CedricGatay/docker_domoticz
 ****
 Je suis même allé assez loin et j'ai appris des choses marrantes sur le comportement de Docker Hub.
 Ca m'a permis de construire une image Docker de façon automatique pour toutes les ß de Domoticz,
+L'idée est juste de push un tag vide sur le repo, et le hook se charge d'injecter la variable d'env nécessaire.
 ****
 
 
@@ -519,11 +520,12 @@ then
      -t $IMAGE_NAME .;
 else 
  docker build  \ 
-     --build-arg BRANCH_NAME=$DOCKER_TAG \
+     --build-arg BRANCH_NAME=$DOCKER_TAG \ <1>
      --build-arg VCS_REF=$SOURCE_COMMIT \
      -t $IMAGE_NAME .;
 fi
 ----
+<1> `BRANCH_NAME` est utilisé lors du `git clone`
 
 [.cue]
 ****
@@ -556,6 +558,12 @@ MAISON< +
 ]futur +
 [.small-shadow]#^ }#
 
+[.cue]
+****
+Fort de cette expérience peu agréable, j'ai réévalué mes besoins en sachant ce que je voulais faire et ce dont je disposais.
+Et surtout ce dont j'avais vraiment besoin, avec une base de technologies existantes.
+****
+
 == Alternatives
 
  * jeedom
@@ -568,13 +576,9 @@ image::jeedom.png[]
 [role="image_slide lower right"]
 image::openHAB.png[]
 
+//on recommence, en sachant mieux ce qu'on veut faire
 
 // == Part 0
-//on recommence, en sachant mieux ce qu'on veut faire
-[.cue]
-****
-Fort de cette expérience peu agréable, j'ai réévalué mes besoins en sachant ce que je voulais faire et ce dont je disposais.
-****
 
 == Home Assistant
 
@@ -605,16 +609,20 @@ Les problèmes de configuration qui disparait peuvent ainsi être gérés très 
 
  * 12h environ
  * De nouvelles automatisations
+ * Du geofencing
 
 [.cue]
 ****
 Temps de reconfiguration: 12h, avec beaucoup de périphériques, tout reconfigurer prend du temps.
 Je vous montrerai à quoi peut ressembler home-assistant en version "brute", il y a énormément de choses.
 C'est pas très encourageant, mais on arrive vite à en faire ce qu'on veut.
+
 Le nombre d'intégration présent de base est assez impressionnant et m'a permis facilement de rajouter des automatisations.
 Par exemple, on a souvent l'habitude de démarrer la musique avec nos téléphones sur Spotify. 
 Spotify qui est malin et qui allume tout seul l'ampli, par contre il n'éteint pas automatiquement une fois la playlist terminée.
 En deux minutes à peine, j'ai pu écrire l'automatisation qui fait que l'ampli s'éteint s'il _idle_ pendant 3 minutes.
+
+De même, j'ai rajouté du geofencing très simplement pour activer des scenarios automatiquement en fonction de ma présence.
 ****
 
 == Ma maison me comprend
@@ -651,7 +659,7 @@ Ainsi, la domotique a permis d'aider a améliorer la prononciation de mes enfant
 
 Assez parlé, une petite démo du tout ne fera pas de mal
 
-*DON'T SKIP TO NEXT SLIDE NOW*
+*NEXT SLIDE IS AN IFRAME*
 ****
 
 == !
@@ -680,6 +688,27 @@ Assez parlé, une petite démo du tout ne fera pas de mal
  * passer sur la config pour montrer le yaml, dire que c'est pas cool mais que c'est quand même facile
  * exemple de renommage d'entité
 ****
+
+== ! 
+
+[source, yaml]
+----
+include::{basedir}/../config/configuration.yaml[tag=usb_conf]
+----
+
+== ! 
+
+[source, yaml]
+----
+include::{basedir}/../config/configuration.yaml[tag=switch_conf]
+----
+
+== ! 
+
+[source, yaml]
+----
+include::{basedir}/../config/automations.yaml[tag=automation]
+----
 
 == !
 
