@@ -69,8 +69,9 @@ include::banner.adoc[]
 // ****
 [.cue]
 ****
-Bonjour à tous, j'espère que votre Breizhcamp se passe bien.
+Bonjour à tous, j'espère que votre Breizhcamp se passe bien et s'est bien passé.
 La conf touche à sa fin, vous avez certainement vu beaucoups de super talks.
+
 Vous avez certainement également noté des choses que vous voulez essayer lundi (enfin *mardi*) lors de votre retour au bureau.
 Je vais essayer de vous apporter un petit retour d'expérience, sur, comment j'ai essayé de rendre ma maison moins bête
 Peut être que ca vous donnera, du coup, des idées de réalisation pour chez vous, pas besoin d'attendre mardi (et vous êtes décideur, peut-être…).
@@ -84,6 +85,9 @@ disclaimer
 [.cue]
 ****
 Je ne suis pas domoticien / electronicien, je fais du code le jour.
+Dans ce talk, je ne parle que de solutions du commerces que vous pouvez vous procurer pour quelques euros.
+Je ne parlerai pas de fer à souder, d'arduino, d'esp ou de resistance, _désolé_
+
 Donc si je dis des bêtises, n'hésitez pas à me le dire et/ou m'envoyer un tweet pour que je corrige pour les prochaine fois
 Et si je ne parle pas de choses super intéressantes, c'est juste que je ne les utilise pas, donc je suis preneur pour pouvoir les rajouter à mon installation :)
 ****
@@ -152,6 +156,12 @@ MAISON< +
 ]futur +
 [.small-shadow]#^ {#
 
+[.cue]
+****
+J'avais donc trouvé un bon scénario pou 'automatiser ma maison et essayer de la rendre moins bête.
+Voila donc la première partie de mon périple d'automatisation, tout en utilisant uniquement des solutions du commerce finalement.
+****
+
 == Premiers pas
 
  * prises commandées 
@@ -212,7 +222,7 @@ Du coup j’en suis venu à utiliser la technique du “ça marche la” pour pl
 Et enfin la sécurité de l'installation : globalement il n’y en a aucune en 433MHz, les températures sont balancées à tout le monde, les ordres d’allumage extinctions de prises commandées sont ouverts à tous. 
 Le seul point sécurisé est le protocole utilisé pour les volets (Somfy à fait une surcouche avec du chiffrement avec un rolling code, et utilise une frequence tres legeremnt différente).
 Le truc marrant avec le 433MHz, c’est que c’est utilisé pour tout plein de choses depuis assez longtemps, je capte par exemple un détecteur de mouvement de la cour de l’immeuble à côté de chez moi. 
-Et ca sert encore chez PSA par exemple, les clefs sont en 433MHz.
+Et ca sert encore chez PSA par exemple, les clefs sont en 433MHz, j'espère juste que c'est juste la frequence et qu'il n'y a aucun truc en clair...
 ****
 //TODO se renseigner sur l'openness de la frequence.
 
@@ -341,6 +351,7 @@ image::techno/z-wave.png[]
 
 Une fois que j’ai eu une maison assez facilitée niveau vie intérieure, j’ai voulu ajouter un peu de sécurité, principalement pour gérer les cas de fenêtres / portes laissées ouvertes.
 Je n’avais pas envie d’exposer cette donnée via du 433MHz non fiable / ni sécurisé et je me suis donc tourné vers du ZWave, qui est la deuxième technologie la plus utilisée sur le marché je pense.
+
 J’ai donc ajouté dans mon installation des capteurs d’ouverture de portes / fenêtres en ZWave (ainsi qu’une clef ZWave) pour être capable d’intéragir avec les périphériques.
 Le tout a fonctionné globalement du premier coup, mais j’ai rapidement vu des problèmes de décrochage du réseau.
 ****
@@ -360,6 +371,7 @@ Toute mon installation est dans une baie de brassage, à côté d'un mur très �
 Il s'agissait tout simplement de problèmes physique de portée du signal.
 ****
 
+[.no-banner]
 == Coût global
 
  * 50€ pour une clef ZWave
@@ -669,6 +681,7 @@ Assez parlé, une petite démo du tout ne fera pas de mal
 *NEXT SLIDE IS AN IFRAME*
 ****
 
+[.no-banner]
 == !
 
 ++++

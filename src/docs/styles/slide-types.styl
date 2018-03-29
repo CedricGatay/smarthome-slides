@@ -1,15 +1,15 @@
 section.title
   h1
     display: none
-  &.bespoke-slide
-    background-color: transparent;
 
 .bespoke-active
-  background-image: url('/images/ct-logo.png');
-  background-repeat: no-repeat;
+  background-image: url('/images/breizhcamp.png');
   background-position-x: 5px;
   background-position-y: calc(100% - 5px);
   background-size: 15%;
+  background-repeat: no-repeat
+  &.no-banner
+    background-image: none;
   &::after
     content: '@CEDRIC_GATAY';
     position: absolute;

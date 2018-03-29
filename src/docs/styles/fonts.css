@@ -3,6 +3,10 @@
     font-family: "BTTF";
     src: url('/fonts/BTTF.ttf');
 }
+@font-face{
+    font-family: "Source Sans Pro";
+    src: url('/fonts/SourceSansPro-Regular.ttf');
+}
 .bttf{
     font-family: "BTTF";
 }
