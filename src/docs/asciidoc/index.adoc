@@ -67,7 +67,14 @@ include::banner.adoc[]
 // ****
 // One can also notice various Wicket framework contributions, docker images, jenkins plugins, restx, parsley.js bridges...
 // ****
-
+[.cue]
+****
+Bonjour à tous, j'espère que votre Breizhcamp se passe bien.
+La conf touche à sa fin, vous avez certainement vu beaucoups de super talks.
+Vous avez certainement également noté des choses que vous voulez essayer lundi (enfin *mardi*) lors de votre retour au bureau.
+Je vais essayer de vous apporter un petit retour d'expérience, sur, comment j'ai essayé de rendre ma maison moins bête
+Peut être que ca vous donnera, du coup, des idées de réalisation pour chez vous, pas besoin d'attendre mardi (et vous êtes décideur, peut-être…).
+****
 
 == !
 [.bttf]
@@ -99,20 +106,20 @@ Je fais partie des co-fondateurs de Code-Troopers, des leads du Google Developer
 ****
 
 
-== ! icon:code-fork[]
+// == ! icon:code-fork[]
 
- * icon:bus[] http://navigtours.com[Navig'Tours] icon:apple[] icon:android[]
- * icon:music[] http://chapi.to[Chapi.to] icon:apple[] icon:android[]
- * icon:github[] FOSS:
- ** icon:calendar[] Android Betterpickers icon:android[]
- ** icon:github-alt[] sbt plugins icon:globe[]
- ** icon:github-alt[] wicket-hot-reload icon:globe[]
- ** icon:gitlab[] Gitlab icon:globe[]
+//  * icon:bus[] http://navigtours.com[Navig'Tours] icon:apple[] icon:android[]
+//  * icon:music[] http://chapi.to[Chapi.to] icon:apple[] icon:android[]
+//  * icon:github[] FOSS:
+//  ** icon:calendar[] Android Betterpickers icon:android[]
+//  ** icon:github-alt[] sbt plugins icon:globe[]
+//  ** icon:github-alt[] wicket-hot-reload icon:globe[]
+//  ** icon:gitlab[] Gitlab icon:globe[]
 
-[.cue]
-****
-Je fais aussi des apps web, mobiles, et de l'open source sur quelques projets
-****
+// [.cue]
+// ****
+// Je fais aussi des apps web, mobiles, et de l'open source sur quelques projets
+// ****
 
 
 //== Part 1
@@ -710,10 +717,19 @@ include::{basedir}/../config/configuration.yaml[tag=switch_conf]
 include::{basedir}/../config/automations.yaml[tag=automation]
 ----
 
+
+== ! 
+
+[source, yaml]
+----
+include::{basedir}/../config/configuration.yaml[tag=scrap_conf]
+include::{basedir}/../config/configuration.yaml[tag=rest_conf]
+----
+
 == !
 
 ++++
-<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/2967baa8-dcbe-45bf-a448-2a5759cfe99e">
+<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/2967baa8-dcbe-45bf-a448-2a5759cfe99e" >
 </iframe>
 ++++
 

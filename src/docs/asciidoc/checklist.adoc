@@ -1,0 +1,50 @@
+= Checklist
+
+== Hardware
+ * prise consommation -> multiprise ou laptop ?
+ * prise 1 -> ampoule
+ * prise 2 -> ventilateur
+ * capteur de porte sorti
+ * ampoule ventilateur visible
+
+
+== Software
+
+=== Laptop setup
+
+ * mute notif (si pas firefox)
+ * clean desktop
+ * caffeine 2h
+ * quit spark / slack
+ * quit docker
+ * quit istat
+ * quit btt
+ * quit cloudstation / dropbox
+
+=== Slides
+
+[source,bash]
+----
+cd /Users/cgatay/Documents/work/github/smarthome-slides/slides
+ct tunnel & && ct run & && ct onstage &
+----
+
+=== HASS
+
+[source,bash]
+----
+cd /Users/cgatay/Documents/work/github/smarthome-slides/config
+hass -c .
+----
+
+== Video proj débranché
+
+ * vérifier dialogflow (tunnel up)
+ * vérifier rfx en débranchant le ventilo et en togglant la prise
+ * vérifier remontée fibaro et le remettre en position porte fermée
+
+== Branchement video proj
+
+ * 720p si besoin
+ * launch dans le onstage, déplacement sur l'écran secondaire [gauche ou droite]
+ * pas besoin de blank le screen, premier slide interessant
