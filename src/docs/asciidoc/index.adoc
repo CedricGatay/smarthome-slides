@@ -128,11 +128,13 @@ Je fais partie des co-fondateurs de Code-Troopers, des leads du Google Developer
 
 //== Part 1
 //DIY the hard way
-
-== Raisons
-
- * gain de temps
- * faciliter les tâches répétitives
+[.no-padding]
+== ! Raisons
+[.canvas.full-width]
+//FIXME FIXME FIXME DOES NOT WORK
+video::black_mirror_reasons.mp4[]
+//  * gain de temps
+//  * faciliter les tâches répétitives
 
 [.cue]
 ****
@@ -160,7 +162,7 @@ MAISON< +
 ****
 J'avais donc trouvé un bon scénario pou 'automatiser ma maison et essayer de la rendre moins bête.
 Voila donc la première partie de mon périple d'automatisation, tout en utilisant uniquement des solutions du commerce finalement.
-****
+
 
 == Premiers pas
 
@@ -168,15 +170,22 @@ Voila donc la première partie de mon périple d'automatisation, tout en utilisa
  * sondes de température
  * contrôle des volets roulants
 
-[.cue]
-****
+
 Ainsi en quelques mois, j'avais le contrôle de mes volets et lumières depuis mon smartphone, un ordinateur en dépensant relativement peu:
 ****
 
-== Coût
+[.no-padding]
+== ! Coût
+[.two-columns]
+--
+[.left-content]
+image:Biffs-panorama.jpg[]
 
+[.right-content]
  * environ 250€
  * 5h de configuration
+
+--
 
 [.cue]
 ****
@@ -187,7 +196,7 @@ Ainsi en quelques mois, j'avais le contrôle de mes volets et lumières depuis m
 * Quelques heures de configuration du logiciel qu'un ami utilisait et m’avait conseillé : domoticz (0€, 5h)
 ****
 
-== Technologie
+== ! Technologie
 
  * 433MHz
  * Somfy RTS
@@ -211,7 +220,7 @@ image::stock-footage-businessman-searching-for-signal-on-cellphone-in-the-desert
 Du coup j’en suis venu à utiliser la technique du “ça marche la” pour placer au mieux l’émetteur. 
 ****
 
-== Techniquement
+== ! Techniquement
 
  * fiabilité hasardeuse
  * bas coût
@@ -228,14 +237,64 @@ Et ca sert encore chez PSA par exemple, les clefs sont en 433MHz, j'espère just
 
 //cockpit
 == ! Interface de contrôle
+[.canvas]
+image::franz-harvin-aceituna-432708-unsplash.jpg[]
 
- * Application Web
- * Application Mobile 
- * Télécommandes _moches_
+[.credit]
+https://unsplash.com/photos/vkfrFrAIO4o
 
-[role="image_slide lower right"]
+//  * Application Web
+//  * Application Mobile 
+//  * Télécommandes _moches_
+
+
+[.cue]
+****
+Au niveau du contrôle, à l’époque j’étais encore sous Android, j’utilisais donc l’application “officielle” Domoticz pour mon smartphone, et des télécommandes pour le reste (dans les tiroirs de table basse). 
+En gros c’était du contrôle uniquement de mon ressort, pas très utilisable par un invité (ni sans un smartphone sous la main).
+Ni avec l'interface domoticz qui est pas forcément hyper sexy.
+
+*CLICK DOMOTICZ*
+****
+
+== ! Interface de contrôle
+[.canvas]
+image::franz-harvin-aceituna-432708-unsplash.jpg[]
+
+[.credit]
+https://unsplash.com/photos/vkfrFrAIO4o
+
+//  * Application Web
+//  * Application Mobile 
+//  * Télécommandes _moches_
+
+
+[role="image_slide upper left bigger"]
+image::domoticz.png[]
+
+[.cue]
+****
+Au niveau du contrôle, à l’époque j’étais encore sous Android, j’utilisais donc l’application “officielle” Domoticz pour mon smartphone, et des télécommandes pour le reste (dans les tiroirs de table basse). 
+En gros c’était du contrôle uniquement de mon ressort, pas très utilisable par un invité (ni sans un smartphone sous la main).
+Ni avec l'interface domoticz qui est pas forcément hyper sexy.
+*CLICK DIY*
+****
+
+== ! Interface de contrôle
+[.canvas]
+image::franz-harvin-aceituna-432708-unsplash.jpg[]
+
+[.credit]
+https://unsplash.com/photos/vkfrFrAIO4o
+
+//  * Application Web
+//  * Application Mobile 
+//  * Télécommandes _moches_
+
+
+[role="image_slide lower right bigger"]
 image::diy_remote.JPG[]
-[role="image_slide upper left"]
+[role="image_slide upper left bigger"]
 image::domoticz.png[]
 
 [.cue]
@@ -279,7 +338,7 @@ Le plus c’est qu’on a des applications sympa Android et iOS permettant le co
 Et pour les gens sous iOS, le compatiblité HomeKit permet d’utiliser Siri ou l’application Maison pour changer la luminosité (et là ça commence à devenir classe) à la voix.
 ****
 
-== Utilisable par tous !
+== ! Utilisable par tous !
 
  * Applications mobiles
  * Contrôle Vocal 
@@ -311,14 +370,22 @@ Niveau coût :
  * Pack de démarrage Hue 1 ampoule, 1 interrupteur, 1 pont (120€)
  * Une ampoule (20 -> 60€) en fonction de la possibilité de changer les couleurs ou non
  * Temps de configuration (1h)
+
+Il y a aussi des solutions moins onéreuses pour nous autres _pauvres_ développeurs
 ****
 
-== Alternative
- 
- * IKEA TRÅDFRI
- * E14
- * Sensiblement moins cher
+[.no-padding]
+== ! Alternative
+[.two-columns]
+--
+[.left-content]
+image:tradfri.jpg[]
 
+[.right-content.no-bullet]
+ * Ikea Tradfri
+ * Zigbee
+ * E14
+--
 
 [.cue]
 ****
@@ -327,13 +394,13 @@ Bien que ce soit le même protocole (Zigbee) que chez Philips, ce n'était pas i
 Il parait que ca l'est devenu, mais je n'ai pas testé.
 ****
 
-[role="image_slide upper left"]
-image::techno/ikea.svg[]
+// [role="image_slide upper left"]
+// image::techno/ikea.svg[]
 
 //== Part 3
 //ZWave
 //REWORK
-== ZWave
+== ! ZWave
 
 * 868.42 MHz
 //* prix honnêtes
@@ -372,7 +439,7 @@ Il s'agissait tout simplement de problèmes physique de portée du signal.
 ****
 
 [.no-banner]
-== Coût global
+== ! Coût global
 
  * 50€ pour une clef ZWave
  * 50€ par élément
@@ -388,24 +455,28 @@ Niveau coût:
  * Temps de configuration (2h)
 
 Au niveau du contrôle, ca n'a pas changé, les outils sont passifs, par contre j'ai mis en place des automatisations.
+Par exemple, je peux lever des alertes si une porte est ouverte depuis plus de 5 minutes (genre la porte du garage)
 ****
 
-[role="image_slide upper left"]
-image::connected_plug.png[]
+:figure-caption: ≈
 
-[role="image_slide lower right"]
-image::door_sensor.png[]
+[role="image_slide upper left captioned"]
+image::connected_plug.png[title="35€"]
 
-[role="image_slide lower left"]
-image::motion_sensor.png[]
+[role="image_slide lower right captioned"]
+image::door_sensor.png[title="40€"]
 
-[role="image_slide upper right"]
-image::smoke_sensor.png[]
+[role="image_slide lower left captioned"]
+image::motion_sensor.png[title="40€"]
 
+[role="image_slide upper right captioned"]
+image::smoke_sensor.png[title="50€"]
+
+:!figure-caption:
 
 //== Part 4
 // Merge all the things
-
+// Picture with iot objects
 == Internet Of Things
  
  * TV
@@ -421,7 +492,7 @@ J'ai donc pu remplacer mon DashButton qui me permettait de penser à vider le la
 ****
 
 
-== Dash Button
+== ! Dash Button
 
  * 5€ le bouton
  * Wifi 
@@ -440,12 +511,19 @@ Un fait marrant c'est qu'on peut utiliser ces 5€ pour, par exemple, commander 
 [role="image_slide upper left"]
 image::techno/dash_button.png[]
 
+
 == ! 
+[.canvas]
+image::markus-spiske-482453-unsplash.jpg[]
 
- * Scan ARP
- * Internet coupé
+[.credit]
+https://unsplash.com/photos/FrWStnBsfxI
 
-=> bouton connecté par cher !
+//terminal window cli hacker 
+//  * Scan ARP
+//  * Internet coupé
+
+// => bouton connecté par cher !
 
 [.cue]
 ****
@@ -477,7 +555,7 @@ La encore, faire un peu d'admin sys pour mettre un bail DHCP "statique" amélior
 
  * Protocole domotique poussé par Apple
  * iOS
- * Siri
+// * Siri
  * Compatibilité restreinte
 
 [role="image_slide upper left"]
@@ -487,7 +565,7 @@ image::homekit.png[]
 ****
 Comme je disais tout à l'heure, j'étais au début de mon installation un utilisateur d'Android.
 J'ai reswitché vers iOS pour tout plein de raisons, et je me suis interessé à HomeKit, l'implémentation domotique poussée par Apple.
-Le défaut est qu'il faut que le matériel soit compatible (ou que le logiciel le soit depuis peu).
+Le défaut, au dela du fait que ce soit uniquement ios, est qu'il faut que le matériel soit compatible (ou que le logiciel le soit depuis peu).
 
 ****
 
@@ -498,11 +576,26 @@ Le défaut est qu'il faut que le matériel soit compatible (ou que le logiciel l
  * Passerelle vers les éléments non-compatibles
 
 
+//TODO TITLE
+== !
 
-== `-beta`
+[.cue]
+****
+En résumé, mon installation se comporte bien avec trois grosses brique logicielles.
+Domoticz pour l'intelligence globale de mon système domotique
+Dasher pour me permettre de déclencher des évenements simplement avec mes dash buttons
+Et HomeBridge qui me permet même de l'attaquer via iOS à la voix.
+
+*MAIS*
+****
+
+//when it work don't fix it...
+== ! `-beta`
 
  * API fragiles
- * passage en version instable
+ * icon:github[] https://github.com/domoticz/domoticz
+ 
+=> passage en version instable
 
 [.cue]
 ****
@@ -512,7 +605,8 @@ Et la, c'est le drame, j'ai commencé à dépendre de version nightly de Domotic
 ****
 
 
-== Docker hub hacks
+== Domoticz Docker Hub 
+// hacks
 
  * construction d'une image automatisée
  * hooks cachés dans hub
@@ -522,9 +616,11 @@ icon:github[] https://github.com/CedricGatay/docker_domoticz
 
 [.cue]
 ****
-Je suis même allé assez loin et j'ai appris des choses marrantes sur le comportement de Docker Hub.
+Mon installation de Domoticz _était_ gérée dans un docker qui tournait sur un synology.
+En reflechissant un tout petit peu, j'ai vu qu'il n'y avait pas de nightly build / beta build de Domoticz sous forme d'image Docker.
+Je me suis mis à en faire une, avec un Jenkins c'est assez facile de lancer le build, mais j'ai rencontré des limites sur mon repo "externe" aux sources.
+C'est la ou je suis allé assez loin et j'ai appris des choses marrantes sur le comportement de Docker Hub.
 Ca m'a permis de construire une image Docker de façon automatique pour toutes les ß de Domoticz,
-L'idée est juste de push un tag vide sur le repo, et le hook se charge d'injecter la variable d'env nécessaire.
 ****
 
 
@@ -548,9 +644,14 @@ fi
 
 [.cue]
 ****
-il me suffit de pousser un nouveau tag sur mon repo github pour que tout se fasse tout seul.
-Jenkins peut très bien s'en charger tout seul ;)
-Le côté marrant c'est qu'il y a environ 190k pull, sur une image que je n'utilise pas (j'ai même mergé ma premiere PR ce we)
+L'idée est juste de push un tag vide sur le repo (a chaque nouveau commit sur master en fait / nouveau numéro de version),
+Le hook se charge d'injecter la variable d'env nécessaire et ensuite déclenche le build de Domoticz dans l'image Docker.
+//il me suffit de pousser un nouveau tag sur mon repo github pour que tout se fasse tout seul.
+Jenkins peut très bien s'en charger tout seul, c'est le cas et en fait je continue de builder cette image
+//SCREENSHOT
+
+Le côté marrant c'est qu'il y a environ 190k pull, sur une image que je n'utilise pas (j'ai même mergé ma premiere PR ce we), parce qu'en fait ...
+*SUSPEND*
 //https://hub.docker.com/v2/repositories/cgatay/domoticz/ 188k pull
 ****
 
@@ -618,11 +719,11 @@ Tout le monde aime detester le YAML, mais ce qu'on peut adorer c'est que c'est u
 Les problèmes de configuration qui disparait peuvent ainsi être gérés très facilement.
 ****
 
-== Atouts principaux
+// == Atouts principaux
 
- * rapide
- * joli
- * stable
+//  * rapide
+//  * joli
+//  * stable
 
 == Coût de migration
 
@@ -691,8 +792,7 @@ Assez parlé, une petite démo du tout ne fera pas de mal
 
 [.cue]
 ****
-== Demo
-
+=> FOCUS LOSS WARNING <=
  * montrer home-assistant démarré depuis le debut de la presentation
  * faire un rapide tour de l'interface, en montrant uniquement le premier onglet (mode y'en a partout).
  * passer sur le deuxième onglet pour montrer qu'on peut (et qu'on doit ranger les éléments)
@@ -716,6 +816,12 @@ Assez parlé, une petite démo du tout ne fera pas de mal
 include::{basedir}/../config/configuration.yaml[tag=usb_conf]
 ----
 
+[.cue]
+****
+La configuration est tres simple, on défini les chemins d'acces vers les périphériques, on peut améliorer les noms cryptiques avec udev par exemple
+Je vous montre la configuration sur mon mac qui fait tourner HA en fait la, c'est un peu plus "souple" sur un linux
+****
+
 == ! 
 
 [source, yaml]
@@ -723,12 +829,24 @@ include::{basedir}/../config/configuration.yaml[tag=usb_conf]
 include::{basedir}/../config/configuration.yaml[tag=switch_conf]
 ----
 
+[.cue]
+****
+La on peut noter qu'on est capable de nommer proprement une prise commandée, parce qu'en fait, la sequence est simplement son ID.
+C'est open, comme je vous l'avais dit, et du coup, la petite option automatic_add peut être bien pratique pour se rendre compte de ce qu'on "ajoute" et renommer ensuite 
+(a passer a false des que possible pour éviter de se faire polluer)
+****
+
 == ! 
 
 [source, yaml]
 ----
 include::{basedir}/../config/automations.yaml[tag=automation]
 ----
+
+[.cue]
+****
+Source d'une automatisation, donc on voit bien les trigger / condition / action
+****
 
 
 == ! 
@@ -739,6 +857,17 @@ include::{basedir}/../config/configuration.yaml[tag=scrap_conf]
 include::{basedir}/../config/configuration.yaml[tag=rest_conf]
 ----
 
+[.cue]
+****
+Comme je disais, c'est un produit tres complet et on peut meme faire des choses qui relevent presque de l'admin sys si on veut
+Par exemple je vais scraper les heures de prochains passage du tram pas loin de chez moi grace a ca (et je peux donc déclencher des alertes du "trop tard" si je veux)
+
+*PAUSE*
+
+Je voulais aussi vous montrer un autre truc assez cool, c'est de parler à ma maison, avec un outil que vous connaissez surement,
+Dialogflow (anciennement A - P - I - A - I ).
+****
+
 == !
 
 ++++
@@ -748,17 +877,28 @@ include::{basedir}/../config/configuration.yaml[tag=rest_conf]
 
 [.cue]
 ****
-Idées:
- * tester dialogflow avec un tunnel ssl sur la 4G du telephone.
-  ** demander a dialogflow l'énergie de la prise commandée
-  ** et la consommation
+Je suis capable de lui demander d'allumer la lumière, ou le ventilateur
+"Allume la lumière"
+"Allume le ventilateur"
+"Combien consomme l'ordinateur ?"
+Attention, j'ai des phrases marrantes normalement pour la reco vocale 
+
+"Combien de pull a l'image docker domoticz ?"
+"Et jenkins ?"
+
 ****
 
 == ! 
 [.canvas]
 image::self_lacing_shoes.gif[]
 
-== Conseils
+[.cue]
+****
+Voilà, je vous ai globalement montré et expliqué par quelles étapes / outils / techniques je suis passé pour rendre ma maison moins "dumb"
+Vous êtes équipé, vous n'avez plus qu'à mettre vos chaussures autolaçantes et vous lancer, mais avant je voudrais vous donner quelques derniers conseils pratiques.
+****
+
+== ! Conseils
 
  * routeur de qualité
  * bloquer le traffic
@@ -773,7 +913,7 @@ Pouvoir bloquer le traffic vers Internet pour un périphérique voir leur créer
 Par exemple, ma super machine à laver high-tech ne sait pas se connecter en WPA2, ce n'est noté nulle part, au bout d'un peu d'archarnement j'ai découvert qu'elle ne parlait juste pas à mon routeur...
 ****
 
-== Effets de bords
+== ! Effets de bords
 
  * mode invité
  * mode pas internet
@@ -789,7 +929,7 @@ On peut ainsi l'empêcher de rallumer une lumière qu'on viendrait d'éteindre p
 Il est important de penser au mode enfant, invité, au cas où on a pas internet et aussi à gérer le cas de la coupure de courant.
 ****
 
-== Problèmes rencontrés
+== ! Problèmes rencontrés
 
  * Taille des ampoules
  * Interférences

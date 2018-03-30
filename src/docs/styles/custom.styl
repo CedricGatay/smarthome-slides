@@ -27,20 +27,38 @@
         -webkit-text-fill-color: transparent;
 
 .image_slide
+    position: absolute;
+    height:  33%;
+    max-width: 33%;
+    figcaption
+        text-align  center
+        font-size: 0.7em
     img
-        position: absolute;
-        max-width: 33%;
-        max-height: 33%;
+        max-width 100%
+        max-height 100%
     &.lower
-        img
-            bottom: 5%;
+        bottom: 5%;
     &.right
-        img
-            right: 5%;
+        right: 5%;
     &.upper
-        img
-            top: 5%;
+        top: 5%;
     &.left
-        img
-            left: 5%;
+        left: 5%;
+    &.captioned
+        padding: 10px 10px 40px;
+        background: white;
+        box-shadow: 0px 3px 5px 0px $gray
+    &.bigger
+        height: 60%
+        max-width: 60%
+        
+.credit
+    position: absolute
+    bottom: 0
+    right: 5px
+    font-size: 0.5em
+
+.canvas.full-width
+    img
+        max-width:100%;
 

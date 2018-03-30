@@ -2,7 +2,7 @@ section.title
   h1
     display: none
 
-.bespoke-active
+.bespoke-active:not(.image)
   background-image: url('/images/breizhcamp.png');
   background-position-x: 5px;
   background-position-y: calc(100% - 5px);
@@ -18,11 +18,14 @@ section.title
     font-size: 0.3em;
     font-family: 'bttf';
 
+.bespoke-slide.no-padding
+  padding: 0
 section 
   .two-columns
     display: flex;
-    flex-flow: rows wrap;
+    flex-flow: row wrap;
     align-items: center;
+    justify-items: center;
     text-align:left;
     width: 100%;
     > pre.source, > ol, > ul, > p, > figure
@@ -31,6 +34,15 @@ section
         max-width: 50%;
     .left-content
       flex: 1
+      box-shadow: 1px 0px 20px 0px $gray;
+    ul.right-content
+      list-style-type none;
+      li
+        line-height: 2;
+    img
+      max-width 100%
+      max-height 100%
+      object-fit: cover
     div.colist
       margin-top:300px;
       margin-left:-300px;
