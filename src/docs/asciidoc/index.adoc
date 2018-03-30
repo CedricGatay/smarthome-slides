@@ -74,7 +74,8 @@ La conf touche à sa fin, vous avez certainement vu beaucoups de super talks.
 
 Vous avez certainement également noté des choses que vous voulez essayer lundi (enfin *mardi*) lors de votre retour au bureau.
 Je vais essayer de vous apporter un petit retour d'expérience, sur, comment j'ai essayé de rendre ma maison moins bête
-Peut être que ca vous donnera, du coup, des idées de réalisation pour chez vous, pas besoin d'attendre mardi (et vous êtes décideur, peut-être…).
+
+Peut être que ca vous donnera, du coup, des idées de réalisation pour chez vous, pas besoin d'attendre mardi (et pour le coup, c'est vous qui décidez, *peut-être*…).
 ****
 
 == !
@@ -84,12 +85,14 @@ disclaimer
 
 [.cue]
 ****
-Je ne suis pas domoticien / electronicien, je fais du code le jour.
+Tout d'abord, je vais commencer par vous dire ce qu'on ne verra pas et du fait que ce n'est pas mon travail.
 Dans ce talk, je ne parle que de solutions du commerces que vous pouvez vous procurer pour quelques euros.
 Je ne parlerai pas de fer à souder, d'arduino, d'esp ou de resistance, _désolé_
 
 Donc si je dis des bêtises, n'hésitez pas à me le dire et/ou m'envoyer un tweet pour que je corrige pour les prochaine fois
-Et si je ne parle pas de choses super intéressantes, c'est juste que je ne les utilise pas, donc je suis preneur pour pouvoir les rajouter à mon installation :)
+Et si j'oublie des choses super intéressantes, c'est juste que je ne les utilise pas, donc je suis preneur pour pouvoir les rajouter à mon installation :)
+
+Je ne suis pas domoticien / electronicien, je fais du code le jour.
 ****
 
 == ! image:CG_BW.jpg[]
@@ -166,6 +169,8 @@ MAISON< +
 ****
 J'avais donc trouvé un bon scénario pou 'automatiser ma maison et essayer de la rendre moins bête.
 Voila donc la première partie de mon périple d'automatisation, tout en utilisant uniquement des solutions du commerce finalement.
+Solutions du commerce, mais pas box toute faite, j'avais quand même envie de comprendre ce qui se passait.
+
 
 
 == Premiers pas
@@ -175,7 +180,7 @@ Voila donc la première partie de mon périple d'automatisation, tout en utilisa
  * contrôle des volets roulants
 
 
-Ainsi en quelques mois, j'avais le contrôle de mes volets et lumières depuis mon smartphone, un ordinateur en dépensant relativement peu:
+Ainsi en quelques mois, j'avais le contrôle de mes volets et lumières depuis mon smartphone ou un ordinateur en dépensant relativement peu.
 ****
 
 [.no-padding]
@@ -194,7 +199,7 @@ image:Biffs-panorama.jpg[]
 [.cue]
 ****
 * Quelques prises commandées (50€ les trois en magasin de bricolage)
-* Un raspberry pi (50€) / un nas (400€)
+* Un raspberry pi (50€) [/ un nas (400€)]
 * Un émetteur rfxtrx (110€)
 * Des sondes de température (10 - 20€)
 * Quelques heures de configuration du logiciel qu'un ami utilisait et m’avait conseillé : domoticz (0€, 5h)
@@ -218,6 +223,9 @@ image::techno/rfxtrx.png[]
 == ! 
 [.canvas]
 image::stock-footage-businessman-searching-for-signal-on-cellphone-in-the-desert.gif[]
+
+[.credit]
+
 
 [.cue]
 ****
@@ -259,55 +267,16 @@ En gros c’était du contrôle uniquement de mon ressort, pas très utilisable 
 Ni avec l'interface domoticz qui est pas forcément hyper sexy.
 
 *CLICK DOMOTICZ*
+*CLICK DYI*
 ****
 
-== ! Interface de contrôle
-[.canvas]
-image::franz-harvin-aceituna-432708-unsplash.jpg[]
-
-[.credit]
-https://unsplash.com/photos/vkfrFrAIO4o
-
-//  * Application Web
-//  * Application Mobile 
-//  * Télécommandes _moches_
-
-
-[role="image_slide upper left bigger"]
-image::domoticz.png[]
-
-[.cue]
-****
-Au niveau du contrôle, à l’époque j’étais encore sous Android, j’utilisais donc l’application “officielle” Domoticz pour mon smartphone, et des télécommandes pour le reste (dans les tiroirs de table basse). 
-En gros c’était du contrôle uniquement de mon ressort, pas très utilisable par un invité (ni sans un smartphone sous la main).
-Ni avec l'interface domoticz qui est pas forcément hyper sexy.
-*CLICK DIY*
-****
-
-== ! Interface de contrôle
-[.canvas]
-image::franz-harvin-aceituna-432708-unsplash.jpg[]
-
-[.credit]
-https://unsplash.com/photos/vkfrFrAIO4o
-
-//  * Application Web
-//  * Application Mobile 
-//  * Télécommandes _moches_
-
-
+[%build]
+--
 [role="image_slide lower right bigger"]
 image::diy_remote.JPG[]
 [role="image_slide upper left bigger"]
 image::domoticz.png[]
-
-[.cue]
-****
-Au niveau du contrôle, à l’époque j’étais encore sous Android, j’utilisais donc l’application “officielle” Domoticz pour mon smartphone, et des télécommandes pour le reste (dans les tiroirs de table basse). 
-En gros c’était du contrôle uniquement de mon ressort, pas très utilisable par un invité (ni sans un smartphone sous la main).
-Ni avec l'interface domoticz qui est pas forcément hyper sexy.
-****
-
+--
 
 // == Part 2
 
@@ -345,13 +314,17 @@ Et pour les gens sous iOS, le compatiblité HomeKit permet d’utiliser Siri ou 
 == ! Utilisable par tous !
 
  * Applications mobiles
- * Contrôle Vocal 
  * Interrupteurs physiques
+ * Contrôle Vocal 
 
+[%build]
+--
 [role="image_slide upper left"]
 image::hue_switch.JPG[]
+
 [role="image_slide lower right"]
 image::hue_app.jpg[]
+--
 
 [.cue]
 ****
@@ -368,8 +341,10 @@ Voilà une belle façon de contrôler les lumières, qui plus est avec des inter
 --
 [.left-content]
 image:fabian-blank-78637-unsplash.jpg[]
-// [.credits]
-// https://unsplash.com/photos/pElSkGRA2NU
+
+[.credit]
+https://unsplash.com/photos/pElSkGRA2NU
+
 [.right-content.no-bullets]
  * environ 120€
  * de 20 à 60€ par ampoule 
@@ -382,7 +357,7 @@ Niveau coût :
  * Une ampoule (20 -> 60€) en fonction de la possibilité de changer les couleurs ou non
  * Temps de configuration (1h)
 
-Il y a aussi des solutions moins onéreuses pour nous autres _pauvres_ développeurs
+Il y a aussi des solutions moins onéreuses pour nous autres _pauvres_ développeurs.
 ****
 
 [.no-padding]
@@ -441,6 +416,9 @@ Le tout a fonctionné globalement du premier coup, mais j’ai rapidement vu des
 [.left-content]
 image:ethan-haddox-482609-unsplash.jpg[]
 
+[.credit]
+https://unsplash.com/photos/TsXmzTc1gDk
+
 [.right-content.no-bullets]
  * Pairage
  * Portée
@@ -461,9 +439,6 @@ C'est pas forcément pratique quand le detecteur est posé a l'opposé dans la m
 [.no-banner]
 == ! Coût global
 
- * 50€ pour une clef ZWave
- * 50€ par élément
-
 [.cue]
 ****
 Niveau coût:
@@ -478,8 +453,9 @@ Au niveau du contrôle, ca n'a pas changé, les outils sont passifs, par contre 
 Par exemple, je peux lever des alertes si une porte est ouverte depuis plus de 5 minutes (genre la porte du garage)
 ****
 
-:figure-caption: ≈
-
+:figure-caption: 
+[%build]
+--
 [role="image_slide upper left captioned"]
 image::connected_plug.png[title="35€"]
 
@@ -492,6 +468,9 @@ image::motion_sensor.png[title="40€"]
 [role="image_slide upper right captioned"]
 image::smoke_sensor.png[title="50€"]
 
+ * 50€ pour une clef ZWave
+ * 50€ par élément
+--
 :!figure-caption:
 
 //== Part 4
@@ -533,7 +512,9 @@ Vous avez surement déjà entendu parler de ce dispositif, il coute peu cher (et
 Il se connecte à votre Wifi et permet de commander tout plein de choses, des couches, du thé, en un click.
 
 Le crédit de 5€ s'ajoute lorsqu'on active et presse pour la premiere fois un nouveau dash button.
-Un fait marrant c'est qu'on peut utiliser ces 5€ pour, par exemple, commander un autre dash button à 5€ -> vous voyez l'astuce ?
+*STEP*
+Un fait marrant c'est qu'on peut utiliser ces 5€ pour, par exemple, 
+commander un autre dash button à 5€ qui va créditer notre compte de 5€ pour permettre de commander...-> vous voyez l'astuce ?
 ****
 
 [role="image_slide upper left"]
@@ -622,6 +603,9 @@ Domoticz pour l'intelligence globale de mon système domotique
 Dasher pour me permettre de déclencher des évenements simplement avec mes dash buttons
 Et HomeBridge qui me permet même de l'attaquer via iOS à la voix.
 
+J'ai un contrôle assez fin de ce que je cherche et j'ai intégré pas mal de périphériques connectés divers aussi au passage.
+Comme par exemple ma télécommande universelle logitech harmony
+
 *MAIS*
 ****
 
@@ -631,14 +615,28 @@ Et HomeBridge qui me permet même de l'attaquer via iOS à la voix.
  * API fragiles
  * icon:github[] https://github.com/domoticz/domoticz
 
-[%build]
-=> passage en version instable
+[.cue]
+****
+L'inconvénient à ne pas utiliser une solution du commerce toute en un est qu'on repose sur du reverse engineering ou de la tolerance des constructeurs
+La beauté de l'open-source fait qu'une API qui a bougé ne reste pas isolée très longtemps et qu'un fix est rapidement disponible, sur le github du projet.
+En l'occurence, sur le github de domoticz, c'était assez facile de construire sa propre image
+****
+
+== ! 
+=> passage en version [.beta-marker]#ßeta#
 
 [.cue]
 ****
-L'avantage de tous ces systèmes, c'est qu'ils sont globalement bien supportés par la communauté et qu'il est possible de trouver un moyen de les adresser.
-Le problème est que parfois, les reverse engineering des API ne va pas assez vite vers les versions stables des outils. 
-Et la, c'est le drame, j'ai commencé à dépendre de version nightly de Domoticz.
+Mais du coup, le drame est un peu que j'ai donc commencé à dépendre de versions nightly de Domoticz.
+Je vais quand même faire une apparté pour parler d'un petit truc marrant que j'ai découvert à cette occasion.
+
+Mon installation de Domoticz _était_ gérée dans un docker qui tournait sur un synology.
+En cherchant, je me suis rendu compte qu'il n'y avait pas de nightly build / beta build de Domoticz sous forme d'image Docker.
+Je me suis mis à en faire une, avec un Jenkins c'est assez facile de lancer le build, mais j'ai rencontré des limites sur mon repo "externe" aux sources.
+
+De plus l'équipe ne fait pas des tags pour toute les beta mais mets à jour le site avec la dernière version.
+J'ai donc utilisé la méthode un peu bourrin d'aller lancer un script toutes les heures pour aller voir s'il y a une nouvelle beta
+
 ****
 
 
@@ -653,11 +651,8 @@ icon:github[] https://github.com/CedricGatay/docker_domoticz
 
 [.cue]
 ****
-Mon installation de Domoticz _était_ gérée dans un docker qui tournait sur un synology.
-En reflechissant un tout petit peu, j'ai vu qu'il n'y avait pas de nightly build / beta build de Domoticz sous forme d'image Docker.
-Je me suis mis à en faire une, avec un Jenkins c'est assez facile de lancer le build, mais j'ai rencontré des limites sur mon repo "externe" aux sources.
-C'est la ou je suis allé assez loin et j'ai appris des choses marrantes sur le comportement de Docker Hub.
-Ca m'a permis de construire une image Docker de façon automatique pour toutes les ß de Domoticz,
+Ce qui est marrant, c'est que, grace aux hooks, faire un build d'une version en particulier se résume à faire un push d'un nouveau tag, vide...
+Pour les curieux, le repo github est visible et peu sûrement servir à s'inspirer.
 ****
 
 [.image_slide.upper.left]
@@ -686,7 +681,7 @@ fi
 L'idée est juste de push un tag vide sur le repo (a chaque nouveau commit sur master en fait / nouveau numéro de version),
 Le hook se charge d'injecter la variable d'env nécessaire et ensuite déclenche le build de Domoticz dans l'image Docker.
 //il me suffit de pousser un nouveau tag sur mon repo github pour que tout se fasse tout seul.
-Jenkins peut très bien s'en charger tout seul, c'est le cas et en fait je continue de builder cette image
+// Jenkins peut très bien s'en charger tout seul, c'est le cas et en fait je continue de builder cette image.
 //SCREENSHOT
 
 Le côté marrant c'est qu'il y a environ 190k pull, sur une image que je n'utilise pas (j'ai même mergé ma premiere PR ce we), parce qu'en fait ...
@@ -702,7 +697,12 @@ image::broken_home.gif[]
 ****
 J'ai cassé ma maison ! 
 
-Et forcément, quand on dépend de `-SNAPSHOT` des choses pas cool arrivent : système qui ne démarre pas, module non fonctionnels, perte de configuration.
+Et forcément, quand on dépend de `-SNAPSHOT` des choses pas cool arrivent :
+
+ *  système qui ne démarre pas
+ *  module non fonctionnels
+ * *PAUSE*
+ * j'ai même fini par perdre ma configuration
 
 Niveau coût:
 
@@ -729,11 +729,36 @@ Et surtout ce dont j'avais vraiment besoin, avec une base de technologies exista
  * openHAB
  * home-assistant
 
+[%build]
+--
+
 [role="image_slide upper left"]
 image::jeedom.png[]
 
 [role="image_slide lower right"]
 image::openHAB.png[]
+--
+
+[.cue]
+****
+J'ai donc réenvisagé les logiciels centralisateurs qui existaient en open source pour les réévaluer et tester.
+* Jeedom : 
+  **  il y a eu un très bon talk hier à ce sujet, je n'ai pas eu la même expérience et j'ai eu du mal avec l'interface pour en faire ce que je voulais.
+  ** l'outil est a base de plugin, certain payant, mais ca ne dépasse pas le prix d'une app mobile, quand on voit le prix de l'équipement
+  qu'on met chez soit, on n'est vraiment pas à 2-5€
+* openHAB
+  ** c'est du java, je me suis dit "cool je vais pouvoir contribuer", c'est du material c'est assez joli etc.
+  ** j'ai jamais réussi à configurer correctement les premiers éléments que je voulais intégrer
+
+*PAUSE*
+*Je suis surement pas complétement doué avec les IHM de configuration*
+
+* Home assistant
+  ** je l'avais écarté au début, mais finalement, je lui ai donné sa chance
+
+*SKIP*
+
+****
 
 //on recommence, en sachant mieux ce qu'on veut faire
 
@@ -741,7 +766,7 @@ image::openHAB.png[]
 
 == ! Home Assistant
 
- * Python
+ * Python 3.5
  * Apache Software License 2.0
  * configuration YAML
  * 1000 composants
@@ -755,7 +780,7 @@ image::home-assistant.png[]
 Je suis passé sur Home Assistant principalement pour le support très étendu et très actif de différenes technologies.
 Dans les bonus, la configuration de Home Assistant est basée sur des fichiers YAML.
 Tout le monde aime detester le YAML, mais ce qu'on peut adorer c'est que c'est un format génialement `diff`able et gérable avec Git.
-Les problèmes de configuration qui disparait peuvent ainsi être gérés très facilement.
+Le problème de la configuration qui disparait peut ainsi être géré très facilement.
 ****
 
 // == Atouts principaux
@@ -817,6 +842,7 @@ https://unsplash.com/photos/baKgjxKYegc
 Pour ceux qui s'interessent a la domotique, il y a plusieurs solutions qui existent pour permettre le pilotage de sa maison par la voix.
 Un des projets notable s'appelle S.A.R.A.H., et permet d'utiliser un Kinect pour gérer la partie reconnaissance vocale.
 Mais, Alexa et Google Assistant sont arrivés, et bien qu'on puisse douter de la destination des données collectées, il faut avouer que ce sont des gadgets sympa.
+Le problème de poser un micro chez soit est aussi le côté esthétique, et je ne me sentais pas assez fort en design 3D pour imprimer de beaux boitiers.
 Et, entre nous, votre téléphone n'est il pas toujours à votre écoute de toute façon ?
 ****
 
@@ -838,6 +864,8 @@ Ainsi, la domotique a permis d'aider a améliorer la prononciation de mes enfant
 
 Assez parlé, une petite démo du tout ne fera pas de mal
 
+WARNING: no clone / se tourner de 3/4 en gardant les slides en vue
+
 *NEXT SLIDE IS AN IFRAME*
 ****
 
@@ -853,19 +881,18 @@ Assez parlé, une petite démo du tout ne fera pas de mal
 ****
 => FOCUS LOSS WARNING <=
  * montrer home-assistant démarré depuis le debut de la presentation
- * faire un rapide tour de l'interface, en montrant uniquement le premier onglet (mode y'en a partout).
- * passer sur le deuxième onglet pour montrer qu'on peut (et qu'on doit ranger les éléments)
+ * faire un rapide tour de l'interface, en montrant uniquement le premier onglet (mode y'en a partout). *PAUSE*
+ * passer sur le deuxième onglet pour montrer qu'on peut (et qu'on doit ranger les éléments) 
   ** graph de consommation de la prise
   ** prochain passage de tram
   ** état des detecteurs d'ouverture
-  ** info instantanées (conso / lumières)
+  ** info instantanées (conso / lumières) *PAUSE*
  
- * faire une automatisation
+ * faire une automatisation 
   ** porte ouverte, on allume la lumière et on pousse une notif html
-  ** porte fermée, on éteint la lumière
 
- * passer sur la config pour montrer le yaml, dire que c'est pas cool mais que c'est quand même facile
- * exemple de renommage d'entité
+*TIMING ISSUE* créer une automatisation de fermeture il reste 5/10min a parler à partir d'ici
+
 ****
 
 == ! 
@@ -964,6 +991,9 @@ Vous êtes équipé, vous n'avez plus qu'à mettre vos chaussures autolaçantes 
 [.left-content]
 image::glenn-carstens-peters-190592-unsplash.jpg[]
 
+[.credit]
+https://unsplash.com/photos/RLw-UC03Gwc
+
 [.right-content.no-bullets]
  * routeur de qualité
  * bloquer le traffic
@@ -1000,11 +1030,19 @@ https://unsplash.com/photos/nbqlWhOVu6k
 
 [.cue]
 ****
+Il est important de penser au mode enfant, invité, au cas où on a pas internet et aussi à gérer le cas de la coupure de courant.
+
 L'automatique c'est bien, mais ça fait souvent des choses non prévues.
 Un des principal travers est de prévoir un mécanisme qui permet au système d'avoir une mémoire à court terme.
 On peut ainsi l'empêcher de rallumer une lumière qu'on viendrait d'éteindre par exemple (c'est un des premiers trucs qu'on découvre).
 
-Il est important de penser au mode enfant, invité, au cas où on a pas internet et aussi à gérer le cas de la coupure de courant.
+J'ai par exemple eu une expérience interessante avec les automatisation la semaine passée, il y avait une quinzaine de personne chez moi,
+j'ai une regle qui me permet de synchroniser la luminosité entre les différents système (tradfri/hue), seulement, une ampoule Hue a décider 
+de ne pas répondre dans les temps, enfin de reporter un status "introuvable" qui a été interprété vers une valeur *0*
+
+=> Toutes les lumières se sont éteintes dans la pièce, bon c'était un anniversaire mais la synchro avec le gateau n'était pas bonne ;)
+
+
 ****
 
 [.no-padding]
@@ -1027,14 +1065,18 @@ https://unsplash.com/photos/asOVDixAb5U
 **** 
 J'ai tenté de faire un détail de ce qu'il est possible de faire.
 Mais vous savez comme moi que tout n'est jamais parfaitement rose dans notre métier et que tout bouge un peu vite.
-Un des inconvénients à l'interconnexion de système hétérogènes est qu'on ne maîtrise pas tout ce qui peut se passer.
-On vit une époque géniale ou les périphériques peuvent se mettre à jour d'eux-même. 
-Du coup, toutes les bidouilles qui consistent à exploiter des API non publiques peuvent poser des problèmes.
 
-Dans les problèmes récents que j'ai pu avoir :
- 
-  * le protocole IKEA qui a bougé pour rajouter de la sécurité (merci Home Assistant et la réactivité, et IKEA de prévenir directement sur Reddit)
-  * Google Actions on Google, qui permet de jouer avec le OK Google, peut bouger, et parfois "Je ne peux contrôler vos appareils domotiques"
+Dans les problèmes récurrents, les ampoules connectées ne sont pas la panacées: 
+ * culots pas forcément disponible
+ * taille des ampoules : on ne peut pas toujours bien mettre une ampoule connectée avec tous les abats jours... une ampoule qui dépasse c'est pas génial 
+
+Quand il pleut, que le micro onde est en route... des intérferences peuvent empêcher les ordres de bien arriver (433 only)
+Et enfin, la plupart des périphériques fonctionnent sur piles, il faut donc bien monitorer le pourcentage qui est remonté
+car franchement, c'est pas super agréable d'être réveillé par le détecteur de fumée qui bippe (moins fort, mais toutes les minutes) pour prévenir de changer sa pile.
+(ca m'est arrivé deux fois, un par étage, a deux semaines d'intervalle...)
+
+A noter que pour ce point un protocole dont je n'ai pas parlé car je ne l'utilse pas est intéressant : Enocean, qui a la particularité de ne pas necessiter de piles.
+La compatibilité avec les systèmes FOSS n'est pas top en revanche.
 ****
 
 == ! En résumé
