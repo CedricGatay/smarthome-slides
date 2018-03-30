@@ -6,6 +6,7 @@ var isWebKit = 'webkitAppearance' in document.documentElement.style,
   bullets = require('bespoke-bullets'),
   classes = require('bespoke-classes'),
   fullscreen = require('bespoke-fullscreen'),
+  multimedia = require('bespoke-multimedia'),
   hash = require('bespoke-hash'),
   nav = require('bespoke-nav'),
   overview = require('bespoke-overview'),
@@ -22,5 +23,6 @@ bespoke.from({ parent: 'article.deck', slides: 'section' }, [
   bullets('.build, .build-items > *:not(.build-items)'),
   hash(),
   onstage(),
-  blackout()
+  blackout(),
+  multimedia()
 ]);

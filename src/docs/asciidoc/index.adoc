@@ -132,7 +132,11 @@ Je fais partie des co-fondateurs de Code-Troopers, des leads du Google Developer
 == ! Raisons
 [.canvas.full-width]
 //FIXME FIXME FIXME DOES NOT WORK
-video::black_mirror_reasons.mp4[]
+//video::black_mirror_reasons.mp4[]
+image::tom-sodoge-73924-unsplash.jpg[]
+
+[.credit]
+https://unsplash.com/photos/A9H40TYRbbk
 //  * gain de temps
 //  * faciliter les tâches répétitives
 
@@ -358,11 +362,18 @@ Et niveau sécurité, c’est mieux car il faut se connecter au compte Hue, apr�
 Voilà une belle façon de contrôler les lumières, qui plus est avec des interactions possible via les API, donc une gestion dans Domoticz, j’ai “juste” eu à enrichir mon système.
 ****
 
-== icon:dollar[]
-
+[.no-padding]
+== ! icon:dollar[]
+[.two-columns]
+--
+[.left-content]
+image:fabian-blank-78637-unsplash.jpg[]
+// [.credits]
+// https://unsplash.com/photos/pElSkGRA2NU
+[.right-content.no-bullets]
  * environ 120€
  * de 20 à 60€ par ampoule 
-
+--
 [.cue]
 **** 
 Niveau coût :
@@ -423,11 +434,17 @@ J’ai donc ajouté dans mon installation des capteurs d’ouverture de portes /
 Le tout a fonctionné globalement du premier coup, mais j’ai rapidement vu des problèmes de décrochage du réseau.
 ****
 
+[.no-padding]
+== ! Galère d'installation
+[.two-columns]
+--
+[.left-content]
+image:ethan-haddox-482609-unsplash.jpg[]
 
-== Galère d'installation
-
+[.right-content.no-bullets]
  * Pairage
  * Portée
+--
 
 [.cue]
 ****
@@ -436,6 +453,9 @@ Comme j'ai dit, j'ai du jouer au jeu du ça capte, ça capte pas pour le 433MHz.
 J'ai fini par réussir, mais la ou je pensais que le ZWave allait me simplifier la vie, j'ai découvert que c'était presque pire.
 Toute mon installation est dans une baie de brassage, à côté d'un mur très épais, j'ai peiné à comprendre mes problèmes d'utilisation du ZWave.
 Il s'agissait tout simplement de problèmes physique de portée du signal.
+Et pour pairer des devices, c'est simple mais il faut etre en vue direct de la clef usb (pas de rebond possible).
+C'est pas forcément pratique quand le detecteur est posé a l'opposé dans la maison.
+=> Certaine clef usb disposent d'une mini batterie et d'un bouton pour simplifier ce cas la.
 ****
 
 [.no-banner]
@@ -477,18 +497,26 @@ image::smoke_sensor.png[title="50€"]
 //== Part 4
 // Merge all the things
 // Picture with iot objects
-== Internet Of Things
+
+== ! Internet Of Things
+[.canvas.no-padding]
+image::matthew-henry-87142-unsplash.jpg[]
+
+[.credit]
+https://unsplash.com/photos/fPxOowbR6ls
  
- * TV
- * Ampli
- * Lave-linge
- * Dash Button
+//  * TV
+//  * Ampli
+//  * Lave-linge
+//  * Dash Button
 
 [.cue]
 ****
 On a des choses marrantes maintenant, parce qu'on a beaucoup de périphériques connectés donc on peut se permettre pas mal de choses.
+TV / Ampli / Lave linge
 Par exemple, j'ai du changer mon lave linge récemment. La différence de prix pour avoir une version avec Wifi était négligeable.
 J'ai donc pu remplacer mon DashButton qui me permettait de penser à vider le lave-linge par un trigger IFTTT.
+D'ailleurs le dash button mérite qu'on s'y attarde...
 ****
 
 
@@ -551,7 +579,7 @@ La encore, faire un peu d'admin sys pour mettre un bail DHCP "statique" amélior
 
 
 
-== HomeKit
+== ! HomeKit
 
  * Protocole domotique poussé par Apple
  * iOS
@@ -560,6 +588,9 @@ La encore, faire un peu d'admin sys pour mettre un bail DHCP "statique" amélior
 
 [role="image_slide upper left"]
 image::homekit.png[]
+
+[role="image_slide upper right"]
+image::techno/homekit_transparent.png[]
 
 [.cue]
 ****
@@ -577,7 +608,12 @@ Le défaut, au dela du fait que ce soit uniquement ios, est qu'il faut que le ma
 
 
 //TODO TITLE
+[.canvas.full-width.no-padding]
 == !
+image::roberto-nickson-g-237027-unsplash.jpg[]
+
+[.credit]
+https://unsplash.com/photos/Ddjl0Cicdr4
 
 [.cue]
 ****
@@ -594,7 +630,8 @@ Et HomeBridge qui me permet même de l'attaquer via iOS à la voix.
 
  * API fragiles
  * icon:github[] https://github.com/domoticz/domoticz
- 
+
+[%build]
 => passage en version instable
 
 [.cue]
@@ -605,7 +642,7 @@ Et la, c'est le drame, j'ai commencé à dépendre de version nightly de Domotic
 ****
 
 
-== Domoticz Docker Hub 
+== ! Domoticz Docker Hub 
 // hacks
 
  * construction d'une image automatisée
@@ -623,6 +660,8 @@ C'est la ou je suis allé assez loin et j'ai appris des choses marrantes sur le 
 Ca m'a permis de construire une image Docker de façon automatique pour toutes les ß de Domoticz,
 ****
 
+[.image_slide.upper.left]
+image::docker-wide.png[]
 
 == !
 
@@ -684,11 +723,11 @@ Fort de cette expérience peu agréable, j'ai réévalué mes besoins en sachant
 Et surtout ce dont j'avais vraiment besoin, avec une base de technologies existantes.
 ****
 
-== Alternatives
+== ! Alternatives
 
  * jeedom
  * openHAB
-//  * home-assistant
+ * home-assistant
 
 [role="image_slide upper left"]
 image::jeedom.png[]
@@ -700,7 +739,7 @@ image::openHAB.png[]
 
 // == Part 0
 
-== Home Assistant
+== ! Home Assistant
 
  * Python
  * Apache Software License 2.0
@@ -725,11 +764,21 @@ Les problèmes de configuration qui disparait peuvent ainsi être gérés très 
 //  * joli
 //  * stable
 
-== Coût de migration
+[.no-padding]
+== ! Coût de migration
+[.two-columns]
+--
+[.left-content]
+image::carson-arias-197710-unsplash.jpg[]
 
+[.credit]
+https://unsplash.com/photos/7Z03R1wOdmI
+
+[.right-content.no-bullets]
  * 12h environ
  * De nouvelles automatisations
  * Du geofencing
+--
 
 [.cue]
 ****
@@ -745,12 +794,22 @@ En deux minutes à peine, j'ai pu écrire l'automatisation qui fait que l'ampli 
 De même, j'ai rajouté du geofencing très simplement pour activer des scenarios automatiquement en fonction de ma présence.
 ****
 
-== Ma maison me comprend
+[.no-padding]
+== ! Ma maison me comprend
+[.two-columns]
+--
+[.left-content]
+image::kelly-sikkema-209680-unsplash.jpg[]
 
+[.credit]
+https://unsplash.com/photos/baKgjxKYegc
+
+[.right-content.no-bullets]
  * Alexa
  * Google Assistant
  * Jarvis
  * S.A.R.A.H.
+--
 
 [.cue]
 ****
@@ -761,8 +820,8 @@ Mais, Alexa et Google Assistant sont arrivés, et bien qu'on puisse douter de la
 Et, entre nous, votre téléphone n'est il pas toujours à votre écoute de toute façon ?
 ****
 
-[role="image_slide upper left"]
-image::techno/google-assistant.png[]
+// [role="image_slide upper left"]
+// image::techno/google-assistant.png[]
 
 == ! Et mes enfants aussi !
 [.canvas]
@@ -898,12 +957,20 @@ Voilà, je vous ai globalement montré et expliqué par quelles étapes / outils
 Vous êtes équipé, vous n'avez plus qu'à mettre vos chaussures autolaçantes et vous lancer, mais avant je voudrais vous donner quelques derniers conseils pratiques.
 ****
 
+[.no-padding]
 == ! Conseils
+[.two-columns]
+--
+[.left-content]
+image::glenn-carstens-peters-190592-unsplash.jpg[]
 
+[.right-content.no-bullets]
  * routeur de qualité
  * bloquer le traffic
  * créer plusieurs SSID
  * un π d'avance
+
+--
 
 [.cue]
 ****
@@ -911,14 +978,25 @@ Pensez à avoir un routeur performant, pour deux raisons principales.
 Vous allez avoir beaucoup de périphériques en Wifi, les boxs de nos FAI ne sont pas si bien pour gérer beaucoup de périphériques.
 Pouvoir bloquer le traffic vers Internet pour un périphérique voir leur créer un réseau Wifi isolé est un luxe parfois nécessaire.
 Par exemple, ma super machine à laver high-tech ne sait pas se connecter en WPA2, ce n'est noté nulle part, au bout d'un peu d'archarnement j'ai découvert qu'elle ne parlait juste pas à mon routeur...
+Un pi d'avance c'est bien aussi parce que les cartes sd c'est pas forcément tres fiable, surtout qu'elles sont bien sollicitées avec la domotique
 ****
 
+[.no-padding]
 == ! Effets de bords
+[.two-columns]
+--
+[.left-content]
+image::david-moum-238279-unsplash.jpg[]
 
+[.credit]
+https://unsplash.com/photos/nbqlWhOVu6k
+
+[.right-content.no-bullets]
  * mode invité
  * mode pas internet
  * retour de courant
- * éviter une automatisation de prendre le pas
+ * _automagiquation_
+--
 
 [.cue]
 ****
@@ -929,11 +1007,21 @@ On peut ainsi l'empêcher de rallumer une lumière qu'on viendrait d'éteindre p
 Il est important de penser au mode enfant, invité, au cas où on a pas internet et aussi à gérer le cas de la coupure de courant.
 ****
 
+[.no-padding]
 == ! Problèmes rencontrés
+[.two-columns]
+--
+[.left-content]
+image::jorik-kleen-596626-unsplash.jpg[]
 
+[.credit]
+https://unsplash.com/photos/asOVDixAb5U
+
+[.right-content.no-bullets]
  * Taille des ampoules
  * Interférences
  * Durée de vie des piles
+--
 
 [.cue]
 **** 
