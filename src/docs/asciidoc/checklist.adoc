@@ -12,14 +12,14 @@
 
 === Laptop setup
 
- * mute notif (si pas firefox)
- * clean desktop
- * caffeine 2h
- * quit spark / slack
- * quit docker
- * quit istat
- * quit btt
- * quit cloudstation / dropbox
+ * mute notif (si pas firefox) X
+ * clean desktop X
+ * caffeine 2h X
+ * quit spark / slack X 
+ * quit docker X
+ * quit istat X
+ * quit btt X
+ * quit cloudstation / dropbox X
 
 === Slides
 

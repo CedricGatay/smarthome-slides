@@ -320,10 +320,10 @@ Et pour les gens sous iOS, le compatiblité HomeKit permet d’utiliser Siri ou 
 [%build]
 --
 [role="image_slide upper left"]
-image::hue_switch.JPG[]
+image::hue_app.jpg[]
 
 [role="image_slide lower right"]
-image::hue_app.jpg[]
+image::hue_switch.JPG[]
 --
 
 [.cue]
@@ -869,31 +869,31 @@ WARNING: no clone / se tourner de 3/4 en gardant les slides en vue
 *NEXT SLIDE IS AN IFRAME*
 ****
 
-[.no-banner]
-== !
+// [.no-banner]
+// == !
 
-++++
-<iframe width="100%" height="100%" src="http://localhost:8123/">
-</iframe>
-++++
+// ++++
+// <iframe width="100%" height="100%" src="http://localhost:8123/">
+// </iframe>
+// ++++
 
-[.cue]
-****
-=> FOCUS LOSS WARNING <=
- * montrer home-assistant démarré depuis le debut de la presentation
- * faire un rapide tour de l'interface, en montrant uniquement le premier onglet (mode y'en a partout). *PAUSE*
- * passer sur le deuxième onglet pour montrer qu'on peut (et qu'on doit ranger les éléments) 
-  ** graph de consommation de la prise
-  ** prochain passage de tram
-  ** état des detecteurs d'ouverture
-  ** info instantanées (conso / lumières) *PAUSE*
+// [.cue]
+// ****
+// => FOCUS LOSS WARNING <=
+//  * montrer home-assistant démarré depuis le debut de la presentation
+//  * faire un rapide tour de l'interface, en montrant uniquement le premier onglet (mode y'en a partout). *PAUSE*
+//  * passer sur le deuxième onglet pour montrer qu'on peut (et qu'on doit ranger les éléments) 
+//   ** graph de consommation de la prise
+//   ** prochain passage de tram
+//   ** état des detecteurs d'ouverture
+//   ** info instantanées (conso / lumières) *PAUSE*
  
- * faire une automatisation 
-  ** porte ouverte, on allume la lumière et on pousse une notif html
+//  * faire une automatisation 
+//   ** porte ouverte, on allume la lumière et on pousse une notif html
 
-*TIMING ISSUE* créer une automatisation de fermeture il reste 5/10min a parler à partir d'ici
+// *TIMING ISSUE* créer une automatisation de fermeture il reste 5/10min a parler à partir d'ici
 
-****
+// ****
 
 == ! 
 
@@ -954,25 +954,25 @@ Je voulais aussi vous montrer un autre truc assez cool, c'est de parler à ma ma
 Dialogflow (anciennement A - P - I - A - I ).
 ****
 
-== !
+// == !
 
-++++
-<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/2967baa8-dcbe-45bf-a448-2a5759cfe99e" >
-</iframe>
-++++
+// ++++
+// <iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/2967baa8-dcbe-45bf-a448-2a5759cfe99e" >
+// </iframe>
+// ++++
 
-[.cue]
-****
-Je suis capable de lui demander d'allumer la lumière, ou le ventilateur
-"Allume la lumière"
-"Allume le ventilateur"
-"Combien consomme l'ordinateur ?"
-Attention, j'ai des phrases marrantes normalement pour la reco vocale 
+// [.cue]
+// ****
+// Je suis capable de lui demander d'allumer la lumière, ou le ventilateur
+// "Allume la lumière"
+// "Allume le ventilateur"
+// "Combien consomme l'ordinateur ?"
+// Attention, j'ai des phrases marrantes normalement pour la reco vocale 
 
-"Combien de pull a l'image docker domoticz ?"
-"Et jenkins ?"
+// "Combien de pull a l'image docker domoticz ?"
+// "Et jenkins ?"
 
-****
+// ****
 
 == ! 
 [.canvas]
