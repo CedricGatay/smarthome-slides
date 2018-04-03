@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Comment j&#8217;ai rendu ma maison moins bête</title><meta name="generator" content="Asciidoctor 1.5.5 (Bespoke.js converter)"><meta name="mobile-web-app-capable" content="yes"><link rel="stylesheet" href="build/build.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css"></head><body><article class="deck"><section class="title" data-title=""><h1>Comment j&#8217;ai rendu ma maison moins bête</h1><p class="bttf">MAISON&lt;</p>
+<p class="bttf reversed">]futur</p>
+<aside role="note"><p>Bonjour à tous, j&#8217;espère que votre Breizhcamp se passe bien et s&#8217;est bien passé.
+La conf touche à sa fin, vous avez certainement vu beaucoups de super talks.</p>
+<p>Vous avez certainement également noté des choses que vous voulez essayer lundi (enfin <strong>mardi</strong>) lors de votre retour au bureau.
+Je vais essayer de vous apporter un petit retour d&#8217;expérience, sur, comment j&#8217;ai essayé de rendre ma maison moins bête</p>
+<p>Peut être que ca vous donnera, du coup, des idées de réalisation pour chez vous, pas besoin d&#8217;attendre mardi (et pour le coup, c&#8217;est vous qui décidez, <strong>peut-être</strong>…).</p></aside><footer><p class="author"><span class="personname"><span class="firstname"></span> <span class="surname"></span></span></p></footer></section>
+<section><p class="bttf">disclaimer</p>
+<aside role="note"><p>Tout d&#8217;abord, je vais commencer par vous dire ce qu&#8217;on ne verra pas et du fait que ce n&#8217;est pas mon travail.
+Dans ce talk, je ne parle que de solutions du commerces que vous pouvez vous procurer pour quelques euros.
+Je ne parlerai pas de fer à souder, d&#8217;arduino, d&#8217;esp ou de resistance, <em>désolé</em></p>
+<p>Donc si je dis des bêtises, n&#8217;hésitez pas à me le dire et/ou m&#8217;envoyer un tweet pour que je corrige pour les prochaine fois
+Et si j&#8217;oublie des choses super intéressantes, c&#8217;est juste que je ne les utilise pas, donc je suis preneur pour pouvoir les rajouter à mon installation :)</p>
+<p>Je ne suis pas domoticien / electronicien, je fais du code le jour.</p></aside></section>
+<section><p><span class="icon"><i class="fa fa-twitter"></i></span> @Cedric_Gatay</p>
+<p><span class="icon"><i class="fa fa-code"></i></span> Developer</p>
+<p><span class="image small ct"><img src="./images/ct-square.png" alt="ct square"></span> Code-Troopers co-founder</p>
+<p><span class="icon"><i class="fa fa-google"></i></span> GDG Tours lead</p>
+<p><span class="image small"><img src="./images/tnt_logo.png" alt="tnt logo"></span> TouraineTech co-organizer</p>
+<aside role="note"><p>Je fais partie des co-fondateurs de Code-Troopers, des leads du Google Developer Group de Tours et co-organisateur de Touraine Tech.</p></aside></section>
+<section class="no-padding image" style="background-image: url(./images/tom-sodoge-73924-unsplash.jpg); background-size: cover; background-repeat: no-repeat">
+<p class="credit"><a href="https://unsplash.com/photos/A9H40TYRbbk" class="bare">https://unsplash.com/photos/A9H40TYRbbk</a></p>
+<aside role="note"><p>Pourquoi j&#8217;ai voulu automatiser ma maison ? Je voulais gagner du temps sur les tâches basiques et me simplifier la vie.
+Les deux exemple les plus visibles sont la gestion des volets roulants et des lumières du salon/séjour.
+En effet j&#8217;ai une grande pièce avec un grand plafond tendu qui donne un style sympa mais qui ne présente donc pas de plafonniers ni de spots.
+Du coup, allumer les lumières du salon voulait dire aller manipuler les 5 interrupteurs partout dans la pièce (et bien sûr même punition lors de l&#8217;extinction).
+Trouver un moyen pour centraliser tout ca me paraissait un bon exercice.
+L&#8217;autre point est la gestion des volets roulants, c&#8217;est assez pénible d&#8217;aller dans chacune des pièces ouvrir / fermer manuellement les volets (bon ok c&#8217;est être faignant).
+C&#8217;est aussi sympa de pouvoir préparer le coucher des enfants en fermant les volets avant d’entrer dans leur chambre.</p>
+<p>Les enfants, parlons en, c&#8217;est l&#8217;autre point qui m’a conduit à améliorer ma maison.
+Les jeunes parents me comprendront quand je vais évoquer la sempiternelle question du “est ce qu&#8217;il est assez ou trop couvert”.
+Une sonde de température coûte pas grand chose et permet de vite se rassurer (surtout quand on change de domicile et qu&#8217;on ne connait pas bien sa réaction aux températures extérieures)</p></aside></section>
+<section><p class="bttf">MAISON&lt;<br></p>
+<p class="bttf reversed">]futur<br>
+<span class="small-shadow">^ {</span></p>
+<aside role="note"><p>J&#8217;avais donc trouvé un bon scénario pou 'automatiser ma maison et essayer de la rendre moins bête.
+Voila donc la première partie de mon périple d&#8217;automatisation, tout en utilisant uniquement des solutions du commerce finalement.
+Solutions du commerce, mais pas box toute faite, j&#8217;avais quand même envie de comprendre ce qui se passait.</p>
+<p>== Premiers pas</p>
+<ul><li><span class="primary">prises commandées</span></li><li><span class="primary">sondes de température</span></li><li><span class="primary">contrôle des volets roulants</span></li></ul>
+<p>Ainsi en quelques mois, j&#8217;avais le contrôle de mes volets et lumières depuis mon smartphone ou un ordinateur en dépensant relativement peu.</p></aside></section>
+<section class="no-padding"><div class="two-columns"><p class="left-content"><span class="image"><img src="./images/Biffs-panorama.jpg" alt="Biffs panorama"></span></p>
+<ul class="right-content"><li><span class="primary">environ 250€</span></li><li><span class="primary">5h de configuration</span></li></ul></div>
+<aside role="note"><ul><li><span class="primary">Quelques prises commandées (50€ les trois en magasin de bricolage)</span></li><li><span class="primary">Un raspberry pi (50€) [/ un nas (400€)]</span></li><li><span class="primary">Un émetteur rfxtrx (110€)</span></li><li><span class="primary">Des sondes de température (10 - 20€)</span></li><li><span class="primary">Quelques heures de configuration du logiciel qu&#8217;un ami utilisait et m’avait conseillé : domoticz (0€, 5h)</span></li></ul></aside></section>
+<section><ul><li><span class="primary">433MHz</span></li><li><span class="primary">Somfy RTS</span></li></ul>
+<aside role="note"><p>So far so good, mais quelques problèmes sont vite arrivés : la technologie derrière toute mon installation est du 433MHz, c&#8217;est du fire and forget.
+Dans certains cas ce n&#8217;est pas important, par exemple les sondes de température envoient toutes les 30s les informations, si j&#8217;en rate quelques uns ce n’est pas grave.
+En revanche si j’envoie l&#8217;ordre de fermer les volets, je m’attends à ce que ce soit fait, et en l&#8217;occurrence, je ne peux pas en être sûr…</p></aside>
+<figure class="image image_slide upper left"><img src="./images/techno/rfxtrx.png" alt="rfxtrx"></figure></section>
+<section class="image" style="background-image: url(./images/stock-footage-businessman-searching-for-signal-on-cellphone-in-the-desert.gif); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>Du coup j’en suis venu à utiliser la technique du “ça marche la” pour placer au mieux l’émetteur.</p></aside></section>
+<section><ul><li><span class="primary">fiabilité hasardeuse</span></li><li><span class="primary">bas coût</span></li><li><span class="primary"><span class="line-through">sécurité</span></span></li></ul>
+<aside role="note"><p>Et enfin la sécurité de l&#8217;installation : globalement il n’y en a aucune en 433MHz, les températures sont balancées à tout le monde, les ordres d’allumage extinctions de prises commandées sont ouverts à tous.
+Le seul point sécurisé est le protocole utilisé pour les volets (Somfy à fait une surcouche avec du chiffrement avec un rolling code, et utilise une frequence tres legeremnt différente).
+Le truc marrant avec le 433MHz, c’est que c’est utilisé pour tout plein de choses depuis assez longtemps, je capte par exemple un détecteur de mouvement de la cour de l’immeuble à côté de chez moi.
+Et ca sert encore chez PSA par exemple, les clefs sont en 433MHz, j&#8217;espère juste que c&#8217;est juste la frequence et qu&#8217;il n&#8217;y a aucun truc en clair&#8230;&#8203;</p></aside></section>
+<section class="image" style="background-image: url(./images/franz-harvin-aceituna-432708-unsplash.jpg); background-size: cover; background-repeat: no-repeat">
+<p class="credit"><a href="https://unsplash.com/photos/vkfrFrAIO4o" class="bare">https://unsplash.com/photos/vkfrFrAIO4o</a></p>
+<aside role="note"><p>Au niveau du contrôle, à l’époque j’étais encore sous Android, j’utilisais donc l’application “officielle” Domoticz pour mon smartphone, et des télécommandes pour le reste (dans les tiroirs de table basse).
+En gros c’était du contrôle uniquement de mon ressort, pas très utilisable par un invité (ni sans un smartphone sous la main).
+Ni avec l&#8217;interface domoticz qui est pas forcément hyper sexy.</p>
+<p><strong>CLICK DOMOTICZ</strong>
+<strong>CLICK DYI</strong></p></aside>
+<div class="build build-items"><figure class="image image_slide lower right bigger"><img src="./images/diy_remote.JPG" alt="diy remote"></figure>
+<figure class="image image_slide upper left bigger"><img src="./images/domoticz.png" alt="domoticz"></figure></div></section>
+<section class="image" style="background-image: url(./images/couleurs_partout.jpg); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>Après quelques mois de bidouilles avec le 433MHz, j’ai réussi à contourner ce qui me gênait et j’arrive a bien parler avec tous mes équipements.
+En plaçant correctement l’antenne je n’ai quasiment aucun ordre non fonctionnel !
+Par contre un point reste un peu dommage, la gestion des lumières n’est pas assez fines avec uniquement des interrupteurs commandés (lag).
+C’est sympa mais faire pouvoir réduire la luminosité (et la couleur en bonus) ca serait sympa.</p></aside></section>
+<section><ul><li><span class="primary">Philips Hue</span></li><li><span class="primary">Zigbee</span></li></ul>
+<figure class="image image_slide upper left"><img src="./images/techno/philips_hue.png" alt="philips hue"></figure>
+<aside role="note"><p>Je me suis donc décidé à utiliser une solution du marché avec les ampoules Philips Hue, des interrupteurs compatibles et le bridge.
+Le bridge c’est finalement un petit périphérique que vous posez sur votre réseau qui vous permet d’attaquer vos lampes via une API.
+(on est des geeks, on aime les api)
+Le plus c’est qu’on a des applications sympa Android et iOS permettant le contrôle des luminosités et couleurs (les enfants adorent jouer avec).
+Et pour les gens sous iOS, le compatiblité HomeKit permet d’utiliser Siri ou l’application Maison pour changer la luminosité (et là ça commence à devenir classe) à la voix.</p></aside></section>
+<section><ul><li><span class="primary">Applications mobiles</span></li><li><span class="primary">Interrupteurs physiques</span></li><li><span class="primary">Contrôle Vocal</span></li></ul>
+<div class="build build-items"><figure class="image image_slide upper left"><img src="./images/hue_app.jpg" alt="hue app"></figure>
+<figure class="image image_slide lower right"><img src="./images/hue_switch.JPG" alt="hue switch"></figure></div>
+<aside role="note"><p>Niveau utilisabilité par n’importe qui j’ai considérablement gagné en confort, avec un iPad qui traine dans le salon, on peut facilement invoquer Siri ou utiliser l’application Maison pour gérer les lumières.
+Pour les invités, des interrupteurs “standard” permettent de gérer la lumière, on est dans une configuration confortable !
+Et niveau sécurité, c’est mieux car il faut se connecter au compte Hue, après les données se balladent un peu partout sur le réseau et en dehors (peut-être).
+(Siri / Google Assistant / Alexa)
+Voilà une belle façon de contrôler les lumières, qui plus est avec des interactions possible via les API, donc une gestion dans Domoticz, j’ai “juste” eu à enrichir mon système.</p></aside></section>
+<section class="no-padding"><div class="two-columns"><p class="left-content"><span class="image"><img src="./images/fabian-blank-78637-unsplash.jpg" alt="fabian blank 78637 unsplash"></span></p>
+<p class="credit"><a href="https://unsplash.com/photos/pElSkGRA2NU" class="bare">https://unsplash.com/photos/pElSkGRA2NU</a></p>
+<ul class="right-content no-bullets"><li><span class="primary">environ 120€</span></li><li><span class="primary">de 20 à 60€ par ampoule</span></li></ul></div>
+<aside role="note"><p>Niveau coût :</p>
+<ul><li><span class="primary">Pack de démarrage Hue 1 ampoule, 1 interrupteur, 1 pont (120€)</span></li><li><span class="primary">Une ampoule (20 &#8594; 60€) en fonction de la possibilité de changer les couleurs ou non</span></li><li><span class="primary">Temps de configuration (1h)</span></li></ul>
+<p>Il y a aussi des solutions moins onéreuses pour nous autres <em>pauvres</em> développeurs.</p></aside></section>
+<section class="no-padding"><div class="two-columns"><p class="left-content"><span class="image"><img src="./images/tradfri.jpg" alt="tradfri"></span></p>
+<ul class="right-content no-bullet"><li><span class="primary">Ikea Tradfri</span></li><li><span class="primary">Zigbee</span></li><li><span class="primary">E14</span></li></ul></div>
+<aside role="note"><p>J&#8217;ai aussi craqué en me promenant dans un magasin de la grande chaîne suèdoise, j&#8217;ai vu que leur système d&#8217;éclairage proposait des ampoules E14 (ce que Philips ne faisait pas à l&#8217;époque).
+Bien que ce soit le même protocole (Zigbee) que chez Philips, ce n&#8217;était pas interopérable à l&#8217;époque.
+Il parait que ca l&#8217;est devenu, mais je n&#8217;ai pas testé.</p></aside></section>
+<section><ul><li><span class="primary">868.42 MHz</span></li><li><span class="primary">réseau maillé</span></li><li><span class="primary">avec retour d&#8217;état</span></li></ul>
+<figure class="image image_slide upper left"><img src="./images/techno/z-wave.png" alt="z wave"></figure>
+<aside role="note"><p>Une fois que j’ai eu une maison assez facilitée niveau vie intérieure, j’ai voulu ajouter un peu de sécurité, principalement pour gérer les cas de fenêtres / portes laissées ouvertes.
+Je n’avais pas envie d’exposer cette donnée via du 433MHz non fiable / ni sécurisé et je me suis donc tourné vers du ZWave, qui est la deuxième technologie la plus utilisée sur le marché je pense.</p>
+<p>J’ai donc ajouté dans mon installation des capteurs d’ouverture de portes / fenêtres en ZWave (ainsi qu’une clef ZWave) pour être capable d’intéragir avec les périphériques.
+Le tout a fonctionné globalement du premier coup, mais j’ai rapidement vu des problèmes de décrochage du réseau.</p></aside></section>
+<section class="no-padding"><div class="two-columns"><p class="left-content"><span class="image"><img src="./images/ethan-haddox-482609-unsplash.jpg" alt="ethan haddox 482609 unsplash"></span></p>
+<p class="credit"><a href="https://unsplash.com/photos/TsXmzTc1gDk" class="bare">https://unsplash.com/photos/TsXmzTc1gDk</a></p>
+<ul class="right-content no-bullets"><li><span class="primary">Pairage</span></li><li><span class="primary">Portée</span></li></ul></div>
+<aside role="note"><p>Et c&#8217;est là que mes difficultés avec ma solution entièrement ont commencé.
+Comme j&#8217;ai dit, j&#8217;ai du jouer au jeu du ça capte, ça capte pas pour le 433MHz.
+J&#8217;ai fini par réussir, mais la ou je pensais que le ZWave allait me simplifier la vie, j&#8217;ai découvert que c&#8217;était presque pire.
+Toute mon installation est dans une baie de brassage, à côté d&#8217;un mur très épais, j&#8217;ai peiné à comprendre mes problèmes d&#8217;utilisation du ZWave.
+Il s&#8217;agissait tout simplement de problèmes physique de portée du signal.
+Et pour pairer des devices, c&#8217;est simple mais il faut etre en vue direct de la clef usb (pas de rebond possible).
+C&#8217;est pas forcément pratique quand le detecteur est posé a l&#8217;opposé dans la maison.
+&#8658; Certaine clef usb disposent d&#8217;une mini batterie et d&#8217;un bouton pour simplifier ce cas la.</p></aside></section>
+<section class="no-banner"><aside role="note"><p>Niveau coût:</p>
+<ul><li><span class="primary">Clef ZWave 50€</span></li><li><span class="primary">Detecteur d&#8217;ouverture 40€</span></li><li><span class="primary">Prise commandée 50€</span></li><li><span class="primary">Détecteur de mouvements 50€</span></li><li><span class="primary">Temps de configuration (2h)</span></li></ul>
+<p>Au niveau du contrôle, ca n&#8217;a pas changé, les outils sont passifs, par contre j&#8217;ai mis en place des automatisations.
+Par exemple, je peux lever des alertes si une porte est ouverte depuis plus de 5 minutes (genre la porte du garage)</p></aside>
+<div class="build build-items"><figure class="image image_slide upper left captioned"><img src="./images/connected_plug.png" alt="connected plug"><figcaption>35€</figcaption></figure>
+<figure class="image image_slide lower right captioned"><img src="./images/door_sensor.png" alt="door sensor"><figcaption>40€</figcaption></figure>
+<figure class="image image_slide lower left captioned"><img src="./images/motion_sensor.png" alt="motion sensor"><figcaption>40€</figcaption></figure>
+<figure class="image image_slide upper right captioned"><img src="./images/smoke_sensor.png" alt="smoke sensor"><figcaption>50€</figcaption></figure>
+<ul><li><span class="primary">50€ pour une clef ZWave</span></li><li><span class="primary">50€ par élément</span></li></ul></div></section>
+<section class="image" style="background-image: url(./images/matthew-henry-87142-unsplash.jpg); background-size: cover; background-repeat: no-repeat">
+<p class="credit"><a href="https://unsplash.com/photos/fPxOowbR6ls" class="bare">https://unsplash.com/photos/fPxOowbR6ls</a></p>
+<aside role="note"><p>On a des choses marrantes maintenant, parce qu&#8217;on a beaucoup de périphériques connectés donc on peut se permettre pas mal de choses.
+TV / Ampli / Lave linge
+Par exemple, j&#8217;ai du changer mon lave linge récemment. La différence de prix pour avoir une version avec Wifi était négligeable.
+J&#8217;ai donc pu remplacer mon DashButton qui me permettait de penser à vider le lave-linge par un trigger IFTTT.
+D&#8217;ailleurs le dash button mérite qu&#8217;on s&#8217;y attarde&#8230;&#8203;</p></aside></section>
+<section><ul><li><span class="primary">5€ le bouton</span></li><li><span class="primary">Wifi</span></li><li><span class="primary">Permet de commander du Thé</span></li></ul>
+<aside role="note"><p>Il y a un élément interessant quand on fait un peu de domotique et qu&#8217;on a besoin de déclencheur, le Dash Button.
+Vous avez surement déjà entendu parler de ce dispositif, il coute peu cher (et une partie est créditée sur le compte amazon).
+Il se connecte à votre Wifi et permet de commander tout plein de choses, des couches, du thé, en un click.</p>
+<p>Le crédit de 5€ s&#8217;ajoute lorsqu&#8217;on active et presse pour la premiere fois un nouveau dash button.
+<strong>STEP</strong>
+Un fait marrant c&#8217;est qu&#8217;on peut utiliser ces 5€ pour, par exemple,
+commander un autre dash button à 5€ qui va créditer notre compte de 5€ pour permettre de commander&#8230;&#8203;&#8594; vous voyez l&#8217;astuce ?</p></aside>
+<figure class="image image_slide upper left"><img src="./images/techno/dash_button.png" alt="dash button"></figure></section>
+<section class="image" style="background-image: url(./images/markus-spiske-482453-unsplash.jpg); background-size: cover; background-repeat: no-repeat">
+<p class="credit"><a href="https://unsplash.com/photos/FrWStnBsfxI" class="bare">https://unsplash.com/photos/FrWStnBsfxI</a></p>
+<aside role="note"><p>Si vous avez eu des cours de réseau il y a un petit moment, vous vous rappelez peut être de la sequence d&#8217;enregistrement sur un réseau.
+Le bouton, lors de l&#8217;appui, va faire une requête ARP qu&#8217;on va pouvoir attraper pour savoir qu&#8217;il a été pressé (c&#8217;est le hack).
+Pourquoi c&#8217;est un bon déclencheur, c&#8217;est qu&#8217;on peut assez facilement le détourner de son usage nominal.
+On configurant le wifi uniquement sur un bouton, on peut voir quand il se "réveille" en scannant l&#8217;ARP.</p></aside></section>
+<section><ul><li><span class="primary"><span class="icon"><i class="fa fa-github"></i></span> <a href="https://github.com/maddox/dasher" class="bare">https://github.com/maddox/dasher</a></span></li><li><span class="primary">Bouton poussoir</span></li><li><span class="primary">1-5s de délai</span></li><li><span class="primary">10s de carence</span></li></ul>
+<aside role="note"><p>Il y a beaucoup de projets qui permettent l&#8217;exploitation des DashButton.
+J&#8217;utilise Dasher qui a le mérite de permettre la configuration d&#8217;actions de natures différentes (appel http, shell script).
+Il ne faut donc pas être pressé et c&#8217;est un "push button", pas un bouton avec un état on/off.
+Ca fait un bon moyen de déclencher des événements, le "défaut" est que le réveil est relativement lent.
+La encore, faire un peu d&#8217;admin sys pour mettre un bail DHCP "statique" améliore la situation</p></aside></section>
+<section><ul><li><span class="primary">Protocole domotique poussé par Apple</span></li><li><span class="primary">iOS</span></li><li><span class="primary">Compatibilité restreinte</span></li></ul>
+<figure class="image image_slide upper left"><img src="./images/homekit.png" alt="homekit"></figure>
+<figure class="image image_slide upper right"><img src="./images/techno/homekit_transparent.png" alt="homekit transparent"></figure>
+<aside role="note"><p>Comme je disais tout à l&#8217;heure, j&#8217;étais au début de mon installation un utilisateur d&#8217;Android.
+J&#8217;ai reswitché vers iOS pour tout plein de raisons, et je me suis interessé à HomeKit, l&#8217;implémentation domotique poussée par Apple.
+Le défaut, au dela du fait que ce soit uniquement ios, est qu&#8217;il faut que le matériel soit compatible (ou que le logiciel le soit depuis peu).</p></aside></section>
+<section><ul><li><span class="primary"><span class="icon"><i class="fa fa-github"></i></span> <a href="https://github.com/nfarina/homebridge" class="bare">https://github.com/nfarina/homebridge</a></span></li><li><span class="primary">NodeJS</span></li><li><span class="primary">Passerelle vers les éléments non-compatibles</span></li></ul></section>
+<section class="canvas full-width no-padding"><figure class="image"><img src="./images/roberto-nickson-g-237027-unsplash.jpg" alt="roberto nickson g 237027 unsplash"></figure>
+<p class="credit"><a href="https://unsplash.com/photos/Ddjl0Cicdr4" class="bare">https://unsplash.com/photos/Ddjl0Cicdr4</a></p>
+<aside role="note"><p>En résumé, mon installation se comporte bien avec trois grosses brique logicielles.
+Domoticz pour l&#8217;intelligence globale de mon système domotique
+Dasher pour me permettre de déclencher des évenements simplement avec mes dash buttons
+Et HomeBridge qui me permet même de l&#8217;attaquer via iOS à la voix.</p>
+<p>J&#8217;ai un contrôle assez fin de ce que je cherche et j&#8217;ai intégré pas mal de périphériques connectés divers aussi au passage.
+Comme par exemple ma télécommande universelle logitech harmony</p>
+<p><strong>MAIS</strong></p></aside></section>
+<section><ul><li><span class="primary">API fragiles</span></li><li><span class="primary"><span class="icon"><i class="fa fa-github"></i></span> <a href="https://github.com/domoticz/domoticz" class="bare">https://github.com/domoticz/domoticz</a></span></li></ul>
+<aside role="note"><p>L&#8217;inconvénient à ne pas utiliser une solution du commerce toute en un est qu&#8217;on repose sur du reverse engineering ou de la tolerance des constructeurs
+La beauté de l&#8217;open-source fait qu&#8217;une API qui a bougé ne reste pas isolée très longtemps et qu&#8217;un fix est rapidement disponible, sur le github du projet.
+En l&#8217;occurence, sur le github de domoticz, c&#8217;était assez facile de construire sa propre image</p></aside></section>
+<section><p>&#8658; passage en version <span class="beta-marker">ßeta</span></p>
+<aside role="note"><p>Mais du coup, le drame est un peu que j&#8217;ai donc commencé à dépendre de versions nightly de Domoticz.
+Je vais quand même faire une apparté pour parler d&#8217;un petit truc marrant que j&#8217;ai découvert à cette occasion.</p>
+<p>Mon installation de Domoticz <em>était</em> gérée dans un docker qui tournait sur un synology.
+En cherchant, je me suis rendu compte qu&#8217;il n&#8217;y avait pas de nightly build / beta build de Domoticz sous forme d&#8217;image Docker.
+Je me suis mis à en faire une, avec un Jenkins c&#8217;est assez facile de lancer le build, mais j&#8217;ai rencontré des limites sur mon repo "externe" aux sources.</p>
+<p>De plus l&#8217;équipe ne fait pas des tags pour toute les beta mais mets à jour le site avec la dernière version.
+J&#8217;ai donc utilisé la méthode un peu bourrin d&#8217;aller lancer un script toutes les heures pour aller voir s&#8217;il y a une nouvelle beta</p></aside></section>
+<section><ul><li><span class="primary">construction d&#8217;une image automatisée</span></li><li><span class="primary">hooks cachés dans hub</span></li><li><span class="primary">push de tag vide</span></li></ul>
+<p><span class="icon"><i class="fa fa-github"></i></span> <a href="https://github.com/CedricGatay/docker_domoticz" class="bare">https://github.com/CedricGatay/docker_domoticz</a></p>
+<aside role="note"><p>Ce qui est marrant, c&#8217;est que, grace aux hooks, faire un build d&#8217;une version en particulier se résume à faire un push d&#8217;un nouveau tag, vide&#8230;&#8203;
+Pour les curieux, le repo github est visible et peu sûrement servir à s&#8217;inspirer.</p></aside>
+<figure class="image image_slide upper left"><img src="./images/docker-wide.png" alt="docker wide"></figure></section>
+<section><pre class="source"><code data-lang="shell" class="language-shell prettyprint">if [[ "$DOCKER_TAG" == *-beta ]];
+then
+ docker build  \
+     --build-arg VCS_REF=$SOURCE_COMMIT \
+     -t $IMAGE_NAME .;
+else
+ docker build  \
+     --build-arg BRANCH_NAME=$DOCKER_TAG \ <i class="conum" data-value="1"></i><b>(1)</b>
+     --build-arg VCS_REF=$SOURCE_COMMIT \
+     -t $IMAGE_NAME .;
+fi</code></pre>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>BRANCH_NAME</code> est utilisé lors du <code>git clone</code></td>
+</tr>
+</table>
+</div>
+<aside role="note"><p>L&#8217;idée est juste de push un tag vide sur le repo (a chaque nouveau commit sur master en fait / nouveau numéro de version),
+Le hook se charge d&#8217;injecter la variable d&#8217;env nécessaire et ensuite déclenche le build de Domoticz dans l&#8217;image Docker.</p>
+<p>Le côté marrant c&#8217;est qu&#8217;il y a environ 190k pull, sur une image que je n&#8217;utilise pas (j&#8217;ai même mergé ma premiere PR ce we), parce qu&#8217;en fait &#8230;&#8203;
+<strong>SUSPEND</strong></p></aside></section>
+<section class="image" style="background-image: url(./images/broken_home.gif); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>J&#8217;ai cassé ma maison !</p>
+<p>Et forcément, quand on dépend de <code>-SNAPSHOT</code> des choses pas cool arrivent :</p>
+<ul><li><span class="primary">système qui ne démarre pas</span></li><li><span class="primary">module non fonctionnels</span></li><li><span class="primary"><strong>PAUSE</strong></span></li><li><span class="primary">j&#8217;ai même fini par perdre ma configuration</span></li></ul>
+<p>Niveau coût:</p>
+<ul><li><span class="primary">pas mal de temps perdu</span></li><li><span class="primary">de l&#8217;agacement</span></li></ul></aside></section>
+<section><p class="bttf">MAISON&lt;<br></p>
+<p class="bttf reversed">]futur<br>
+<span class="small-shadow">^ }</span></p>
+<aside role="note"><p>Fort de cette expérience peu agréable, j&#8217;ai réévalué mes besoins en sachant ce que je voulais faire et ce dont je disposais.
+Et surtout ce dont j&#8217;avais vraiment besoin, avec une base de technologies existantes.</p></aside></section>
+<section><ul><li><span class="primary">jeedom</span></li><li><span class="primary">openHAB</span></li><li><span class="primary">home-assistant</span></li></ul>
+<div class="build build-items"><figure class="image image_slide upper left"><img src="./images/jeedom.png" alt="jeedom"></figure>
+<figure class="image image_slide lower right"><img src="./images/openHAB.png" alt="openHAB"></figure></div>
+<aside role="note"><p>J&#8217;ai donc réenvisagé les logiciels centralisateurs qui existaient en open source pour les réévaluer et tester.
+* Jeedom :
+  <strong>  il y a eu un très bon talk hier à ce sujet, je n&#8217;ai pas eu la même expérience et j&#8217;ai eu du mal avec l&#8217;interface pour en faire ce que je voulais.
+  </strong> l&#8217;outil est a base de plugin, certain payant, mais ca ne dépasse pas le prix d&#8217;une app mobile, quand on voit le prix de l&#8217;équipement
+  qu&#8217;on met chez soit, on n&#8217;est vraiment pas à 2-5€
+* openHAB
+  <strong> c&#8217;est du java, je me suis dit "cool je vais pouvoir contribuer", c&#8217;est du material c&#8217;est assez joli etc.
+  </strong> j&#8217;ai jamais réussi à configurer correctement les premiers éléments que je voulais intégrer</p>
+<p><strong>PAUSE</strong>
+<strong>Je suis surement pas complétement doué avec les IHM de configuration</strong></p>
+<ul><li><span class="primary">Home assistant</span><ul><li><span class="primary">je l&#8217;avais écarté au début, mais finalement, je lui ai donné sa chance</span></li></ul></li></ul>
+<p><strong>SKIP</strong></p></aside></section>
+<section><ul><li><span class="primary">Python 3.5</span></li><li><span class="primary">Apache Software License 2.0</span></li><li><span class="primary">configuration YAML</span></li><li><span class="primary">1000 composants</span></li><li><span class="primary">deux releases par mois</span></li></ul>
+<figure class="image image_slide upper left"><img src="./images/home-assistant.png" alt="home assistant"></figure>
+<aside role="note"><p>Je suis passé sur Home Assistant principalement pour le support très étendu et très actif de différenes technologies.
+Dans les bonus, la configuration de Home Assistant est basée sur des fichiers YAML.
+Tout le monde aime detester le YAML, mais ce qu&#8217;on peut adorer c&#8217;est que c&#8217;est un format génialement `diff`able et gérable avec Git.
+Le problème de la configuration qui disparait peut ainsi être géré très facilement.</p></aside></section>
+<section class="no-padding"><div class="two-columns"><figure class="image left-content"><img src="./images/carson-arias-197710-unsplash.jpg" alt="carson arias 197710 unsplash"></figure>
+<p class="credit"><a href="https://unsplash.com/photos/7Z03R1wOdmI" class="bare">https://unsplash.com/photos/7Z03R1wOdmI</a></p>
+<ul class="right-content no-bullets"><li><span class="primary">12h environ</span></li><li><span class="primary">De nouvelles automatisations</span></li><li><span class="primary">Du geofencing</span></li></ul></div>
+<aside role="note"><p>Temps de reconfiguration: 12h, avec beaucoup de périphériques, tout reconfigurer prend du temps.
+Je vous montrerai à quoi peut ressembler home-assistant en version "brute", il y a énormément de choses.
+C&#8217;est pas très encourageant, mais on arrive vite à en faire ce qu&#8217;on veut.</p>
+<p>Le nombre d&#8217;intégration présent de base est assez impressionnant et m&#8217;a permis facilement de rajouter des automatisations.
+Par exemple, on a souvent l&#8217;habitude de démarrer la musique avec nos téléphones sur Spotify.
+Spotify qui est malin et qui allume tout seul l&#8217;ampli, par contre il n&#8217;éteint pas automatiquement une fois la playlist terminée.
+En deux minutes à peine, j&#8217;ai pu écrire l&#8217;automatisation qui fait que l&#8217;ampli s&#8217;éteint s&#8217;il <em>idle</em> pendant 3 minutes.</p>
+<p>De même, j&#8217;ai rajouté du geofencing très simplement pour activer des scenarios automatiquement en fonction de ma présence.</p></aside></section>
+<section class="no-padding"><div class="two-columns"><figure class="image left-content"><img src="./images/kelly-sikkema-209680-unsplash.jpg" alt="kelly sikkema 209680 unsplash"></figure>
+<p class="credit"><a href="https://unsplash.com/photos/baKgjxKYegc" class="bare">https://unsplash.com/photos/baKgjxKYegc</a></p>
+<ul class="right-content no-bullets"><li><span class="primary">Alexa</span></li><li><span class="primary">Google Assistant</span></li><li><span class="primary">Jarvis</span></li><li><span class="primary">S.A.R.A.H.</span></li></ul></div>
+<aside role="note"><p>Pour ceux qui s&#8217;interessent a la domotique, il y a plusieurs solutions qui existent pour permettre le pilotage de sa maison par la voix.
+Un des projets notable s&#8217;appelle S.A.R.A.H., et permet d&#8217;utiliser un Kinect pour gérer la partie reconnaissance vocale.
+Mais, Alexa et Google Assistant sont arrivés, et bien qu&#8217;on puisse douter de la destination des données collectées, il faut avouer que ce sont des gadgets sympa.
+Le problème de poser un micro chez soit est aussi le côté esthétique, et je ne me sentais pas assez fort en design 3D pour imprimer de beaux boitiers.
+Et, entre nous, votre téléphone n&#8217;est il pas toujours à votre écoute de toute façon ?</p></aside></section>
+<section class="image" style="background-image: url(./images/ouvre_volets.gif); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>"Ok Google, ouvre les volets !"
+Home Assistant dispose depuis quelques mois d&#8217;une intégration de Google Actions, et m&#8217;a donc permis de piloter ma maison simplement avec un Google Home.</p>
+<p>Pour dire vrai, il a surtout permis à mes enfants de piloter la maison simplement.
+C&#8217;est tellement amusant de les voir répéter les phrases quand le Google Home dit qu&#8217;il n&#8217;a pas compris.
+Ainsi, la domotique a permis d&#8217;aider a améliorer la prononciation de mes enfants "OK Google, ouvre les volets".</p>
+<p>Assez parlé, une petite démo du tout ne fera pas de mal</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+no clone / se tourner de 3/4 en gardant les slides en vue
+</td>
+</tr>
+</table>
+</div>
+<p><strong>NEXT SLIDE IS AN IFRAME</strong></p></aside></section>
+<section><pre class="source"><code data-lang="yaml" class="language-yaml prettyprint">zwave:
+  usb_path: /dev/cu.usbmodem1411
+  network_key: "0x5C, 0x6A, 0x84, 0x16, 0x9E, 0x60, 0x28, 0x9A, 0xF9, 0x8B, 0x69, 0x67, 0x6B, 0x75, 0x87, 0x2F"
+rfxtrx:
+  device: /dev/tty.usbserial-A4VBQJPT
+light:
+  - platform: rfxtrx
+    automatic_add: True</code></pre>
+<aside role="note"><p>La configuration est tres simple, on défini les chemins d&#8217;acces vers les périphériques, on peut améliorer les noms cryptiques avec udev par exemple
+Je vous montre la configuration sur mon mac qui fait tourner HA en fait la, c&#8217;est un peu plus "souple" sur un linux</p></aside></section>
+<section><pre class="source"><code data-lang="yaml" class="language-yaml prettyprint">switch:
+  platform: rfxtrx
+  automatic_add: True
+  devices:
+    0b110000014e18e601010f50:
+      name: Prise 1
+    0b110002014e18e602010f50:
+      name: Prise 2</code></pre>
+<aside role="note"><p>La on peut noter qu&#8217;on est capable de nommer proprement une prise commandée, parce qu&#8217;en fait, la sequence est simplement son ID.
+C&#8217;est open, comme je vous l&#8217;avais dit, et du coup, la petite option automatic_add peut être bien pratique pour se rendre compte de ce qu&#8217;on "ajoute" et renommer ensuite
+(a passer a false des que possible pour éviter de se faire polluer)</p></aside></section>
+<section><pre class="source"><code data-lang="yaml" class="language-yaml prettyprint">- action:
+  - data:
+      entity_id: switch.prise_1
+    service: switch.turn_on
+  alias: Porte ouverte - lumière
+  condition: []
+  id: '1521664603446'
+  trigger:
+  - entity_id: binary_sensor.sensor_porte
+    from: 'off'
+    platform: state
+    to: 'on'</code></pre>
+<aside role="note"><p>Source d&#8217;une automatisation, donc on voit bien les trigger / condition / action</p></aside></section>
+<section><pre class="source"><code data-lang="yaml" class="language-yaml prettyprint">  - platform: scrape
+    resource: 'https://mobi.filbleu.fr/horaires-et-trajet/horaires-temps-reel?view=tempsreel&amp;id_ligne=A&amp;id_arret=JJAU-1T&amp;ordering=1&amp;submit_bt=recherche&amp;user=0'
+    name: Jean_Jaures_Aller
+    select: "span.passage.passage0"
+  - platform: rest
+    resource: "https://hub.docker.com/v2/repositories/cgatay/domoticz/"
+    value_template: '{{value_json.pull_count}}'
+    name: "cgatay/domoticz pull"</code></pre>
+<aside role="note"><p>Comme je disais, c&#8217;est un produit tres complet et on peut meme faire des choses qui relevent presque de l&#8217;admin sys si on veut
+Par exemple je vais scraper les heures de prochains passage du tram pas loin de chez moi grace a ca (et je peux donc déclencher des alertes du "trop tard" si je veux)</p>
+<p><strong>PAUSE</strong></p>
+<p>Je voulais aussi vous montrer un autre truc assez cool, c&#8217;est de parler à ma maison, avec un outil que vous connaissez surement,
+Dialogflow (anciennement A - P - I - A - I ).</p></aside></section>
+<section class="image" style="background-image: url(./images/self_lacing_shoes.gif); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>Voilà, je vous ai globalement montré et expliqué par quelles étapes / outils / techniques je suis passé pour rendre ma maison moins "dumb"
+Vous êtes équipé, vous n&#8217;avez plus qu&#8217;à mettre vos chaussures autolaçantes et vous lancer, mais avant je voudrais vous donner quelques derniers conseils pratiques.</p></aside></section>
+<section class="no-padding"><div class="two-columns"><figure class="image left-content"><img src="./images/glenn-carstens-peters-190592-unsplash.jpg" alt="glenn carstens peters 190592 unsplash"></figure>
+<p class="credit"><a href="https://unsplash.com/photos/RLw-UC03Gwc" class="bare">https://unsplash.com/photos/RLw-UC03Gwc</a></p>
+<ul class="right-content no-bullets"><li><span class="primary">routeur de qualité</span></li><li><span class="primary">bloquer le traffic</span></li><li><span class="primary">créer plusieurs SSID</span></li><li><span class="primary">un π d&#8217;avance</span></li></ul></div>
+<aside role="note"><p>Pensez à avoir un routeur performant, pour deux raisons principales.
+Vous allez avoir beaucoup de périphériques en Wifi, les boxs de nos FAI ne sont pas si bien pour gérer beaucoup de périphériques.
+Pouvoir bloquer le traffic vers Internet pour un périphérique voir leur créer un réseau Wifi isolé est un luxe parfois nécessaire.
+Par exemple, ma super machine à laver high-tech ne sait pas se connecter en WPA2, ce n&#8217;est noté nulle part, au bout d&#8217;un peu d&#8217;archarnement j&#8217;ai découvert qu&#8217;elle ne parlait juste pas à mon routeur&#8230;&#8203;
+Un pi d&#8217;avance c&#8217;est bien aussi parce que les cartes sd c&#8217;est pas forcément tres fiable, surtout qu&#8217;elles sont bien sollicitées avec la domotique</p></aside></section>
+<section class="no-padding"><div class="two-columns"><figure class="image left-content"><img src="./images/david-moum-238279-unsplash.jpg" alt="david moum 238279 unsplash"></figure>
+<p class="credit"><a href="https://unsplash.com/photos/nbqlWhOVu6k" class="bare">https://unsplash.com/photos/nbqlWhOVu6k</a></p>
+<ul class="right-content no-bullets"><li><span class="primary">mode invité</span></li><li><span class="primary">mode pas internet</span></li><li><span class="primary">retour de courant</span></li><li><span class="primary"><em>automagiquation</em></span></li></ul></div>
+<aside role="note"><p>Il est important de penser au mode enfant, invité, au cas où on a pas internet et aussi à gérer le cas de la coupure de courant.</p>
+<p>L&#8217;automatique c&#8217;est bien, mais ça fait souvent des choses non prévues.
+Un des principal travers est de prévoir un mécanisme qui permet au système d&#8217;avoir une mémoire à court terme.
+On peut ainsi l&#8217;empêcher de rallumer une lumière qu&#8217;on viendrait d&#8217;éteindre par exemple (c&#8217;est un des premiers trucs qu&#8217;on découvre).</p>
+<p>J&#8217;ai par exemple eu une expérience interessante avec les automatisation la semaine passée, il y avait une quinzaine de personne chez moi,
+j&#8217;ai une regle qui me permet de synchroniser la luminosité entre les différents système (tradfri/hue), seulement, une ampoule Hue a décider
+de ne pas répondre dans les temps, enfin de reporter un status "introuvable" qui a été interprété vers une valeur <strong>0</strong></p>
+<p>&#8658; Toutes les lumières se sont éteintes dans la pièce, bon c&#8217;était un anniversaire mais la synchro avec le gateau n&#8217;était pas bonne ;)</p></aside></section>
+<section class="no-padding"><div class="two-columns"><figure class="image left-content"><img src="./images/jorik-kleen-596626-unsplash.jpg" alt="jorik kleen 596626 unsplash"></figure>
+<p class="credit"><a href="https://unsplash.com/photos/asOVDixAb5U" class="bare">https://unsplash.com/photos/asOVDixAb5U</a></p>
+<ul class="right-content no-bullets"><li><span class="primary">Taille des ampoules</span></li><li><span class="primary">Interférences</span></li><li><span class="primary">Durée de vie des piles</span></li></ul></div>
+<aside role="note"><p>J&#8217;ai tenté de faire un détail de ce qu&#8217;il est possible de faire.
+Mais vous savez comme moi que tout n&#8217;est jamais parfaitement rose dans notre métier et que tout bouge un peu vite.</p>
+<p>Dans les problèmes récurrents, les ampoules connectées ne sont pas la panacées:
+ * culots pas forcément disponible
+ * taille des ampoules : on ne peut pas toujours bien mettre une ampoule connectée avec tous les abats jours&#8230;&#8203; une ampoule qui dépasse c&#8217;est pas génial</p>
+<p>Quand il pleut, que le micro onde est en route&#8230;&#8203; des intérferences peuvent empêcher les ordres de bien arriver (433 only)
+Et enfin, la plupart des périphériques fonctionnent sur piles, il faut donc bien monitorer le pourcentage qui est remonté
+car franchement, c&#8217;est pas super agréable d&#8217;être réveillé par le détecteur de fumée qui bippe (moins fort, mais toutes les minutes) pour prévenir de changer sa pile.
+(ca m&#8217;est arrivé deux fois, un par étage, a deux semaines d&#8217;intervalle&#8230;&#8203;)</p>
+<p>A noter que pour ce point un protocole dont je n&#8217;ai pas parlé car je ne l&#8217;utilse pas est intéressant : Enocean, qui a la particularité de ne pas necessiter de piles.
+La compatibilité avec les systèmes FOSS n&#8217;est pas top en revanche.</p></aside></section>
+<section class="image" style="background-image: url(./images/techno.png); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>En mélangeant tout plein de technologies, j&#8217;ai réussi à finalement rendre ma maison moins bête.
+Je ne dirais pas que j&#8217;ai une maison intelligente, et je n&#8217;ai pas réellement chercher à en arriver là.
+J&#8217;ai surtout cherché à faciliter la vie et l&#8217;utilisation de la maison par les personnes qui l&#8217;occupent.
+Que ce soit les habitants comme les invités, et c&#8217;est un des points les plus importants.</p>
+<p>Malgré tout le travail pour que ce soit simple à utiliser, il reste toujours des moments ou "ca marche pas".
+Pour tous ceux-là, avoir une technique "classique" est indispensable.
+Et quand ca finit par ne plus fonctionner, le problème est le temps passé à réparer ensuite.</p>
+<p>Maintenant, en terme de temps consacré, il y a des semaines ou je ne passe pas une seconde à m&#8217;en occuper, et d&#8217;autres ou je peux avoir besoin d&#8217;y passer 3 ou 4h.
+En moyenne, je dirais que je prend 10 minutes maximum par semaine pour effectuer la maintenance classique.</p>
+<p>Maintenant, abordons le plus gros problème, c&#8217;est un passe temps assez addictif, je passe beaucoup de temps à chercher un peu de matériel pour améliorer des petits trucs.
+J&#8217;achète des trucs dont je ne me sers pas, je m&#8217;acharne même à sauver du matos que j&#8217;ai tué dans mes tests.
+Par exemple, pour sauver une caméra IP avec un badflash j&#8217;ai dépensé plus en matériel qui me resservira peut-être que le prix de la caméra&#8230;&#8203;</p></aside></section></article><script src="build/build.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script><script>Array.prototype.forEach.call(document.querySelectorAll('i.conum+b'),function(n){n.parentNode.removeChild(n)})</script><script>prettyPrint()</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  }
+})</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script></body></html>

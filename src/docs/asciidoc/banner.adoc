@@ -1,4 +1,0 @@
-[role=bttf]
-MAISON< 
-[role="bttf reversed"]
-]futur
