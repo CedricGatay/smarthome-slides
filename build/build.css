@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
 @font-face{
     font-family: "BTTF";
-    src: url('fonts/BTTF.ttf');
+    src: url('../fonts/BTTF.ttf');
 }
 @font-face{
     font-family: "Source Sans Pro";
-    src: url('fonts/SourceSansPro-Regular.ttf');
+    src: url('../fonts/SourceSansPro-Regular.ttf');
 }
 .bttf{
     font-family: "BTTF";
@@ -535,7 +535,7 @@ section.title h1 {
   display: none;
 }
 .bespoke-active:not(.image) {
-  background-image: url("/images/breizhcamp.png");
+  background-image: url("../images/breizhcamp.png");
   background-position-x: 5px;
   background-position-y: calc(100% - 5px);
   background-size: 15%;
